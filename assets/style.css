@@ -84,6 +84,93 @@ a:hover { text-decoration: underline; }
   border-left: 4px solid var(--accent);
   background: var(--accent-soft);
 }
+.account-archive {
+  margin-top: 34px;
+}
+.account-archive > h2 {
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.account-group {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfe;
+  margin: 12px 0;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(31,41,51,.05);
+}
+.account-group summary {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto minmax(120px, 1fr) auto;
+  gap: 4px 14px;
+  align-items: center;
+  padding: 14px 16px;
+  list-style: none;
+  background: #f7f9fc;
+  border-left: 4px solid transparent;
+}
+.account-group summary::-webkit-details-marker { display: none; }
+.account-group summary::before {
+  content: "›";
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9eef7;
+  color: var(--accent);
+  font-size: 18px;
+  line-height: 1;
+  transition: transform .16s ease, background .16s ease;
+}
+.account-group[open] summary::before {
+  transform: rotate(90deg);
+  background: var(--accent-soft);
+}
+.account-group summary:hover {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+}
+.account-name {
+  font-weight: 700;
+  color: var(--text);
+}
+.account-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+.account-titles {
+  grid-column: 2 / -1;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.account-articles {
+  padding: 2px 18px 18px;
+  background: #ffffff;
+}
+.account-article {
+  padding: 10px 0 20px;
+  border-top: 1px solid var(--line);
+}
+.account-article:first-child {
+  border-top: 0;
+}
+.account-article h2 {
+  margin-top: 12px;
+  padding-top: 0;
+  border-top: 0;
+}
 ul { padding-left: 22px; }
 li { margin: 6px 0; }
 .table-wrap {
@@ -119,4 +206,7 @@ pre {
   .container { width: min(100% - 20px, 1040px); padding-top: 18px; }
   .hero h1 { font-size: 28px; }
   .report { padding: 18px; }
+  .account-group summary { grid-template-columns: auto 1fr; }
+  .account-count { justify-self: start; }
+  .account-titles { grid-column: 1 / -1; }
 }
