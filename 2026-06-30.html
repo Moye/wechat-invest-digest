@@ -5,373 +5,278 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>公众号文章摘要 2026-06-30 · 公众号投资简报</title>
   <style>
-    :root {
-      --bg: #f8fafc;
-      --panel: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
-      --primary: #2563eb;
-      --primary-soft: #dbeafe;
-      --line: #e2e8f0;
-      --tag: #e2e8f0;
-      --success-bg: #f0fdf4;
-      --success-border: #22c55e;
-      --risk-bg: #fef2f2;
-      --risk-border: #ef4444;
-      --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem),
-        var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 650;
-    }
-
-    a:hover { text-decoration: underline; }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 14px clamp(18px, 4vw, 40px);
-      background: rgba(248, 250, 252, 0.88);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.88);
-      backdrop-filter: blur(14px);
-    }
-
-    .brand {
-      color: #0f172a;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 0;
-    }
-
-    .topbar nav a {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .container {
-      width: min(100%, 848px);
-      margin: 0 auto;
-      padding: 34px 24px 64px;
-    }
-
-    .report {
-      padding: clamp(24px, 4vw, 40px);
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid rgba(226, 232, 240, 0.92);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .report-meta {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: #1d4ed8;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    h1, h2, h3 {
-      color: #0f172a;
-      line-height: 1.25;
-      letter-spacing: 0;
-    }
-
-    h1 {
-      margin: 16px 0 28px;
-      font-size: clamp(30px, 5vw, 42px);
-      font-weight: 850;
-    }
-
-    h2 {
-      margin: 34px 0 18px;
-      padding-left: 14px;
-      border-left: 4px solid var(--primary);
-      font-size: 23px;
-      font-weight: 820;
-    }
-
-    h3 {
-      margin: 26px 0 12px;
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    p { margin: 14px 0; }
-
-    ul {
-      margin: 12px 0 18px;
-      padding-left: 1.25rem;
-    }
-
-    li { margin: 8px 0; }
-
-    .summary-list {
-      display: grid;
-      gap: 12px;
-      margin: 0 0 28px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .summary-list > li {
-      margin: 0;
-      padding: 14px 16px;
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-    }
-
-    .label {
-      display: inline-block;
-      margin-right: 6px;
-      color: #334155;
-      font-weight: 800;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 24px;
-      padding: 2px 8px;
-      border-radius: 4px;
-      background: var(--tag);
-      color: #334155;
-      font-size: 13px;
-      font-weight: 720;
-      white-space: nowrap;
-    }
-
-    .subsection-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 22px 0 10px;
-      color: #0f172a;
-      font-weight: 850;
-    }
-
-    .subsection-title::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--primary);
-      box-shadow: 0 0 0 4px var(--primary-soft);
-    }
-
-    .insight,
-    .risk {
-      margin: 18px 0;
-      padding: 14px 16px;
-      border-radius: 12px;
-    }
-
-    .insight {
-      background: var(--success-bg);
-      border: 1px solid rgba(34, 197, 94, 0.38);
-      border-left: 4px solid var(--success-border);
-    }
-
-    .risk {
-      background: var(--risk-bg);
-      border: 1px solid rgba(239, 68, 68, 0.32);
-      border-left: 4px solid var(--risk-border);
-    }
-
-    .risk p,
-    .risk ul { margin-bottom: 0; }
-
-    .table-wrap {
-      width: 100%;
-      margin: 12px 0 22px;
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--panel);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 640px;
-      font-size: 14px;
-    }
-
-    th,
-    td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      background: #eff6ff;
-      color: #1e40af;
-      font-size: 13px;
-      font-weight: 850;
-    }
-
-    tbody tr:nth-child(even) { background: #f8fafc; }
-    tbody tr:last-child td { border-bottom: 0; }
-
-    .rank {
-      color: var(--primary);
-      font-weight: 850;
-      white-space: nowrap;
-    }
-
-    .account-archive {
-      margin-top: 38px;
-    }
-
-    details.account-group {
-      margin: 16px 0;
-      overflow: hidden;
-      background: var(--panel);
-      border: 1px solid rgba(203, 213, 225, 0.9);
-      border-radius: 16px;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
-    }
-
-    details.account-group summary {
-      position: relative;
-      display: grid;
-      grid-template-columns: auto auto 1fr auto;
-      gap: 10px;
-      align-items: center;
-      min-height: 64px;
-      padding: 16px 118px 16px 18px;
-      cursor: pointer;
-      list-style: none;
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
-    }
-
-    details.account-group summary::-webkit-details-marker { display: none; }
-
-    details.account-group summary::after {
-      content: "展开 ▾";
-      position: absolute;
-      right: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--primary);
-      font-size: 13px;
-      font-weight: 850;
-    }
-
-    details.account-group[open] summary::after {
-      content: "收起 ▴";
-    }
-
-    .account-name {
-      color: #0f172a;
-      font-weight: 850;
-    }
-
-    .account-count {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: #1d4ed8;
-      font-size: 13px;
-      font-weight: 820;
-    }
-
-    .account-titles {
-      min-width: 0;
-      color: var(--muted);
-      font-size: 13px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .account-articles {
-      display: grid;
-      gap: 18px;
-      padding: 18px;
-      background: #f8fafc;
-      border-top: 1px solid var(--line);
-    }
-
-    .account-article {
-      padding: 18px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-    }
-
-    .account-article h2 {
-      margin-top: 0;
-      font-size: 21px;
-    }
-
-    .meta-list {
-      display: grid;
-      gap: 8px;
-      margin: 0 0 18px;
-      padding: 0;
-      list-style: none;
-      color: #475569;
-      font-size: 14px;
-    }
-
-    .meta-list li {
-      margin: 0;
-      padding: 9px 12px;
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-    }
-
-    @media (max-width: 680px) {
-      .container { padding: 22px 14px 48px; }
-      .report { border-radius: 14px; }
-      h1 { font-size: 30px; }
-      h2 { font-size: 20px; }
-
-      details.account-group summary {
-        grid-template-columns: 1fr auto;
-        padding-right: 92px;
-      }
-
-      .account-titles {
-        grid-column: 1 / -1;
-        white-space: normal;
-      }
-    }
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
   </style>
 </head>
 <body>
@@ -381,269 +286,184 @@
   </header>
   <main class="container">
     <article class="report">
-      <div class="report-meta">每日摘要</div>
-      <h1>公众号文章摘要 2026-06-30</h1>
-
-      <h2>当日汇总</h2>
-      <ul class="summary-list">
-        <li><span class="label">收录文章：</span>3 篇</li>
-        <li><span class="label">覆盖公众号：</span>北向牧风、国家能源局</li>
-        <li>
-          <span class="label">高频实体/主题：</span>
-          <span class="tag-row">
-            <span class="tag">三星</span>
-            <span class="tag">SK</span>
-            <span class="tag">应用材料</span>
-            <span class="tag">AMAT</span>
-            <span class="tag">JPM</span>
-            <span class="tag">Jefferies</span>
-            <span class="tag">德银</span>
-            <span class="tag">高盛</span>
-            <span class="tag">大摩</span>
-            <span class="tag">台积电</span>
-            <span class="tag">KLA</span>
-            <span class="tag">Besi</span>
-            <span class="tag">DRAM</span>
-            <span class="tag">HBM</span>
-            <span class="tag">EUV</span>
-            <span class="tag">FinFET</span>
-            <span class="tag">CoWoS</span>
-            <span class="tag">CoPoS</span>
-          </span>
-        </li>
-      </ul>
-
-      <h2>板块与风格观察</h2>
-      <p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
-      <ul>
-        <li>半导体设备：AI/HBM/DRAM 制程升级会抬升前道、量检测和良率控制需求，降本点主要在缩短工艺迭代、提高良率和减少返工。</li>
-        <li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
-        <li>先进封装/玻璃基板：先进封装把算力芯片、存储和互连做得更近，降本点在封装集成、互连效率和单位算力能耗。</li>
-        <li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
-      </ul>
-
-      <p class="subsection-title"><strong>2. 强势板块线索</strong></p>
-      <ul>
-        <li>连续两天上涨：待接入板块行情数据确认；原文暂无可直接判定的连续上涨线索。</li>
-        <li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
-      </ul>
-
-      <p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>排名</th>
-              <th>板块名称</th>
-              <th>提及频次</th>
-              <th>核心主体</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="rank">1</td><td>能源/电力</td><td>合计 2篇/29次</td><td>国家能源局 2篇/29次</td></tr>
-            <tr><td class="rank">2</td><td>半导体设备</td><td>合计 1篇/38次</td><td>北向牧风 1篇/38次</td></tr>
-            <tr><td class="rank">3</td><td>存储/HBM</td><td>合计 1篇/29次</td><td>北向牧风 1篇/29次</td></tr>
-            <tr><td class="rank">4</td><td>先进封装/玻璃基板</td><td>合计 1篇/10次</td><td>北向牧风 1篇/10次</td></tr>
-            <tr><td class="rank">5</td><td>AI算力/大模型</td><td>合计 1篇/8次</td><td>北向牧风 1篇/8次</td></tr>
-            <tr><td class="rank">6</td><td>洁净室/厂务</td><td>合计 1篇/2次</td><td>北向牧风 1篇/2次</td></tr>
-            <tr><td class="rank">7</td><td>机器人</td><td>合计 1篇/1次</td><td>北向牧风 1篇/1次</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
-      <div class="tag-row">
-        <span class="tag">科技成长/AI硬件</span>
-        <span class="tag">设备含量提升</span>
-        <span class="tag">涨价/周期修复</span>
-      </div>
-
-      <p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
-      <ul class="summary-list">
-        <li><span class="label">能源/电力：</span>原文未明确提及个股/公司</li>
-        <li>
-          <span class="label">半导体设备：</span>
-          <span class="tag-row"><span class="tag">应用材料</span><span class="tag">AMAT</span><span class="tag">Besi</span><span class="tag">KLA</span></span>
-        </li>
-        <li>
-          <span class="label">存储/HBM：</span>
-          <span class="tag-row"><span class="tag">三星</span><span class="tag">AMAT</span></span>
-        </li>
-        <li>
-          <span class="label">先进封装/玻璃基板：</span>
-          <span class="tag-row"><span class="tag">AMAT</span><span class="tag">台积电</span><span class="tag">Besi</span></span>
-        </li>
-        <li>
-          <span class="label">AI算力/大模型：</span>
-          <span class="tag-row"><span class="tag">三星</span><span class="tag">台积电</span><span class="tag">AMAT</span></span>
-        </li>
-        <li><span class="label">洁净室/厂务：</span>原文未明确提及个股/公司</li>
-      </ul>
-
-      <p class="subsection-title"><strong>共性后续跟踪</strong></p>
-      <ul>
-        <li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
-        <li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
-        <li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
-        <li>复核重点实体的公告、纪要或财报口径：三星、SK、应用材料、AMAT、JPM、Jefferies</li>
-      </ul>
-
-      <section class="account-archive" aria-label="按公众号归档的文章">
-        <h2>按公众号归档</h2>
-        <details class="account-group" open>
-          <summary><span class="account-name">北向牧风</span><span class="account-count">1 篇</span><span class="account-titles">半导体设备商讲的是另一回事…</span></summary>
-          <div class="account-articles">
-            <article class="account-article">
-              <h2>半导体设备商讲的是另一回事…</h2>
-              <ul class="meta-list">
-                <li>公众号：北向牧风</li>
-                <li>发布时间：2026-06-30 08:46:37</li>
-                <li>原文：<a href="https://mp.weixin.qq.com/s/-fhjYIlzNQT34WqPOtb1vw">点击查看原文</a></li>
-              </ul>
-              <p class="insight"><strong>一句话</strong>：3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</p>
-              <p class="subsection-title"><strong>核心内容</strong></p>
-              <ul>
-                <li>3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</li>
-                <li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
-                <li>每 10 万片/月的 DRAM 产能，AMAT 的 SAM（服务可及市场）从 6F² 制程的 60 亿美元，涨到 4F² 的 65 亿、3D DRAM 的 75 亿</li>
-                <li>（业内叫 SAM，服务可及市场）</li>
-                <li>再就是，HBM4 的基础芯片（base die）要从老的控制逻辑往先进 FinFET 节点迁，等于又把一部分 HBM 需求拉进了它的代工/逻辑设备盘子</li>
-                <li>AI 加速器越做越大，几年内要奔着 14 倍光罩面积去，一张 300mm 圆晶圆只能切出 4-5 个这么大的中介层（interposer），切不动了，行业只能往&quot;面板级&quot;走，上 600x600mm 的大方板（业内叫 CoPoS，对标台积电的 CoWoS）</li>
-              </ul>
-              <p class="subsection-title"><strong>关键实体</strong></p>
-              <div class="tag-row">
-                <span class="tag">三星</span>
-                <span class="tag">SK</span>
-                <span class="tag">应用材料</span>
-                <span class="tag">AMAT</span>
-                <span class="tag">JPM</span>
-                <span class="tag">Jefferies</span>
-                <span class="tag">德银</span>
-                <span class="tag">高盛</span>
-                <span class="tag">大摩</span>
-                <span class="tag">台积电</span>
-                <span class="tag">KLA</span>
-                <span class="tag">Besi</span>
-                <span class="tag">DRAM</span>
-                <span class="tag">HBM</span>
-                <span class="tag">EUV</span>
-                <span class="tag">FinFET</span>
-                <span class="tag">CoWoS</span>
-                <span class="tag">CoPoS</span>
-                <span class="tag">CMOS</span>
-                <span class="tag">Bonded</span>
-              </div>
-              <p class="subsection-title"><strong>关键数字/证据</strong></p>
-              <ul>
-                <li>JPM 把三星、SK 两家的投资公告加总到约 3.1 万亿美元</li>
-                <li>（其中纯半导体、内存约 2 万亿出头，剩下是 AI 基建、造船、电池这些非芯片的）</li>
-                <li>所以晚上美股存储开盘暴跌10%...</li>
-                <li>3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</li>
-                <li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
-                <li>上周四（6/25）AMAT（应用材料，全球最大的半导体设备厂）开了一场挺低调的 master class</li>
-                <li>Centura Prime Epi、Opta Quad CMP、Nokota VMax 2 ECD、Producer Avila 2 PECVD、VeritySEM 7AP、SEMVision G7AP</li>
-                <li>每 10 万片/月的 DRAM 产能，AMAT 的 SAM（服务可及市场）从 6F² 制程的 60 亿美元，涨到 4F² 的 65 亿、3D DRAM 的 75 亿</li>
-              </ul>
-              <div class="risk">
-                <p><strong>风险/分歧</strong></p>
-                <ul>
-                  <li>市场第一反应是未来要过剩</li>
-                  <li>所以晚上美股存储开盘暴跌10%...</li>
-                  <li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
-                  <li>还是要提醒大家注意风险</li>
-                  <li>量检测恰恰是国产设备最薄弱、国产化率最低的一环，连 AMAT 这种刻蚀沉积大厂都开始往里挤....</li>
-                </ul>
-              </div>
-              <p class="subsection-title"><strong>后续跟踪</strong></p>
-              <ul>
-                <li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
-                <li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
-                <li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
-                <li>复核重点实体的公告、纪要或财报口径：三星、SK、应用材料、AMAT、JPM、Jefferies</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-
-        <details class="account-group" open>
-          <summary><span class="account-name">国家能源局</span><span class="account-count">2 篇</span><span class="account-titles">国家能源局召开工作交流会&nbsp;进一步推动“获得电力”服务水平提升、“一带一路”能源合作伙伴关系2026年第一次高官会在京召开</span></summary>
-          <div class="account-articles">
-            <article class="account-article">
-              <h2>国家能源局召开工作交流会&nbsp;进一步推动“获得电力”服务水平提升</h2>
-              <ul class="meta-list">
-                <li>公众号：国家能源局</li>
-                <li>发布时间：2026-06-30 13:09:20</li>
-                <li>原文：<a href="https://mp.weixin.qq.com/s/dz61KdNBr7c8Uy5szvQ1Cw">点击查看原文</a></li>
-              </ul>
-              <p class="insight"><strong>一句话</strong>：分析当前工作新形势新要求，安排部署下一阶段重点任务</p>
-              <p class="subsection-title"><strong>核心内容</strong></p>
-              <ul>
-                <li>分析当前工作新形势新要求，安排部署下一阶段重点任务</li>
-                <li>深入贯彻落实党中央、国务院关于优化营商环境的决策部署，总结交流</li>
-                <li>服务新质生产力发展专项行动方案（</li>
-                <li>发布《中国供电发展报告（</li>
-                <li>树立实干导向，在推进标杆示范引领、服务保障产业升级、破解群众用电难题上抓出</li>
-                <li>已成为我国优化营商环境的重要优势领域</li>
-              </ul>
-              <p class="subsection-title"><strong>关键实体</strong></p>
-              <div class="tag-row"><span class="tag">待补充</span></div>
-              <p class="subsection-title"><strong>关键数字/证据</strong></p>
-              <ul>
-                <li>待补充</li>
-              </ul>
-              <div class="risk">
-                <p><strong>风险/分歧</strong></p>
-                <ul>
-                  <li>待结合市场走势和原文进一步判断。</li>
-                </ul>
-              </div>
-              <p class="subsection-title"><strong>后续跟踪</strong></p>
-              <ul>
-                <li>复核原文和相关公告。</li>
-              </ul>
-            </article>
-
-            <article class="account-article">
-              <h2>“一带一路”能源合作伙伴关系2026年第一次高官会在京召开</h2>
-              <ul class="meta-list">
-                <li>公众号：国家能源局</li>
-                <li>发布时间：2026-06-30 10:13:13</li>
-                <li>原文：<a href="https://mp.weixin.qq.com/s/g2fpVQuBKLTa8Is31g8DYQ">点击查看原文</a></li>
-              </ul>
-              <p class="insight"><strong>一句话</strong>：近日，中国国家能源局在京组织召开“一带一路”能源合作伙伴关系2026年第一次高官会</p>
-              <p class="subsection-title"><strong>核心内容</strong></p>
-              <ul>
-                <li>近日，中国国家能源局在京组织召开“一带一路”能源合作伙伴关系2026年第一次高官会</li>
-                <li>中国国家能源局总工程师刘德顺、伊朗能源部副部长塔兹塔拉布、古巴驻华大使白诗德出席会议并致辞</li>
-                <li>会上，伙伴关系秘书处汇报了“一带一路”能源合作伙伴关系2026年有关工作情况和下半年工作计划，并介绍了理事会组建方案和第四届部长会初步安排</li>
-                <li>与会成员国代表介绍了各国能源发展情况，高度认可伙伴关系对推动能源务实合作的重要作用，对完善伙伴关系机制提出了建设性意见</li>
-                <li>来自18个成员国的80余名中外代表，山东省能源局、青岛市发展改革委，伙伴关系秘书处办公室以及合作网络各工作组组长单位等有关同志参加会议</li>
-                <li>会议聚焦理事会组建、第四届部长会筹备等关键事项，凝聚各国共识，打磨实操方案，完善平台机制建设，为推动今年11月在青岛召开第四届“一带一路”能源部长会议奠定了坚实的工作基础</li>
-              </ul>
-              <p class="subsection-title"><strong>关键实体</strong></p>
-              <div class="tag-row"><span class="tag">待补充</span></div>
-              <p class="subsection-title"><strong>关键数字/证据</strong></p>
-              <ul>
-                <li>近日，中国国家能源局在京组织召开“一带一路”能源合作伙伴关系2026年第一次高官会</li>
-                <li>会上，伙伴关系秘书处汇报了“一带一路”能源合作伙伴关系2026年有关工作情况和下半年工作计划，并介绍了理事会组建方案和第四届部长会初步安排</li>
-                <li>会议聚焦理事会组建、第四届部长会筹备等关键事项，凝聚各国共识，打磨实操方案，完善平台机制建设，为推动今年11月在青岛召开第四届“一带一路”能源部长会议奠定了坚实的工作基础</li>
-                <li>来自18个成员国的80余名中外代表，山东省能源局、青岛市发展改革委，伙伴关系秘书处办公室以及合作网络各工作组组长单位等有关同志参加会议</li>
-              </ul>
-              <div class="risk">
-                <p><strong>风险/分歧</strong></p>
-                <ul>
-                  <li>待结合市场走势和原文进一步判断。</li>
-                </ul>
-              </div>
-              <p class="subsection-title"><strong>后续跟踪</strong></p>
-              <ul>
-                <li>复核原文和相关公告。</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-      </section>
-    </article>
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-06-30</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>3 篇</li>
+<li><span class="label">覆盖公众号：</span>北向牧风、国家能源局</li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">应用材料</span><span class="tag">AMAT</span><span class="tag">JPM</span><span class="tag">Jefferies</span><span class="tag">德银</span><span class="tag">高盛</span><span class="tag">大摩</span><span class="tag">台积电</span><span class="tag">KLA</span><span class="tag">Besi</span><span class="tag">DRAM</span><span class="tag">HBM</span><span class="tag">EUV</span><span class="tag">FinFET</span><span class="tag">CoWoS</span><span class="tag">CoPoS</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>半导体设备：AI/HBM/DRAM 制程升级会抬升前道、量检测和良率控制需求，降本点主要在缩短工艺迭代、提高良率和减少返工。</li>
+<li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
+<li>先进封装/玻璃基板：先进封装把算力芯片、存储和互连做得更近，降本点在封装集成、互连效率和单位算力能耗。</li>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文暂无可直接判定的连续上涨线索。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>半导体设备</td><td>合计 1篇/38次</td><td>北向牧风 1篇/38次</td></tr>
+<tr><td class="rank">2</td><td>存储/HBM</td><td>合计 1篇/29次</td><td>北向牧风 1篇/29次</td></tr>
+<tr><td class="rank">3</td><td>能源/电力</td><td>合计 1篇/20次</td><td>国家能源局 1篇/20次</td></tr>
+<tr><td class="rank">4</td><td>先进封装/玻璃基板</td><td>合计 1篇/10次</td><td>北向牧风 1篇/10次</td></tr>
+<tr><td class="rank">5</td><td>AI算力/大模型</td><td>合计 1篇/8次</td><td>北向牧风 1篇/8次</td></tr>
+<tr><td class="rank">6</td><td>洁净室/厂务</td><td>合计 1篇/2次</td><td>北向牧风 1篇/2次</td></tr>
+<tr><td class="rank">7</td><td>机器人</td><td>合计 1篇/1次</td><td>北向牧风 1篇/1次</td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>科技成长/AI硬件、设备含量提升、涨价/周期修复</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>半导体设备：应用材料、AMAT、Besi、KLA</li>
+<li>存储/HBM：三星、AMAT</li>
+<li>能源/电力：原文未明确提及个股/公司</li>
+<li>先进封装/玻璃基板：AMAT、台积电、Besi</li>
+<li>AI算力/大模型：三星、台积电、AMAT</li>
+<li>洁净室/厂务：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、SK、应用材料、AMAT、JPM、Jefferies</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" open>
+<summary><span class="account-name">北向牧风</span><span class="account-count">1 篇</span><span class="account-titles">半导体设备商讲的是另一回事…</span></summary>
+<div class="account-articles">
+<article class="account-article">
+<h2>半导体设备商讲的是另一回事…</h2>
+<ul>
+<li>公众号：北向牧风</li>
+<li>发布时间：2026-06-30 08:46:37</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/-fhjYIlzNQT34WqPOtb1vw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li>3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</li>
+<li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
+<li>每 10 万片/月的 DRAM 产能，AMAT 的 SAM（服务可及市场）从 6F² 制程的 60 亿美元，涨到 4F² 的 65 亿、3D DRAM 的 75 亿</li>
+<li>（业内叫 SAM，服务可及市场）</li>
+<li>再就是，HBM4 的基础芯片（base die）要从老的控制逻辑往先进 FinFET 节点迁，等于又把一部分 HBM 需求拉进了它的代工/逻辑设备盘子</li>
+<li>AI 加速器越做越大，几年内要奔着 14 倍光罩面积去，一张 300mm 圆晶圆只能切出 4-5 个这么大的中介层（interposer），切不动了，行业只能往&quot;面板级&quot;走，上 600x600mm 的大方板（业内叫 CoPoS，对标台积电的 CoWoS）</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">应用材料</span><span class="tag">AMAT</span><span class="tag">JPM</span><span class="tag">Jefferies</span><span class="tag">德银</span><span class="tag">高盛</span><span class="tag">大摩</span><span class="tag">台积电</span><span class="tag">KLA</span><span class="tag">Besi</span><span class="tag">DRAM</span><span class="tag">HBM</span><span class="tag">EUV</span><span class="tag">FinFET</span><span class="tag">CoWoS</span><span class="tag">CoPoS</span><span class="tag">CMOS</span><span class="tag">Bonded</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>JPM 把三星、SK 两家的投资公告加总到约 3.1 万亿美元</li>
+<li>（其中纯半导体、内存约 2 万亿出头，剩下是 AI 基建、造船、电池这些非芯片的）</li>
+<li>所以晚上美股存储开盘暴跌10%...</li>
+<li>3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</li>
+<li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
+<li>上周四（6/25）AMAT（应用材料，全球最大的半导体设备厂）开了一场挺低调的 master class</li>
+<li>Centura Prime Epi、Opta Quad CMP、Nokota VMax 2 ECD、Producer Avila 2 PECVD、VeritySEM 7AP、SEMVision G7AP</li>
+<li>每 10 万片/月的 DRAM 产能，AMAT 的 SAM（服务可及市场）从 6F² 制程的 60 亿美元，涨到 4F² 的 65 亿、3D DRAM 的 75 亿</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>市场第一反应是未来要过剩</li>
+<li>所以晚上美股存储开盘暴跌10%...</li>
+<li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
+<li>还是要提醒大家注意风险</li>
+<li>量检测恰恰是国产设备最薄弱、国产化率最低的一环，连 AMAT 这种刻蚀沉积大厂都开始往里挤....</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、SK、应用材料、AMAT、JPM、Jefferies</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" open>
+<summary><span class="account-name">国家能源局</span><span class="account-count">2 篇</span><span class="account-titles">国家能源局召开工作交流会 进一步推动“获得电力”服务水平提升、未命名公众号文章</span></summary>
+<div class="account-articles">
+<article class="account-article">
+<h2>国家能源局召开工作交流会 进一步推动“获得电力”服务水平提升</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-06-30 13:09:20</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/dz61KdNBr7c8Uy5szvQ1Cw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：分析当前工作新形势新要求，安排部署下一阶段重点任务</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li>分析当前工作新形势新要求，安排部署下一阶段重点任务</li>
+<li>深入贯彻落实党中央、国务院关于优化营商环境的决策部署，总结交流</li>
+<li>服务新质生产力发展专项行动方案（</li>
+<li>发布《中国供电发展报告（</li>
+<li>树立实干导向，在推进标杆示范引领、服务保障产业升级、破解群众用电难题上抓出</li>
+<li>已成为我国优化营商环境的重要优势领域</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>待结合市场走势和原文进一步判断。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article">
+<h2>未命名公众号文章</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-06-30</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/g2fpVQuBKLTa8Is31g8DYQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>待结合市场走势和原文进一步判断。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
   </main>
 </body>
 </html>
