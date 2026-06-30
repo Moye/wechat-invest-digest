@@ -109,6 +109,31 @@ li { margin: 8px 0; }
   font-weight: 720;
   white-space: nowrap;
 }
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
 .subsection-title {
   display: flex;
   align-items: center;
@@ -137,6 +162,26 @@ li { margin: 8px 0; }
   border-left: 4px solid var(--risk-border);
 }
 .risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
 .table-wrap {
   width: 100%;
   margin: 12px 0 22px;
@@ -290,17 +335,17 @@ pre {
   <h1>公众号文章摘要 2026-06-30</h1>
 <h2>当日汇总</h2>
 <ul class="summary-list">
-<li><span class="label">收录文章：</span>3 篇</li>
-<li><span class="label">覆盖公众号：</span>北向牧风、国家能源局</li>
-<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">应用材料</span><span class="tag">AMAT</span><span class="tag">JPM</span><span class="tag">Jefferies</span><span class="tag">德银</span><span class="tag">高盛</span><span class="tag">大摩</span><span class="tag">台积电</span><span class="tag">KLA</span><span class="tag">Besi</span><span class="tag">DRAM</span><span class="tag">HBM</span><span class="tag">EUV</span><span class="tag">FinFET</span><span class="tag">CoWoS</span><span class="tag">CoPoS</span></span></li>
+<li><span class="label">收录文章：</span>7 篇</li>
+<li><span class="label">覆盖公众号：</span>寻找低估、北向牧风、国家能源局</li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">台积电</span><span class="tag">HBM</span><span class="tag">TheElec</span><span class="tag">TrendForce</span><span class="tag">CCL</span><span class="tag">LiFSI</span><span class="tag">Meta</span><span class="tag">MACHINA</span><span class="tag">Summit</span><span class="tag">Al</span><span class="tag">SMM</span><span class="tag">应用材料</span><span class="tag">AMAT</span><span class="tag">JPM</span><span class="tag">Jefferies</span><span class="tag">德银</span></span></li>
 </ul>
 <h2>板块与风格观察</h2>
 <p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
 <ul>
 <li>半导体设备：AI/HBM/DRAM 制程升级会抬升前道、量检测和良率控制需求，降本点主要在缩短工艺迭代、提高良率和减少返工。</li>
 <li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
-<li>先进封装/玻璃基板：先进封装把算力芯片、存储和互连做得更近，降本点在封装集成、互连效率和单位算力能耗。</li>
 <li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>机器人：机器人把 AI 能力落到物理执行端，降本点在核心零部件国产化、规模制造和控制算法优化。</li>
 </ul>
 <p class="subsection-title"><strong>2. 强势板块线索</strong></p>
 <ul>
@@ -312,38 +357,105 @@ pre {
 <table>
 <thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
 <tbody>
-<tr><td class="rank">1</td><td>半导体设备</td><td>合计 1篇/38次</td><td>北向牧风 1篇/38次</td></tr>
-<tr><td class="rank">2</td><td>存储/HBM</td><td>合计 1篇/29次</td><td>北向牧风 1篇/29次</td></tr>
-<tr><td class="rank">3</td><td>能源/电力</td><td>合计 1篇/20次</td><td>国家能源局 1篇/20次</td></tr>
-<tr><td class="rank">4</td><td>先进封装/玻璃基板</td><td>合计 1篇/10次</td><td>北向牧风 1篇/10次</td></tr>
-<tr><td class="rank">5</td><td>AI算力/大模型</td><td>合计 1篇/8次</td><td>北向牧风 1篇/8次</td></tr>
-<tr><td class="rank">6</td><td>洁净室/厂务</td><td>合计 1篇/2次</td><td>北向牧风 1篇/2次</td></tr>
-<tr><td class="rank">7</td><td>机器人</td><td>合计 1篇/1次</td><td>北向牧风 1篇/1次</td></tr>
+<tr><td class="rank">1</td><td>能源/电力</td><td>合计 4篇/59次</td><td>国家能源局 3篇/56次；寻找低估 1篇/3次</td></tr>
+<tr><td class="rank">2</td><td>半导体设备</td><td>合计 2篇/40次</td><td>北向牧风 1篇/38次；寻找低估 1篇/2次</td></tr>
+<tr><td class="rank">3</td><td>存储/HBM</td><td>合计 2篇/35次</td><td>北向牧风 1篇/29次；寻找低估 1篇/6次</td></tr>
+<tr><td class="rank">4</td><td>AI算力/大模型</td><td>合计 2篇/17次</td><td>寻找低估 1篇/9次；北向牧风 1篇/8次</td></tr>
+<tr><td class="rank">5</td><td>机器人</td><td>合计 2篇/8次</td><td>寻找低估 1篇/7次；北向牧风 1篇/1次</td></tr>
+<tr><td class="rank">6</td><td>水利/防汛减灾</td><td>合计 1篇/22次</td><td>国家能源局 1篇/22次</td></tr>
+<tr><td class="rank">7</td><td>商业航天</td><td>合计 1篇/10次</td><td>寻找低估 1篇/10次</td></tr>
+<tr><td class="rank">8</td><td>先进封装/玻璃基板</td><td>合计 1篇/10次</td><td>北向牧风 1篇/10次</td></tr>
 </tbody>
 </table>
 </div>
 <p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
 <ul>
-<li>科技成长/AI硬件、设备含量提升、涨价/周期修复</li>
+<li>科技成长/AI硬件、涨价/周期修复、设备含量提升</li>
 </ul>
 <p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
 <ul>
-<li>半导体设备：应用材料、AMAT、Besi、KLA</li>
-<li>存储/HBM：三星、AMAT</li>
 <li>能源/电力：原文未明确提及个股/公司</li>
-<li>先进封装/玻璃基板：AMAT、台积电、Besi</li>
-<li>AI算力/大模型：三星、台积电、AMAT</li>
-<li>洁净室/厂务：原文未明确提及个股/公司</li>
+<li>半导体设备：SK海力士、应用材料、AMAT、Besi、KLA</li>
+<li>存储/HBM：SK海力士、台积电、三星、AMAT</li>
+<li>AI算力/大模型：富乔、亚马逊、三星、台积电、AMAT</li>
+<li>机器人：优必选、三星</li>
+<li>水利/防汛减灾：原文未明确提及个股/公司</li>
 </ul>
 <p class="subsection-title"><strong>共性后续跟踪</strong></p>
 <ul>
-<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
 <li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
 <li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、SK、台积电、HBM、TheElec、TrendForce</li>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
 <li>复核重点实体的公告、纪要或财报口径：三星、SK、应用材料、AMAT、JPM、Jefferies</li>
 </ul>
 <section class="account-archive" aria-label="按公众号归档的文章">
 <h2>按公众号归档</h2>
+<details class="account-group" open>
+<summary><span class="account-name">寻找低估</span><span class="account-count">1 篇</span><span class="account-titles">4000亿韩元订单</span></summary>
+<div class="account-articles">
+<article class="account-article">
+<h2>4000亿韩元订单</h2>
+<ul>
+<li>公众号：寻找低估</li>
+<li>发布时间：2026-06-30 21:55:58</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/h3gn42UaDTNYWUiWrJLx2w">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：设备行业预计，该工厂将订购约200台设备，其中包括HBM4测试仪</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>SK海力士正在与半导体设备厂商讨清州P&amp;T7工厂所需的半导体检测设备供应事宜。各设备公司正在口头协调明年可交付的设备数量。设备行业预计，该工厂将订购约200台设备，其中包括HBM4测试仪。按每台15亿至20亿韩元的价格计算，总价最高可达4000亿韩元</p><p><span class="impact-label">利好板块/公司：</span>利好板块：半导体设备、存储/HBM；相关公司/标的：SK海力士。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>TrendForce：AI零部件产能排挤、大厂减产加剧 预估晶圆代工成熟制程涨价效应延伸至2027年；芯联集成发了涨价函：三季度产品涨价15-25%；功率涨价的核心原因如上面所说，在于代工产能紧缺，8寸BCD工艺供给减少，台积电、三星电子都在减产；东芯、寒武纪也在提示上游物料、代工封测涨价风险；东芯股份：上游代工价格持续上涨，将对公司的产品交付、成本控制及整体经营业绩产生不利影响；寒武纪：若未来上游原材料价格持续走高，将可能对公司经营业绩产生不利影响</p><p><span class="impact-label">利好板块/公司：</span>利好板块：存储/HBM、功率/碳化硅、AI算力/大模型；相关公司/标的：台积电、三星、芯联集成、东芯股份、寒武纪。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>电子布：富乔涨价函：7月1日起常规E-glass电子布涨价30%，AI专用FLD2低介电布上调15%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型、PCB/电子布；相关公司/标的：富乔。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>CCL：松下涨价函：覆铜板涨价5-15%，粘结片涨价5-15%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：PCB/电子布；相关公司/标的：松下。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>晶振：泰晶科技涨价函，7月1日起对全系列晶振产品涨价10-30%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：晶振/被动元件；相关公司/标的：泰晶科技。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>三菱刀具涨价函：7月1日起硬质合金刀片涨价50%-85%碳化钨钻头32%硬质合金立铣刀41%，高速钢产品35%</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>永太科技：预计上半年净利，2.65亿元-3.30亿元，同比增长351%-461%，Q2净利润预计1.6亿-2.25亿，环比变动53%-115%。公司六氟磷酸锂、LiFSI、VC及电解液等锂电材料核心产品销量与价格同比提升</p><p><span class="impact-label">利好板块/公司：</span>利好板块：锂电材料/电解液；相关公司/标的：永太科技。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>中矿资源：全资子公司江西中矿锂业因自产锂精矿运输周期与生产调度错配，自2026年6月30日起对“年产3万吨高纯锂盐”生产线临时停产检修；7月11日起对“年产3.5万吨高纯锂盐”生产线进行临时停产检修，局部低负荷运行，预计7月底前完成</p><p><span class="impact-label">利好板块/公司：</span>利好板块：锂电材料/电解液；相关公司/标的：中矿资源。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>八部门印发《关于推动工业互联网高质量发展的实施意见》，其中提到：目标到2030年工业互联网核心产业增加值突破2.5万亿元；推动工业互联网基础设施和智算设施、超算设施等算力基础设施一体规划、同步建设</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型、工业互联网/制造业数字化；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国家航天局：我国将建立近地小行星天地协同监测体系，为防御小行星撞击提供预警监测支撑</p><p><span class="impact-label">利好板块/公司：</span>利好板块：商业航天；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>华为开源盘古920亿参数的openPangu-2.0-Flash模型正式开源上线</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>优必选：已收超13361台“超仿生人形机器人”订单，9月开启交付</p><p><span class="impact-label">利好板块/公司：</span>利好板块：机器人；相关公司/标的：优必选。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>Anthropic与亚马逊重新达成了一项新协议，计费方式从按计算小时收费改为按Token收费。亚马逊或会为此支付更高的费用</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型；相关公司/标的：亚马逊。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>芝商所将于7月27日推出单一股票期货 上市公司包括Alphabet、亚马逊、苹果、Meta、英伟达和SpaceX</p><p><span class="impact-label">利好板块/公司：</span>利好板块：商业航天；相关公司/标的：亚马逊、英伟达、苹果、Meta、Alphabet、SpaceX。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>美股核电龙头警告：美部分地区最早明年就可能停电 AI巨头们低估了前方阻力</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型、能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>太辰光：康宁GlassBridge与MPO功能互补 将重塑而非削弱MPO市场空间</p><p><span class="impact-label">利好板块/公司：</span>利好板块：光模块/CPO；相关公司/标的：太辰光。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>安洁科技：拟现金收购苏州志烽51%股权 收购标的主要产品包括光模块芯片基座等</p><p><span class="impact-label">利好板块/公司：</span>利好板块：光模块/CPO；相关公司/标的：安洁科技。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>昀冢科技：停牌核查已完成 明日开市起复牌</p><p><span class="impact-label">利好板块/公司：</span>利好板块：相关公司所在产业链；相关公司/标的：昀冢科技。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>金宏气体：高纯二氧化碳已通过海力士第三轮测试 进入正式供应阶段</p><p><span class="impact-label">利好板块/公司：</span>利好板块：电子特气/六氟化钨；相关公司/标的：金宏气体。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>斯迪克：MLCC离型膜近期已通过村田供应商准入 后续将持续推进送样验证工作</p><p><span class="impact-label">利好板块/公司：</span>利好板块：晶振/被动元件；相关公司/标的：斯迪克。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月10-13日，预计长10乙发射</p><p><span class="impact-label">利好板块/公司：</span>利好板块：商业航天；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月10日，SK海力士美国ADR上市</p><p><span class="impact-label">利好板块/公司：</span>利好板块：存储/HBM；相关公司/标的：SK海力士。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月17-20日，世界人工智能大会</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月31日，第二届中国国际游戏开发者大会</p><p><span class="impact-label">利好板块/公司：</span>利好板块：存储/HBM、AI算力/大模型、机器人、商业航天；相关公司/标的：原文未明确点名。</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">台积电</span><span class="tag">HBM</span><span class="tag">TheElec</span><span class="tag">TrendForce</span><span class="tag">CCL</span><span class="tag">LiFSI</span><span class="tag">Meta</span><span class="tag">MACHINA</span><span class="tag">Summit</span><span class="tag">Al</span><span class="tag">SMM</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>4000亿韩元（约17亿RMB）</li>
+<li>SK海力士正在与半导体设备厂商讨清州P&amp;T7工厂所需的半导体检测设备供应事宜</li>
+<li>设备行业预计，该工厂将订购约200台设备，其中包括HBM4测试仪</li>
+<li>按每台15亿至20亿韩元的价格计算，总价最高可达4000亿韩元</li>
+<li>：AI零部件产能排挤、大厂减产加剧 预估晶圆代工成熟制程涨价效应延伸至2027年</li>
+<li>芯联集成发了涨价函：三季度产品涨价15-25%</li>
+<li>功率涨价的核心原因如上面所说，在于代工产能紧缺，8寸BCD工艺供给减少，台积电、三星电子都在减产</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>东芯、寒武纪也在提示上游物料、代工封测涨价风险</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、SK、台积电、HBM、TheElec、TrendForce</li>
+</ul>
+</article>
+</div>
+</details>
 <details class="account-group" open>
 <summary><span class="account-name">北向牧风</span><span class="account-count">1 篇</span><span class="account-titles">半导体设备商讲的是另一回事…</span></summary>
 <div class="account-articles">
@@ -357,32 +469,28 @@ pre {
 <p class="insight"><strong>一句话</strong>：3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</li>
-<li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
-<li>每 10 万片/月的 DRAM 产能，AMAT 的 SAM（服务可及市场）从 6F² 制程的 60 亿美元，涨到 4F² 的 65 亿、3D DRAM 的 75 亿</li>
-<li>（业内叫 SAM，服务可及市场）</li>
-<li>再就是，HBM4 的基础芯片（base die）要从老的控制逻辑往先进 FinFET 节点迁，等于又把一部分 HBM 需求拉进了它的代工/逻辑设备盘子</li>
-<li>AI 加速器越做越大，几年内要奔着 14 倍光罩面积去，一张 300mm 圆晶圆只能切出 4-5 个这么大的中介层（interposer），切不动了，行业只能往&quot;面板级&quot;走，上 600x600mm 的大方板（业内叫 CoPoS，对标台积电的 CoWoS）</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</p><p><span class="impact-label">利好板块/公司：</span>利好板块：半导体设备、洁净室/厂务；相关公司/标的：原文未明确点名。</p></li>
+</ul>
+<figure class="figure"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/DC5NIvUiaF3Q5JCL77T1H4UYFWNaLjLtYprFMXoGaP4tHERr2SjkX16an6iclaVEUmdDxum2Lgrh6uOormgw3iaRCk2X85TsP03iaSKm5lhvySw/640?wx_fmt=png&amp;from=appmsg" alt="图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）" loading="lazy"><figcaption>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</figcaption></figure>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>再就是，HBM4 的基础芯片（base die）要从老的控制逻辑往先进 FinFET 节点迁，等于又把一部分 HBM 需求拉进了它的代工/逻辑设备盘子</p><p><span class="impact-label">利好板块/公司：</span>利好板块：存储/HBM；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>AI 加速器越做越大，几年内要奔着 14 倍光罩面积去，一张 300mm 圆晶圆只能切出 4-5 个这么大的中介层（interposer），切不动了，行业只能往&quot;面板级&quot;走，上 600x600mm 的大方板（业内叫 CoPoS，对标台积电的 CoWoS）</p><p><span class="impact-label">利好板块/公司：</span>利好板块：先进封装/玻璃基板、AI算力/大模型；相关公司/标的：台积电。</p></li>
 </ul>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">应用材料</span><span class="tag">AMAT</span><span class="tag">JPM</span><span class="tag">Jefferies</span><span class="tag">德银</span><span class="tag">高盛</span><span class="tag">大摩</span><span class="tag">台积电</span><span class="tag">KLA</span><span class="tag">Besi</span><span class="tag">DRAM</span><span class="tag">HBM</span><span class="tag">EUV</span><span class="tag">FinFET</span><span class="tag">CoWoS</span><span class="tag">CoPoS</span><span class="tag">CMOS</span><span class="tag">Bonded</span></span>
 <p class="subsection-title"><strong>关键数字/证据</strong></p>
 <ul>
 <li>JPM 把三星、SK 两家的投资公告加总到约 3.1 万亿美元</li>
-<li>（其中纯半导体、内存约 2 万亿出头，剩下是 AI 基建、造船、电池这些非芯片的）</li>
 <li>所以晚上美股存储开盘暴跌10%...</li>
 <li>3.1 万亿里 60-70% 是前道晶圆设备，20-30% 是基建和洁净室（洁净室这个梳理一下最近的行业情况，最近发出，纪要先更星球），剩下才是封装</li>
-<li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
 <li>上周四（6/25）AMAT（应用材料，全球最大的半导体设备厂）开了一场挺低调的 master class</li>
 <li>Centura Prime Epi、Opta Quad CMP、Nokota VMax 2 ECD、Producer Avila 2 PECVD、VeritySEM 7AP、SEMVision G7AP</li>
-<li>每 10 万片/月的 DRAM 产能，AMAT 的 SAM（服务可及市场）从 6F² 制程的 60 亿美元，涨到 4F² 的 65 亿、3D DRAM 的 75 亿</li>
 </ul>
 <div class="risk">
 <p><strong>风险/分歧</strong></p>
 <ul>
 <li>市场第一反应是未来要过剩</li>
 <li>所以晚上美股存储开盘暴跌10%...</li>
-<li>图：JPM 估的 DRAM 供需——2026E、2027E 需求增速（蓝）一直高于供给/出货（灰），缺口还在扩，跟盘面&quot;未来过剩&quot;的读法正相反（来源：JPM）</li>
 <li>还是要提醒大家注意风险</li>
 <li>量检测恰恰是国产设备最薄弱、国产化率最低的一环，连 AMAT 这种刻蚀沉积大厂都开始往里挤....</li>
 </ul>
@@ -397,26 +505,17 @@ pre {
 </article>
 </div>
 </details>
-<details class="account-group" open>
-<summary><span class="account-name">国家能源局</span><span class="account-count">2 篇</span><span class="account-titles">国家能源局召开工作交流会 进一步推动“获得电力”服务水平提升、未命名公众号文章</span></summary>
+<details class="account-group">
+<summary><span class="account-name">国家能源局</span><span class="account-count">5 篇</span><span class="account-titles">央视新闻丨《中国供电发展报告》发布 供电服务从“基本供给”转向“品质体验”、国家能源局发布2026年5月全国可再生能源绿色电力证书核发及交易数据、国家能源局召开工作交流会 进一步推动“获得电力”服务水平提升 等 5 篇</span></summary>
 <div class="account-articles">
 <article class="account-article">
-<h2>国家能源局召开工作交流会 进一步推动“获得电力”服务水平提升</h2>
+<h2>央视新闻丨《中国供电发展报告》发布 供电服务从“基本供给”转向“品质体验”</h2>
 <ul>
 <li>公众号：国家能源局</li>
-<li>发布时间：2026-06-30 13:09:20</li>
-<li>原文：<a href="https://mp.weixin.qq.com/s/dz61KdNBr7c8Uy5szvQ1Cw">点击查看原文</a></li>
+<li>发布时间：2026-06-30 17:08:40</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/OV2X_A5lEKpSe1yeeXF9pw">点击查看原文</a></li>
 </ul>
-<p class="insight"><strong>一句话</strong>：分析当前工作新形势新要求，安排部署下一阶段重点任务</p>
-<p class="subsection-title"><strong>核心内容</strong></p>
-<ul>
-<li>分析当前工作新形势新要求，安排部署下一阶段重点任务</li>
-<li>深入贯彻落实党中央、国务院关于优化营商环境的决策部署，总结交流</li>
-<li>服务新质生产力发展专项行动方案（</li>
-<li>发布《中国供电发展报告（</li>
-<li>树立实干导向，在推进标杆示范引领、服务保障产业升级、破解群众用电难题上抓出</li>
-<li>已成为我国优化营商环境的重要优势领域</li>
-</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">待补充</span></span>
 <p class="subsection-title"><strong>关键数字/证据</strong></p>
@@ -426,7 +525,7 @@ pre {
 <div class="risk">
 <p><strong>风险/分歧</strong></p>
 <ul>
-<li>待结合市场走势和原文进一步判断。</li>
+<li>原文未强调明确风险。</li>
 </ul>
 </div>
 <p class="subsection-title"><strong>后续跟踪</strong></p>
@@ -435,14 +534,52 @@ pre {
 </ul>
 </article>
 <article class="account-article">
-<h2>未命名公众号文章</h2>
+<h2>国家能源局发布2026年5月全国可再生能源绿色电力证书核发及交易数据</h2>
 <ul>
 <li>公众号：国家能源局</li>
-<li>发布时间：2026-06-30</li>
-<li>原文：<a href="https://mp.weixin.qq.com/s/g2fpVQuBKLTa8Is31g8DYQ">点击查看原文</a></li>
+<li>发布时间：2026-06-30 15:00:00</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/Nhm25NCOd-wZ0mYpGAjyZA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：2026年5月，国家能源局核发绿证3.58亿个，涉及可再生能源发电项目125.69万个，其中可交易绿证2.16亿个，占比60.41%，市场化流通绿证供给充足</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026年5月，国家能源局核发绿证3.58亿个，涉及可再生能源发电项目125.69万个，其中可交易绿证2.16亿个，占比60.41%，市场化流通绿证供给充足</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>本期核发2026年4月可再生能源电量对应绿证2.36亿个，占比66.06%，当期电量核发占比处于较高水平</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026年5月，全国交易绿证3388万个，其中绿色电力交易绿证741万个</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>本月各可再生能源发电类型绿证核发数量均有所增长，其中常规水电绿证核发增幅最大</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026年5月，全国单独交易绿证2647万个，市场价格依据电量生产年份呈现清晰梯度，其中电量生产年为2024年的绿证交易420万个，平均价格1.03元/个</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>电量生产年为2025年的绿证交易1819万个，平均价格4.31元/个</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>2026年5月，国家能源局核发绿证3.58亿个，涉及可再生能源发电项目125.69万个，其中可交易绿证2.16亿个，占比60.41%，市场化流通绿证供给充足</li>
+<li>本期核发2026年4月可再生能源电量对应绿证2.36亿个，占比66.06%，当期电量核发占比处于较高水平</li>
+<li>2026年5月，全国交易绿证3388万个，其中绿色电力交易绿证741万个</li>
+<li>2026年5月，全国单独交易绿证2647万个，市场价格依据电量生产年份呈现清晰梯度，其中电量生产年为2024年的绿证交易420万个，平均价格1.03元/个</li>
+<li>电量生产年为2025年的绿证交易1819万个，平均价格4.31元/个</li>
+<li>电量生产年为2026年的绿证交易408万个，平均价格5.76元/个</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+</ul>
+</article>
+<article class="account-article">
+<h2>国家能源局召开工作交流会 进一步推动“获得电力”服务水平提升</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-06-30 13:09:20</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/dz61KdNBr7c8Uy5szvQ1Cw">点击查看原文</a></li>
 </ul>
 <p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
-<p class="subsection-title"><strong>核心内容</strong></p>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">待补充</span></span>
 <p class="subsection-title"><strong>关键数字/证据</strong></p>
@@ -452,7 +589,76 @@ pre {
 <div class="risk">
 <p><strong>风险/分歧</strong></p>
 <ul>
-<li>待结合市场走势和原文进一步判断。</li>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article">
+<h2>“一带一路”能源合作伙伴关系2026年第一次高官会在京召开</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-06-30 10:13:13</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/g2fpVQuBKLTa8Is31g8DYQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：近日，中国国家能源局在京组织召开“一带一路”能源合作伙伴关系2026年第一次高官会</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>近日，中国国家能源局在京组织召开“一带一路”能源合作伙伴关系2026年第一次高官会</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>会上，伙伴关系秘书处汇报了“一带一路”能源合作伙伴关系2026年有关工作情况和下半年工作计划，并介绍了理事会组建方案和第四届部长会初步安排</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>与会成员国代表介绍了各国能源发展情况，高度认可伙伴关系对推动能源务实合作的重要作用，对完善伙伴关系机制提出了建设性意见</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>来自18个成员国的80余名中外代表，山东省能源局、青岛市发展改革委，伙伴关系秘书处办公室以及合作网络各工作组组长单位等有关同志参加会议</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>会议聚焦理事会组建、第四届部长会筹备等关键事项，凝聚各国共识，打磨实操方案，完善平台机制建设，为推动今年11月在青岛召开第四届“一带一路”能源部长会议奠定了坚实的工作基础</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>近日，中国国家能源局在京组织召开“一带一路”能源合作伙伴关系2026年第一次高官会</li>
+<li>会上，伙伴关系秘书处汇报了“一带一路”能源合作伙伴关系2026年有关工作情况和下半年工作计划，并介绍了理事会组建方案和第四届部长会初步安排</li>
+<li>会议聚焦理事会组建、第四届部长会筹备等关键事项，凝聚各国共识，打磨实操方案，完善平台机制建设，为推动今年11月在青岛召开第四届“一带一路”能源部长会议奠定了坚实的工作基础</li>
+<li>来自18个成员国的80余名中外代表，山东省能源局、青岛市发展改革委，伙伴关系秘书处办公室以及合作网络各工作组组长单位等有关同志参加会议</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article">
+<h2>中共中央政治局召开会议 研究部署防汛抗旱工作 中共中央总书记习近平主持会议</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-06-30 18:00:00</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/DsLCr9lXnXBQO937TbAAuw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：中共中央政治局6月30日召开会议，研究部署防汛抗旱工作</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>中共中央政治局6月30日召开会议，研究部署防汛抗旱工作</p><p><span class="impact-label">利好板块/公司：</span>利好板块：水利/防汛减灾；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>高度重视旱涝急转风险，坚持防汛抗旱两手抓，加强水源统一管理和调度</p><p><span class="impact-label">利好板块/公司：</span>利好板块：水利/防汛减灾；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要确保大江大河大湖防洪安全，全面加强河湖行洪空间管控</p><p><span class="impact-label">利好板块/公司：</span>利好板块：水利/防汛减灾；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要用心用情做好救灾救助工作，切实保障受灾群众基本生活</p><p><span class="impact-label">利好板块/公司：</span>利好板块：水利/防汛减灾；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要坚持资源向基层倾斜、力量向一线下沉，着力提升基层防汛减灾救灾能力</p><p><span class="impact-label">利好板块/公司：</span>利好板块：水利/防汛减灾；相关公司/标的：原文未明确点名。</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>中共中央政治局6月30日召开会议，研究部署防汛抗旱工作</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>高度重视旱涝急转风险，坚持防汛抗旱两手抓，加强水源统一管理和调度</li>
 </ul>
 </div>
 <p class="subsection-title"><strong>后续跟踪</strong></p>

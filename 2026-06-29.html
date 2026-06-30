@@ -109,6 +109,31 @@ li { margin: 8px 0; }
   font-weight: 720;
   white-space: nowrap;
 }
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
 .subsection-title {
   display: flex;
   align-items: center;
@@ -137,6 +162,26 @@ li { margin: 8px 0; }
   border-left: 4px solid var(--risk-border);
 }
 .risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
 .table-wrap {
   width: 100%;
   margin: 12px 0 22px;
@@ -297,8 +342,8 @@ pre {
 <h2>板块与风格观察</h2>
 <p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
 <ul>
-<li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
 <li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
 <li>商业航天：卫星和发射能力规模化会摊薄通信、遥感和发射成本，降本点在复用、批量制造和组网效率。</li>
 <li>半导体设备：AI/HBM/DRAM 制程升级会抬升前道、量检测和良率控制需求，降本点主要在缩短工艺迭代、提高良率和减少返工。</li>
 </ul>
@@ -312,10 +357,10 @@ pre {
 <table>
 <thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
 <tbody>
-<tr><td class="rank">1</td><td>能源/电力</td><td>合计 6篇/150次</td><td>国家能源局 5篇/148次；韭菜的一天 1篇/2次</td></tr>
-<tr><td class="rank">2</td><td>存储/HBM</td><td>合计 3篇/69次</td><td>韭菜的一天 1篇/62次；寻找低估 1篇/5次；盘口逻辑拆解 1篇/2次</td></tr>
-<tr><td class="rank">3</td><td>AI算力/大模型</td><td>合计 3篇/44次</td><td>韭菜的一天 1篇/35次；寻找低估 1篇/8次；国家能源局 1篇/1次</td></tr>
-<tr><td class="rank">4</td><td>商业航天</td><td>合计 3篇/36次</td><td>韭菜的一天 1篇/28次；寻找低估 1篇/7次；盘口逻辑拆解 1篇/1次</td></tr>
+<tr><td class="rank">1</td><td>能源/电力</td><td>合计 6篇/155次</td><td>国家能源局 5篇/152次；韭菜的一天 1篇/3次</td></tr>
+<tr><td class="rank">2</td><td>AI算力/大模型</td><td>合计 5篇/72次</td><td>国家能源局 3篇/10次；韭菜的一天 1篇/48次；寻找低估 1篇/14次</td></tr>
+<tr><td class="rank">3</td><td>存储/HBM</td><td>合计 3篇/69次</td><td>韭菜的一天 1篇/62次；寻找低估 1篇/5次；盘口逻辑拆解 1篇/2次</td></tr>
+<tr><td class="rank">4</td><td>商业航天</td><td>合计 3篇/51次</td><td>韭菜的一天 1篇/40次；寻找低估 1篇/10次；盘口逻辑拆解 1篇/1次</td></tr>
 <tr><td class="rank">5</td><td>半导体设备</td><td>合计 3篇/13次</td><td>韭菜的一天 1篇/10次；盘口逻辑拆解 1篇/2次；寻找低估 1篇/1次</td></tr>
 <tr><td class="rank">6</td><td>功率/碳化硅</td><td>合计 2篇/30次</td><td>韭菜的一天 1篇/25次；盘口逻辑拆解 1篇/5次</td></tr>
 <tr><td class="rank">7</td><td>电子特气/六氟化钨</td><td>合计 2篇/14次</td><td>盘口逻辑拆解 1篇/7次；韭菜的一天 1篇/7次</td></tr>
@@ -330,9 +375,9 @@ pre {
 <p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
 <ul>
 <li>能源/电力：原文未明确提及个股/公司</li>
-<li>存储/HBM：腾讯、CXMT、三星、德明利、兆易创新、佰维存储、普冉股份、SK海力士</li>
 <li>AI算力/大模型：三星、腾讯、CXMT、华丰科技</li>
-<li>商业航天：飞沃科技</li>
+<li>存储/HBM：腾讯、CXMT、三星、德明利、兆易创新、佰维存储、普冉股份、SK海力士</li>
+<li>商业航天：飞沃科技、腾讯、CXMT</li>
 <li>半导体设备：腾讯、CXMT</li>
 <li>功率/碳化硅：新洁能、腾讯、CXMT、天岳先进、新益昌</li>
 </ul>
@@ -383,21 +428,19 @@ pre {
 <li>4、美国新关税预期引发抢运 中国至美东海运费月内暴涨超60%</li>
 <li>6、美的集团：PortaSplit空调在欧洲市场ToB端出货量已超20万套 较去年翻倍</li>
 </ul>
-<p class="insight"><strong>一句话</strong>：寻找低估将在每天晚上9点-11点整理影响次日资本市场的重点信息和资讯，包括但不限于重要政策解读、行业基本面数据跟踪、重要上市公司公告、券商研报纪要等等</p>
+<p class="insight"><strong>一句话</strong>：三星宣布总投资规模达2655万亿韩元（约11.68万亿人民币），计划向平泽园区及龙仁国家产业园区等半导体集群投入2030万亿韩元</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>寻找低估将在每天晚上9点-11点整理影响次日资本市场的重点信息和资讯，包括但不限于重要政策解读、行业基本面数据跟踪、重要上市公司公告、券商研报纪要等等</li>
-<li>三星宣布总投资规模达2655万亿韩元（约11.68万亿人民币），计划向平泽园区及龙仁国家产业园区等半导体集群投入2030万亿韩元</li>
-<li>3、大摩：预计钠电池2030年市占率升至20% 将拉动原盐需求持续增长</li>
-<li>5、美国大型养老金计划即将启动半年度“资产再平衡”操作，市场测算预计将有总计300亿美元的美股资产集中在本周一和周二两日强制抛售</li>
-<li>7月10-13日，预计长10乙发射</li>
-<li>7月17-20日，世界人工智能大会</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>三星宣布总投资规模达2655万亿韩元（约11.68万亿人民币），计划向平泽园区及龙仁国家产业园区等半导体集群投入2030万亿韩元</p><p><span class="impact-label">利好板块/公司：</span>利好板块：存储/HBM；相关公司/标的：三星。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>3、大摩：预计钠电池2030年市占率升至20% 将拉动原盐需求持续增长</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型、商业航天；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>5、美国大型养老金计划即将启动半年度“资产再平衡”操作，市场测算预计将有总计300亿美元的美股资产集中在本周一和周二两日强制抛售</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型、商业航天；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月10-13日，预计长10乙发射</p><p><span class="impact-label">利好板块/公司：</span>利好板块：商业航天；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月17-20日，世界人工智能大会</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型；相关公司/标的：原文未明确点名。</p></li>
 </ul>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">大摩</span><span class="tag">V4</span><span class="tag">Al</span><span class="tag">SMM</span></span>
 <p class="subsection-title"><strong>关键数字/证据</strong></p>
 <ul>
-<li>寻找低估将在每天晚上9点-11点整理影响次日资本市场的重点信息和资讯，包括但不限于重要政策解读、行业基本面数据跟踪、重要上市公司公告、券商研报纪要等等</li>
 <li>DeepSeek官宣：V4 正式版计划 7 月中旬上线，本次版本更新将带来更多功能优化和性能提升</li>
 <li>正式版将同步引入&quot;峰谷定价&quot;机制——每日 9:00-12:00 和 14:00-18:00（北京时间）高峰时段价格翻倍</li>
 <li>1）盘后报道称，腾讯和CXMT签了200亿存储供货协议</li>
@@ -409,7 +452,7 @@ pre {
 <div class="risk">
 <p><strong>风险/分歧</strong></p>
 <ul>
-<li>待结合市场走势和原文进一步判断。</li>
+<li>原文未强调明确风险。</li>
 </ul>
 </div>
 <p class="subsection-title"><strong>后续跟踪</strong></p>
@@ -438,12 +481,12 @@ pre {
 <p class="insight"><strong>一句话</strong>：大科技正在经历越来越大的波动，这种情况接下来只会增加不会减少，后面的日子会更加不好过</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>大科技正在经历越来越大的波动，这种情况接下来只会增加不会减少，后面的日子会更加不好过</li>
-<li>科技接下来的剧本会跟任何一个题材“尾声”近似，不会轻易消失，方向只会更加聚焦和集中</li>
-<li>不过还可以换个视角，面对一个逻辑，涨起来要不要追？</li>
-<li>今天盘中指数跳水时，跟周五结合其实有点二次恐慌的意思了，不知道你们感受到没有</li>
-<li>硅片：有研硅，西安奕材，沪硅产业，中晶科技，立昂微</li>
-<li>这几只股票贴好久了，然后这两天半导体设备和材料新增了好多好多票，随便问问豆包和千问都有，没法都列举，还有个类似的设备ETF</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>大科技正在经历越来越大的波动，这种情况接下来只会增加不会减少，后面的日子会更加不好过</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>科技接下来的剧本会跟任何一个题材“尾声”近似，不会轻易消失，方向只会更加聚焦和集中</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>不过还可以换个视角，面对一个逻辑，涨起来要不要追？</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>今天盘中指数跳水时，跟周五结合其实有点二次恐慌的意思了，不知道你们感受到没有</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>硅片：有研硅，西安奕材，沪硅产业，中晶科技，立昂微</p><p><span class="impact-label">利好板块/公司：</span>利好板块：硅片；相关公司/标的：立昂微、有研硅。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这几只股票贴好久了，然后这两天半导体设备和材料新增了好多好多票，随便问问豆包和千问都有，没法都列举，还有个类似的设备ETF</p><p><span class="impact-label">利好板块/公司：</span>利好板块：半导体设备；相关公司/标的：长川科技、亚翔集成、盛美上海、华峰测控、华海诚科。</p></li>
 </ul>
 <p><strong>板块梳理</strong></p>
 <ul>
@@ -464,7 +507,6 @@ pre {
 <p><strong>风险/分歧</strong></p>
 <ul>
 <li>提示：文章不构成任何投资建议或意见，投资者需自主作出投资决策并独立承担投资风险</li>
-<li>股市有风险，入市需谨慎</li>
 </ul>
 </div>
 <p class="subsection-title"><strong>后续跟踪</strong></p>
@@ -487,8 +529,8 @@ pre {
 <p class="insight"><strong>一句话</strong>：媒体报道丨“全球南方”电力企业发布合作发展倡议</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>媒体报道丨“全球南方”电力企业发布合作发展倡议</li>
-<li>微信扫一扫可打开此内容</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>媒体报道丨“全球南方”电力企业发布合作发展倡议</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>微信扫一扫可打开此内容</p></li>
 </ul>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">待补充</span></span>
@@ -499,7 +541,7 @@ pre {
 <div class="risk">
 <p><strong>风险/分歧</strong></p>
 <ul>
-<li>待结合市场走势和原文进一步判断。</li>
+<li>原文未强调明确风险。</li>
 </ul>
 </div>
 <p class="subsection-title"><strong>后续跟踪</strong></p>
@@ -517,8 +559,8 @@ pre {
 <p class="insight"><strong>一句话</strong>：媒体报道丨我国东北首座光热电站投产发电</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>媒体报道丨我国东北首座光热电站投产发电</li>
-<li>微信扫一扫可打开此内容</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>媒体报道丨我国东北首座光热电站投产发电</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>微信扫一扫可打开此内容</p></li>
 </ul>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">待补充</span></span>
@@ -529,7 +571,7 @@ pre {
 <div class="risk">
 <p><strong>风险/分歧</strong></p>
 <ul>
-<li>待结合市场走势和原文进一步判断。</li>
+<li>原文未强调明确风险。</li>
 </ul>
 </div>
 <p class="subsection-title"><strong>后续跟踪</strong></p>
@@ -547,12 +589,12 @@ pre {
 <p class="insight"><strong>一句话</strong>：6月29日主持召开国务院常务会议，听取人工智能发展情况汇报，研究当前外贸形势和贸易强国建设有关工作，审议通过《“十五五”碳达峰行动方案》和《国民健康“十五五”规划》</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>6月29日主持召开国务院常务会议，听取人工智能发展情况汇报，研究当前外贸形势和贸易强国建设有关工作，审议通过《“十五五”碳达峰行动方案》和《国民健康“十五五”规划》</li>
-<li>李强主持召开国务院常务会议</li>
-<li>要深入实施“人工智能+”行动，发挥我国产业体系完备、应用场景丰富等优势，促进智能产品和服务加快规模化商业应用</li>
-<li>要加力推进人工智能创新突破，加快关键技术攻关和超大规模智算集群建设，强化高质量数据供给，加强人才、资金等要素保障，支持企业开展基础研究和前沿探索</li>
-<li>要聚焦重点领域、关键环节持续用力，加快能源结构调整优化，推进产业绿色化低碳化，健全完善法律法规标准、碳排放统计核算等体系，科学有序开展评价考核，将绿色低碳导向融入国民经济循环各领域各环节，推动形成绿色生产生活方式，厚植高质量发展绿色底色</li>
-<li>要大力发展健康产业，完善支持政策，培育壮大健康领域新型服务业态，丰富健康产品供给，严格质量安全监管，让群众放心消费、健康生活</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>6月29日主持召开国务院常务会议，听取人工智能发展情况汇报，研究当前外贸形势和贸易强国建设有关工作，审议通过《“十五五”碳达峰行动方案》和《国民健康“十五五”规划》</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>李强主持召开国务院常务会议</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要深入实施“人工智能+”行动，发挥我国产业体系完备、应用场景丰富等优势，促进智能产品和服务加快规模化商业应用</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要加力推进人工智能创新突破，加快关键技术攻关和超大规模智算集群建设，强化高质量数据供给，加强人才、资金等要素保障，支持企业开展基础研究和前沿探索</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要聚焦重点领域、关键环节持续用力，加快能源结构调整优化，推进产业绿色化低碳化，健全完善法律法规标准、碳排放统计核算等体系，科学有序开展评价考核，将绿色低碳导向融入国民经济循环各领域各环节，推动形成绿色生产生活方式，厚植高质量发展绿色底色</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要大力发展健康产业，完善支持政策，培育壮大健康领域新型服务业态，丰富健康产品供给，严格质量安全监管，让群众放心消费、健康生活</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型、能源/电力；相关公司/标的：原文未明确点名。</p></li>
 </ul>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">待补充</span></span>
@@ -563,7 +605,7 @@ pre {
 <div class="risk">
 <p><strong>风险/分歧</strong></p>
 <ul>
-<li>待结合市场走势和原文进一步判断。</li>
+<li>原文未强调明确风险。</li>
 </ul>
 </div>
 <p class="subsection-title"><strong>后续跟踪</strong></p>
@@ -582,12 +624,12 @@ pre {
 <p class="insight"><strong>一句话</strong>：国家能源局方面介绍，“十五五”时期，我国能源发展进入安全风险叠加演变期、低碳转型加力推进期、能源创新加速突破期、体制改革深度攻坚期、国际合作调整重塑期</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>国家能源局方面介绍，“十五五”时期，我国能源发展进入安全风险叠加演变期、低碳转型加力推进期、能源创新加速突破期、体制改革深度攻坚期、国际合作调整重塑期</li>
-<li>近日，国家发展改革委、国家能源局对外公布《新型能源体系建设“十五五”规划》（以下简称《规划》）</li>
-<li>“十五五”时期，将重点围绕3个方向，进一步加快布局建设新型能源基础设施</li>
-<li>同时，提升新能源的接入和消纳能力，加快打造安全可靠、绿色低碳、坚强韧性、智能灵活的新型电网，推动源储调节能力增长40%以上</li>
-<li>虚拟电厂的调节能力将达到5000万千瓦以上，相当于50台不烧煤的大型火电机组</li>
-<li>到2030年，我国的充电基础设施将达到4000万个、实现倍增发展，未来充电将更加方便</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国家能源局方面介绍，“十五五”时期，我国能源发展进入安全风险叠加演变期、低碳转型加力推进期、能源创新加速突破期、体制改革深度攻坚期、国际合作调整重塑期</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>近日，国家发展改革委、国家能源局对外公布《新型能源体系建设“十五五”规划》（以下简称《规划》）</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>“十五五”时期，将重点围绕3个方向，进一步加快布局建设新型能源基础设施</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>同时，提升新能源的接入和消纳能力，加快打造安全可靠、绿色低碳、坚强韧性、智能灵活的新型电网，推动源储调节能力增长40%以上</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>虚拟电厂的调节能力将达到5000万千瓦以上，相当于50台不烧煤的大型火电机组</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型、能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>到2030年，我国的充电基础设施将达到4000万个、实现倍增发展，未来充电将更加方便</p><p><span class="impact-label">利好板块/公司：</span>利好板块：AI算力/大模型、能源/电力；相关公司/标的：原文未明确点名。</p></li>
 </ul>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">待补充</span></span>
@@ -627,12 +669,12 @@ pre {
 <p class="insight"><strong>一句话</strong>：随着能源结构深入调整，供给品种更加多元，消费需求更加多样，新型市场主体不断涌现，能源体制机制改革进入深水区，需要持续深化改革，健全完善能源市场体系，形成充分反映能量、容量、绿色、调节等多元价值的价格机制，有效激发各类市场主体参与能源转型的动力和活力</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>随着能源结构深入调整，供给品种更加多元，消费需求更加多样，新型市场主体不断涌现，能源体制机制改革进入深水区，需要持续深化改革，健全完善能源市场体系，形成充分反映能量、容量、绿色、调节等多元价值的价格机制，有效激发各类市场主体参与能源转型的动力和活力</li>
-<li>（一）安全风险叠加演变期</li>
-<li>《规划》提出，到2030年，非化石能源消费比重达到25%，风电和太阳能发电装机比重超过50%、成为电力装机主体，非化石能源发电量比重达到50%、成为电量主体</li>
-<li>《规划》聚焦能源关键领域和重大需求，提出到2030年，能源产业链关键技术装备实现总体自主可控，迈入世界能源科技创新国家前列</li>
-<li>《规划》统筹法规与政策、市场与价格、投资与运行、服务与监管等各方面，系统安排了相关任务举措，进一步强化能源治理的协同性，提高治理效能</li>
-<li>打造“能源+数字”产业集群，推动能源行业智能化发展</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>随着能源结构深入调整，供给品种更加多元，消费需求更加多样，新型市场主体不断涌现，能源体制机制改革进入深水区，需要持续深化改革，健全完善能源市场体系，形成充分反映能量、容量、绿色、调节等多元价值的价格机制，有效激发各类市场主体参与能源转型的动力和活力</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>（一）安全风险叠加演变期</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>《规划》提出，到2030年，非化石能源消费比重达到25%，风电和太阳能发电装机比重超过50%、成为电力装机主体，非化石能源发电量比重达到50%、成为电量主体</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>《规划》聚焦能源关键领域和重大需求，提出到2030年，能源产业链关键技术装备实现总体自主可控，迈入世界能源科技创新国家前列</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>《规划》统筹法规与政策、市场与价格、投资与运行、服务与监管等各方面，系统安排了相关任务举措，进一步强化能源治理的协同性，提高治理效能</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>打造“能源+数字”产业集群，推动能源行业智能化发展</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
 </ul>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">待补充</span></span>
@@ -671,12 +713,12 @@ pre {
 <p class="insight"><strong>一句话</strong>：2026年5月，全国完成电力市场交易电量6268亿千瓦时，同比增长23.6%</p>
 <p class="subsection-title"><strong>核心内容</strong></p>
 <ul>
-<li>2026年5月，全国完成电力市场交易电量6268亿千瓦时，同比增长23.6%</li>
-<li>从交易范围看，省内交易电量4906亿千瓦时，同比增长26.9%</li>
-<li>2026年1-5月，全国累计完成电力市场交易电量30573亿千瓦时，同比增长24.8%</li>
-<li>绿电交易电量311亿千瓦时，同比增长6.1%</li>
-<li>从交易范围看，省内交易电量24361亿千瓦时，同比增长28.5%</li>
-<li>跨省跨区交易电量6212亿千瓦时，同比增长12.2%</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026年5月，全国完成电力市场交易电量6268亿千瓦时，同比增长23.6%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>从交易范围看，省内交易电量4906亿千瓦时，同比增长26.9%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026年1-5月，全国累计完成电力市场交易电量30573亿千瓦时，同比增长24.8%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>绿电交易电量311亿千瓦时，同比增长6.1%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>从交易范围看，省内交易电量24361亿千瓦时，同比增长28.5%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>跨省跨区交易电量6212亿千瓦时，同比增长12.2%</p><p><span class="impact-label">利好板块/公司：</span>利好板块：能源/电力；相关公司/标的：原文未明确点名。</p></li>
 </ul>
 <p class="subsection-title"><strong>关键实体</strong></p>
 <span class="tag-row"><span class="tag">待补充</span></span>
@@ -694,7 +736,7 @@ pre {
 <div class="risk">
 <p><strong>风险/分歧</strong></p>
 <ul>
-<li>待结合市场走势和原文进一步判断。</li>
+<li>原文未强调明确风险。</li>
 </ul>
 </div>
 <p class="subsection-title"><strong>后续跟踪</strong></p>
