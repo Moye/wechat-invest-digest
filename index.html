@@ -31,6 +31,22 @@ body {
 }
 a { color: var(--primary); text-decoration: none; font-weight: 650; }
 a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
 .topbar {
   position: sticky;
   top: 0;
@@ -132,6 +148,55 @@ li { margin: 8px 0; }
 }
 .impact-label {
   color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
   font-weight: 850;
 }
 .subsection-title {
@@ -334,15 +399,15 @@ pre {
   <p class="eyebrow">WeChat Digest</p>
   <h1>公众号投资简报</h1>
   <p>由本地公众号采集流程生成，适合通过 GitHub Pages 分享阅读。</p>
-  <p class="updated">站点生成时间：2026-07-01 23:14</p>
+  <p class="updated">站点生成时间：2026-07-02 09:48</p>
 </section>
 <section class="report-list">
   <article class="report-card">
-  <div class="report-meta">每日摘要 · 更新 2026-07-01 23:14</div>
+  <div class="report-meta">每日摘要 · 更新 2026-07-02 09:48</div>
   <h2><a href="2026-07-01.html">公众号文章摘要 2026-07-01</a></h2>
   <div class="report-path">reports/wechat/2026-07-01.md</div>
 </article><article class="report-card">
-  <div class="report-meta">每日摘要 · 更新 2026-07-01 16:23</div>
+  <div class="report-meta">每日摘要 · 更新 2026-07-02 08:59</div>
   <h2><a href="2026-06-30.html">公众号文章摘要 2026-06-30</a></h2>
   <div class="report-path">reports/wechat/2026-06-30.md</div>
 </article><article class="report-card">
@@ -352,5 +417,17 @@ pre {
 </article>
 </section>
   </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
 </body>
 </html>
