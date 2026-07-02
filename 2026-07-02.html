@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-02 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-02</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>5 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-d5b3e56e40">橙子不糊涂</a><a class="anchor-chip" href="#account-f00b1051cd">国家能源局</a><a class="anchor-chip" href="#account-98077dbdaf">安静拆主线</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">待补充</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>商业航天：卫星和发射能力规模化会摊薄通信、遥感和发射成本，降本点在复用、批量制造和组网效率。</li>
+<li>机器人：机器人把 AI 能力落到物理执行端，降本点在核心零部件国产化、规模制造和控制算法优化。</li>
+<li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文强势词提到 创新药/医药、金融。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>AI算力/大模型</td><td>合计 2篇/14次</td><td><span class="source-links"><a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-e26a8cd3db">需要新的信心逻辑</a>》8次；<a href="#account-d5b3e56e40">橙子不糊涂</a>《<a href="#article-ac37249469">“AI超级飞轮”里原本就没有Meta，甚至可能连Microsoft都没有…</a>》6次</span></td></tr>
+<tr><td class="rank">2</td><td>商业航天</td><td>合计 2篇/9次</td><td><span class="source-links"><a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-e26a8cd3db">需要新的信心逻辑</a>》7次；<a href="#account-d5b3e56e40">橙子不糊涂</a>《<a href="#article-ac37249469">“AI超级飞轮”里原本就没有Meta，甚至可能连Microsoft都没有…</a>》2次</span></td></tr>
+<tr><td class="rank">3</td><td>机器人</td><td>合计 2篇/2次</td><td><span class="source-links"><a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-e26a8cd3db">需要新的信心逻辑</a>》1次；<a href="#account-d5b3e56e40">橙子不糊涂</a>《<a href="#article-ac37249469">“AI超级飞轮”里原本就没有Meta，甚至可能连Microsoft都没有…</a>》1次</span></td></tr>
+<tr><td class="rank">4</td><td>能源/电力</td><td>合计 1篇/32次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-1eac61670c">国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知</a>》32次</span></td></tr>
+<tr><td class="rank">5</td><td>创新药/医药</td><td>合计 1篇/4次</td><td><span class="source-links"><a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-e26a8cd3db">需要新的信心逻辑</a>》4次</span></td></tr>
+<tr><td class="rank">6</td><td>存储/HBM</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-d5b3e56e40">橙子不糊涂</a>《<a href="#article-ac37249469">“AI超级飞轮”里原本就没有Meta，甚至可能连Microsoft都没有…</a>》1次</span></td></tr>
+<tr><td class="rank">7</td><td>消费</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-d5b3e56e40">橙子不糊涂</a>《<a href="#article-ac37249469">“AI超级飞轮”里原本就没有Meta，甚至可能连Microsoft都没有…</a>》1次</span></td></tr>
+<tr><td class="rank">8</td><td>AI硬件</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-d5b3e56e40">橙子不糊涂</a>《<a href="#article-ac37249469">“AI超级飞轮”里原本就没有Meta，甚至可能连Microsoft都没有…</a>》1次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>科技成长/AI硬件、高波动/分歧交易、涨价/周期修复</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>AI算力/大模型：Meta</li>
+<li>商业航天：原文未明确提及个股/公司</li>
+<li>机器人：原文未明确提及个股/公司</li>
+<li>能源/电力：原文未明确提及个股/公司</li>
+<li>创新药/医药：海南海药</li>
+<li>存储/HBM：美光</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-d5b3e56e40" open>
+<summary><span class="account-name">橙子不糊涂</span><span class="account-count">1 篇</span><span class="account-titles">“AI超级飞轮”里原本就没有Meta，甚至可能连Microsoft都没有…</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-ac37249469">
+<h2>“AI超级飞轮”里原本就没有Meta，甚至可能连Microsoft都没有…</h2>
+<ul>
+<li>公众号：橙子不糊涂</li>
+<li>发布时间：2026-07-02 12:44:35</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/eGIWKihjbg3LFwkYSGYjDA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：到了中午，问昨晚Meta的还很多…AI显然已经不是CSP的事儿：</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>到了中午，问昨晚<mark class="evidence-mark">Meta</mark>的还很多…AI显然已经不是CSP的事儿：</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">Meta</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>1，大CSP谁投不起谁先出局，逐步被淘汰，自然有新玩家快速补上，能力更强，更加新锐</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>AI是G2新结构的核心锚点，一个<mark class="evidence-mark">Meta</mark>什么也不是，AI超级飞轮里原本也没有他</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">Meta</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2，大CSP投不了美国ZF投，绑定顶级AI，先印钱之后再分钱</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">美光</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>我很期待<mark class="evidence-mark">Meta</mark>甚至微软、Amazon被阶段性淘汰，我们一定可以看到AI世代更加新锐的新物种，Anthropic只是其中一个而已</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">Meta</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：2，大CSP投不了美国ZF投，绑定顶级AI，先印钱之后再分钱；比如<mark class="evidence-mark">美光</mark>作为美芯国际、Intel作为美ji电就很合适</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">美光</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">存储/HBM</mark>：2，大CSP投不了美国ZF投，绑定顶级AI，先印钱之后再分钱；比如<mark class="evidence-mark">美光</mark>作为美芯国际、Intel作为美ji电就很合适</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">美光</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>1，大CSP谁投不起谁先出局，逐步被淘汰，自然有新玩家快速补上，能力更强，更加新锐</li>
+<li>2，大CSP投不了美国ZF投，绑定顶级AI，先印钱之后再分钱</li>
+<li>3，我们中国也要投，自上而下同步印钱投…</li>
+<li>AI是G2新结构的核心锚点，一个Meta什么也不是，AI超级飞轮里原本也没有他</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-f00b1051cd" open>
+<summary><span class="account-name">国家能源局</span><span class="account-count">1 篇</span><span class="account-titles">国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-1eac61670c">
+<h2>国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-02 08:00:00</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/mrhh0-XzJEfOXJIG-8gumw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：合作平台是在国家能源局、生态环境部（国家核安全局）指导下，由中国核电发展中心、生态环境部核与辐射安全中心、中国核学会共同发起，中国核工业集团有限公司、中国华能集团有限公司、国家电力投资集团有限公司、中国广核集团有限公司作为主体单位，联合核电行业相关企业、高校、科研院所、学会协会、有关媒体等建立的核电行业科普工作协调机制，组成单位见附件</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>合作平台是在国家能源局、生态环境部（国家核安全局）指导下，由中国核电发展中心、生态环境部核与辐射安全中心、中国核学会共同发起，中国核工业集团有限公司、中国华能集团有限公司、国家电力投资集团有限公司、中国广核集团有限公司作为主体单位，联合核电行业相关企业、高校、科研院所、学会协会、有关媒体等建立的核电行业科普工作协调机制，组成单位见附件</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国能综通核电〔2026〕62号</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>围绕“4∙15全民国家安全教育日”“全国科普月”等重要节点，组织各科普品牌协同开展系列活动</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>推动各成员单位间共享科普资源，形成全行业共同支持各科普品牌建设的工作格局</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>建立行业科普专家库，根据需要向媒体推荐专家，就国内外核电发展与核安全热点问题接受采访</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>办公室定期召开会议，组织各成员单位相互通报工作情况，协商推进有关工作，根据需要成立工作组推动重点任务落实</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：电力、能源、核电；截图上下文：“绿色核能”核电科普合作平台组成单位；中国核电发展中心、生态环境部核与辐射安全中心、中国；电力投资集团有限公司、中国广核集团有限公司。；(=) 核电业主单位: 中国核能电力股份有限公司、华能；核电开发有限公司、国电投核能有限公司、中广核电力...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/b13656b2d914b7f1c1641ab1597bb65e6e89bd35.jpg" alt="国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知 截图2" loading="lazy"><figcaption>国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：电力、能源、核电；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：教育、能源、核电；截图上下文：(A) 相关媒体: 生态环境部宣传教育中心、中国能源传；核传媒 )、中国原子能出版社、核电那些事公众号、星球研究所。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/d5181825278047bf65d9aa9fc95509ee372d9cf7.jpg" alt="国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知 截图3" loading="lazy"><figcaption>国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知 截图3</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：教育、能源、核电；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知 截图4" loading="lazy"><figcaption>国家能源局综合司 生态环境部办公厅关于建立“绿色核能”核电科普合作平台的通知 截图4</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>国能综通核电〔2026〕62号</li>
+<li>为贯彻习近平总书记关于科普工作的重要指示精神，落实《关于新时代进一步加强科学技术普及工作的意见》（中办发〔2022〕53号），加强核电科普和核安全知识宣传，引导社会公众正确认识核电，为核电发展营造良好社会氛围，经研究，决定建立“绿色核能”核电科普合作平台（以下简称“合作平台”）</li>
+<li>围绕“4∙15全民国家安全教育日”“全国科普月”等重要节点，组织各科普品牌协同开展系列活动</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-98077dbdaf" open>
+<summary><span class="account-name">安静拆主线</span><span class="account-count">3 篇</span><span class="account-titles">7月2日 涨停板复盘、需要新的信心逻辑、7月2日 强势联动板块复盘</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-d921d4ef37">
+<h2>7月2日 涨停板复盘</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-02 16:40:52</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/NUwZoz3hUQtXUQWeQ9m3sQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：半导体材料、医药、机器人、锂电、养殖业、消费、化工、算力租赁；代表标的：000566 海南海药、600641 先导基电、002559 亚威股份、002971 和远气体、603137 恒尚节能、605488 福莱新材、603559 中通国脉、603505 金石资源、000520 凤凰航运、600182 S佳通；截图上下文：机器人概念 21 只涨停人含涨幅&gt;1096)最多；冲高后回落; 其他方向机器人、医药、黄金等有所；医药/海南 “000566 ， 海南海药 10:16 4 7.45；002826 。” 易明医药 ”09:49 2 1.27；半导体 6006...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/a0e12e0fae022a1aeaf35ac0c4a4f84e03c8218f.jpg" alt="7月2日 涨停板复盘 截图1" loading="lazy"><figcaption>7月2日 涨停板复盘 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：半导体材料、医药、机器人、锂电、养殖业、消费、化工、算力租赁；相关公司/标的：000566 海南海药、600641 先导基电、002559 亚威股份、002971 和远气体、603137 恒尚节能、605488 福莱新材、603559 中通国脉、603505 金石资源、000520 凤凰航运、600182 S佳通</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<p><strong>风险/分歧</strong></p>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-e26a8cd3db">
+<h2>需要新的信心逻辑</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-02 16:40:52</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/OE5R4smCMLz5HuGcDV-Xfw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：股市有风险，投资需谨慎</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>股市有风险，投资需谨慎</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>而具体是那些支线，其实就看催化，这里谁能讲的出催化，谁就拥有了蹦跶2，3天的资格</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>刚好赶上<mark class="evidence-mark">商业航天</mark>有些产业利好，不知不觉间，被干出一波超级主升浪</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>比如，现在回头去看，25年年底的那波<mark class="evidence-mark">商业航天</mark>超级主升浪，不就是这种挤压行情诞生的阶段产物么？</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>但之后，国内AI产业一直没有另一个超级逻辑出现，因此行情还是体现在一种跟随与补涨</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>只不过在迷茫期之后，第二个救世主出现了，就是Anthropic，这家公司以黑马之姿，在to B的AI编程领域实现了质的突破，给产业继续告诉发展的信心续命了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：比如，现在回头去看，25年年底的那波<mark class="evidence-mark">商业航天</mark>超级主升浪，不就是这种挤压行情诞生的阶段产物么？当时AI链进入了低信心，迷茫震荡期。然后市场赚钱效应火热</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：比如，现在回头去看，25年年底的那波<mark class="evidence-mark">商业航天</mark>超级主升浪，不就是这种挤压行情诞生的阶段产物么？当时AI链进入了低信心，迷茫震荡期。然后市场赚钱效应火热</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">机器人</mark>：<mark class="evidence-mark">机器人</mark>：日盈电子，福莱新材，富春染织，雷赛智能，长城科技，锋龙股份</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">创新药/医药</mark>：另一方面，轮动线，主要的特点就是异动联动越来越频繁。从波段趋势上，比如创新药，比如金融都走出了一段不错的反弹</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>7月目前的关键词：均衡</li>
+<li>而具体是那些支线，其实就看催化，这里谁能讲的出催化，谁就拥有了蹦跶2，3天的资格</li>
+<li>比如，现在回头去看，25年年底的那波商业航天超级主升浪，不就是这种挤压行情诞生的阶段产物么？</li>
+<li>非AI线的话，最近，7月份的可回收火箭试验算是一个，但是得结果成功才能讲这个故事</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>股市有风险，投资需谨慎</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-1e8ee49cc7">
+<h2>7月2日 强势联动板块复盘</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-02 16:40:52</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/r1mhkQrVRqgS60NVB6PHOA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：半导体、医药、机器人、存储、优必选、超仿生、科伦、海思科；代表标的：688305 科德数控、300154 瑞凌股份、301163 宏德股份、603135 中重科技、002559 亚威股份、002931 锋龙股份、002979 雷赛智能、603416 信捷电气、603638 艾迪精密、002427 尤夫股份；截图上下文：ziozo 机器人(20)(141.40亿)；688305 科德数控 12.37 11.65；300154 瑞凌股份 12.24 3.08；301163 宏德股份 10.17 1.32；603135 中重科技 10.02 3.25；0025...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/1bd2b3149b3bb11d4fe57892dfdbf7777fa013f3.jpg" alt="7月2日 强势联动板块复盘 截图1" loading="lazy"><figcaption>7月2日 强势联动板块复盘 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：半导体、医药、机器人、存储、优必选、超仿生、科伦、海思科；相关公司/标的：688305 科德数控、300154 瑞凌股份、301163 宏德股份、603135 中重科技、002559 亚威股份、002931 锋龙股份、002979 雷赛智能、603416 信捷电气、603638 艾迪精密、002427 尤夫股份</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<p><strong>风险/分歧</strong></p>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>
