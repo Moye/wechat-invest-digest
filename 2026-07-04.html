@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-04 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-04</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>4 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-0e0ccdbbe6">北向牧风</a><a class="anchor-chip" href="#account-f00b1051cd">国家能源局</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">Anthropic</span><span class="tag">Claude</span><span class="tag">Code</span><span class="tag">Fable</span><span class="tag">GitHub</span><span class="tag">Copilot</span><span class="tag">Gemini</span><span class="tag">CFO</span><span class="tag">ROI</span><span class="tag">Top</span><span class="tag">Ramp</span><span class="tag">Index</span><span class="tag">SemiAnalysis</span><span class="tag">RAG</span><span class="tag">UBS</span><span class="tag">Estimates</span><span class="tag">Uber</span><span class="tag">IT</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文暂无可直接判定的连续上涨线索。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>能源/电力</td><td>合计 2篇/11次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-6b2319b873">从空白起步到引领全球！看中国水电的百年奋进之路</a>》9次；<a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-227d4c589a">连 Claude Code 都开始砍成本了....</a>》2次</span></td></tr>
+<tr><td class="rank">2</td><td>AI算力/大模型</td><td>合计 1篇/37次</td><td><span class="source-links"><a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-227d4c589a">连 Claude Code 都开始砍成本了....</a>》37次</span></td></tr>
+<tr><td class="rank">3</td><td>水利/防汛减灾</td><td>合计 1篇/8次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-6b2319b873">从空白起步到引领全球！看中国水电的百年奋进之路</a>》8次</span></td></tr>
+<tr><td class="rank">4</td><td>航运</td><td>合计 1篇/2次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-6b2319b873">从空白起步到引领全球！看中国水电的百年奋进之路</a>》2次</span></td></tr>
+<tr><td class="rank">5</td><td>教育</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-6b2319b873">从空白起步到引领全球！看中国水电的百年奋进之路</a>》1次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>科技成长/AI硬件、涨价/周期修复、设备含量提升</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>能源/电力：原文未明确提及个股/公司</li>
+<li>AI算力/大模型：原文未明确提及个股/公司</li>
+<li>水利/防汛减灾：原文未明确提及个股/公司</li>
+<li>航运：原文未明确提及个股/公司</li>
+<li>教育：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>复核重点实体的公告、纪要或财报口径：Anthropic、Claude、Code、Fable、GitHub、Copilot</li>
+<li>复核重点实体的公告、纪要或财报口径：China、Five-Year、Plan、Chinese、Unveiled、Speaking</li>
+<li>复核重点实体的公告、纪要或财报口径：China、Wang、Hongzhi、National、Energy、This</li>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-0e0ccdbbe6" open>
+<summary><span class="account-name">北向牧风</span><span class="account-count">1 篇</span><span class="account-titles">连 Claude Code 都开始砍成本了....</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-227d4c589a">
+<h2>连 Claude Code 都开始砍成本了....</h2>
+<ul>
+<li>公众号：北向牧风</li>
+<li>发布时间：2026-07-04 07:20:00</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/bPwy_UIk277suqa-IkEbMg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：图：59% 的公司每年在 AI 上砸至少 100 万美元，但只有 29% 说看到了像样的回报——钱花了，值不值还是个问号（来源：企业 AI 采用调研）</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<figure class="figure"><img src="assets/images/26adc290d017675c4ee60858723b7ff8a69b7d7d.jpg" alt="图：59% 的公司每年在 AI 上砸至少 100 万美元，但只有 29% 说看到了像样的回报——钱花了，值不值还是个问号（来源：企业 AI 采用调研）" loading="lazy"><figcaption>图：59% 的公司每年在 AI 上砸至少 100 万美元，但只有 29% 说看到了像样的回报——钱花了，值不值还是个问号（来源：企业 AI 采用调研）</figcaption></figure>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>四个月就把一整年的 AI 预算烧光了，最后只能给每人每月摁一个 1500 美元的上限</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<figure class="figure"><img src="assets/images/33138e587ce392654ac75437c8432bc91d33becb.jpg" alt="图：企业人均每月 AI 开支一路往上——最能花的 Top 1% 已烧到 7500 美元/人/月，Top 10% 约 630，中位数才 12，差距悬殊但集体在涨（来源：Ramp AI Index，SemiAnalysis 整理）" loading="lazy"><figcaption>图：企业人均每月 AI 开支一路往上——最能花的 Top 1% 已烧到 7500 美元/人/月，Top 10% 约 630，中位数才 12，差距悬殊但集体在涨（来源：Ramp AI Index，SemiAnalysis 整理）</figcaption></figure>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>基线会从 9 直接顶到 13、14 块去</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>市场上&quot;FinOps for AI&quot;这套说法，已经开始有人提了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：——好的数据中心选址、电力、审批那时候差不多耗尽，小型核电这类能撑下一段的新供给又还没成熟，建设速度会慢下来。到那会儿如果大家都在收紧 token，总算力够不够都不好说</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：Anthropic 应用 AI 负责人William做了一个演讲</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：AI算力/大模型；截图上下文：专家 € 00:13:50；就目前正在进行的这些对话而言，他们现在有足够的能力去推动此事。可以说，这已经成为了一项常规。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/929efb5bd0ff1a88cb741c785ca0d57de565166c.jpg" alt="连 Claude Code 都开始砍成本了.... 截图2" loading="lazy"><figcaption>连 Claude Code 都开始砍成本了.... 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：AI算力/大模型；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：AI算力/大模型；截图上下文：Figure 4: Hypothetical Token Consumption Growth；四 Token Optimization。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/045dfdee9471a416549f43466284c5c8066f7ab5.jpg" alt="图：每次 token 优化只把消耗曲线摁平一阵子，之后接着往上爬——单价降压不住总用量（来源：UBS Estimates）" loading="lazy"><figcaption>图：每次 token 优化只把消耗曲线摁平一阵子，之后接着往上爬——单价降压不住总用量（来源：UBS Estimates）</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：AI算力/大模型；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">Anthropic</span><span class="tag">Claude</span><span class="tag">Code</span><span class="tag">Fable</span><span class="tag">GitHub</span><span class="tag">Copilot</span><span class="tag">Gemini</span><span class="tag">CFO</span><span class="tag">ROI</span><span class="tag">Top</span><span class="tag">Ramp</span><span class="tag">Index</span><span class="tag">SemiAnalysis</span><span class="tag">RAG</span><span class="tag">UBS</span><span class="tag">Estimates</span><span class="tag">Uber</span><span class="tag">IT</span><span class="tag">Google</span><span class="tag">FinOps</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>谈到A厂把 Claude Code 的系统提示词一口气砍掉了八成——从 800 token 压到了 164 token</li>
+<li>官方给的理由是新一代模型（Fable 5）够聪明了，喂太多指令和例子反而框住它，不如让它自己发挥</li>
+<li>四个月就把一整年的 AI 预算烧光了，最后只能给每人每月摁一个 1500 美元的上限</li>
+<li>1.发出去的席位，有没有人</li>
+<li>而当初给企业画的饼，是 30% 到 50%</li>
+<li>一个月人均 500 到 2000 美元 token</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>这一轮行业层面的利空，很大程度上就是从这儿引出来的....</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>复核重点实体的公告、纪要或财报口径：Anthropic、Claude、Code、Fable、GitHub、Copilot</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-f00b1051cd" open>
+<summary><span class="account-name">国家能源局</span><span class="account-count">3 篇</span><span class="account-titles">China SCIO︱China&#x27;s new energy roadmap shifts focus from capacity expansion to system building、China Daily︱Energy system rejig on AI demand、从空白起步到引领全球！看中国水电的百年奋进之路</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-673623f875">
+<h2>China SCIO︱China&#x27;s new energy roadmap shifts focus from capacity expansion to system building</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-04 16:16:23</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/zuEkS69HlwUIJWDy5JEoUQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：Unveiled last week, the plan aims to basically establish a clean, low-carbon, secure, and efficient new energy system by 2030.</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>Unveiled last week, the plan aims to basically establish a clean, low-carbon, secure, and efficient new energy system by 2030.</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>Experts said the significance of the plan lies not only in its numerical targets, but also in what they reveal about the next stage of China&#x27;s energy transition.</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>He noted that rising electrification, growing renewable energy use, and the rapid adoption of electric vehicles have increased China&#x27;s resilience to external energy shocks.</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>The plan nevertheless reaffirms the role of conventional energy sources — including coal, oil, and natural gas — in maintaining system stability and ensuring reliable supply.</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>Lyu said the blueprint provides policy certainty amid global energy market volatility and demonstrates that low-carbon development can be pursued alongside energy security.</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>Yang said China is speeding up its energy transition not only to address climate change but also to create economic opportunities.</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：&#x27; Rey &gt;20268；ant »” 06.26 =。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/742a2e85c21ff67772e9c53e66f9d0cb00e2693a.jpg" alt="China SCIO︱China&#x27;s new energy roadmap shifts focus from capacity expansion to system building 截图2" loading="lazy"><figcaption>China SCIO︱China&#x27;s new energy roadmap shifts focus from capacity expansion to system building 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="China SCIO︱China&#x27;s new energy roadmap shifts focus from capacity expansion to system building 截图4" loading="lazy"><figcaption>China SCIO︱China&#x27;s new energy roadmap shifts focus from capacity expansion to system building 截图4</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">China</span><span class="tag">Five-Year</span><span class="tag">Plan</span><span class="tag">Chinese</span><span class="tag">Unveiled</span><span class="tag">Speaking</span><span class="tag">Friday</span><span class="tag">Wang</span><span class="tag">Hongzhi</span><span class="tag">National</span><span class="tag">Energy</span><span class="tag">By</span><span class="tag">Non-fossil</span><span class="tag">Experts</span><span class="tag">Lyu</span><span class="tag">Wenbin</span><span class="tag">Research</span><span class="tag">Institute</span><span class="tag">Development</span><span class="tag">Reform</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>Unveiled last week, the plan aims to basically establish a clean, low-carbon, secure, and efficient new energy system by 2030.</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核重点实体的公告、纪要或财报口径：China、Five-Year、Plan、Chinese、Unveiled、Speaking</li>
+</ul>
+</article>
+<article class="account-article" id="article-a9d03acdab">
+<h2>China Daily︱Energy system rejig on AI demand</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-04 16:16:23</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/SNNaSdhgCCVhHt66oRErPw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：&quot;For example, generating a five-second high-definition video using artificial intelligence consumes as much electricity as charging 10 smartphones,&quot; Wang said.</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>&quot;For example, generating a five-second high-definition video using artificial intelligence consumes as much electricity as charging 10 smartphones,&quot; Wang said.</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>Furthermore, sweeping upgrades to distribution networks and smart microgrids will support the charging needs of over 110 million electric vehicles, it said.</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>The government aims to meet newly added electricity demand primarily through clean energy by developing a mix of wind, solar, hydropower, and nuclear power, it said.</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>&quot;In terms of ensuring energy supply, renewable energy has already become the main contributor to the country&#x27;s domestic energy increments,&quot; Yi added.</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="China Daily︱Energy system rejig on AI demand 截图2" loading="lazy"><figcaption>China Daily︱Energy system rejig on AI demand 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">China</span><span class="tag">Wang</span><span class="tag">Hongzhi</span><span class="tag">National</span><span class="tag">Energy</span><span class="tag">This</span><span class="tag">Beijing</span><span class="tag">Friday</span><span class="tag">By</span><span class="tag">For</span><span class="tag">In</span><span class="tag">Meeting</span><span class="tag">According</span><span class="tag">NEA</span><span class="tag">Five-Year</span><span class="tag">Plan</span><span class="tag">The</span><span class="tag">Yi</span><span class="tag">Yuechun</span><span class="tag">Renewable</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>&quot;For example, generating a five-second high-definition video using artificial intelligence consumes as much electricity as charging 10 smartphones,&quot; Wang said.</li>
+<li>Furthermore, sweeping upgrades to distribution networks and smart microgrids will support the charging needs of over 110 million electric vehicles, it said.</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核重点实体的公告、纪要或财报口径：China、Wang、Hongzhi、National、Energy、This</li>
+</ul>
+</article>
+<article class="account-article" id="article-6b2319b873">
+<h2>从空白起步到引领全球！看中国水电的百年奋进之路</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-04 14:50:39</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/m1lmg8f4-mr7TZ83lcCcdg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：电站拥有独一无二的红色党建根基：1927年4月，云南省首个产业工人党支部在石龙坝厂区成立，也是当年云南15个地下党支部中唯一完全由产业工人组成的企业党支部，百年红色火种自此扎根水电一线</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>电站拥有独一无二的红色党建根基：1927年4月，云南省首个产业工人党支部在石龙坝厂区成立，也是当年云南15个地下党支部中唯一完全由产业工人组成的企业党支部，百年红色火种自此扎根水电一线</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>党员骨干牵头完成百年老旧机组常态化运维、防汛保电、工业遗产保护全流程攻坚，自主完成老旧设备国产化改造，摆脱进口备件依赖</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截至2025年底，三峡电站累计发电量突破1.8万亿千瓦时，相当于节约标准煤约5.4亿吨，减排二氧化碳约14.8亿吨</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>三峡水电站1994年正式开工，2003年首批机组并网，2012年全部机组投产，总装机2250万千瓦，是当前全球总装机容量最大水电站，集防洪、发电、航运、水资源利用多重功能于一体</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>电站正式运维阶段，各运行党支部持续传承工程建设时期红色优良传统，划定设立党员设备检修责任区，党员骨干牵头实施老旧机组国产化升级改造、通航建筑物提质改造、智能监控系统迭代升级等重点项目</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截至6月9日，白鹤滩电厂实现连续安全生产2000天，累计发电量超2500亿千瓦时</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：三峡工程筑牢全国能源稳压底座 白鹤滩登顶世界水电技术巅峰 葛洲坝开启长江干流筑坝先河 四座里程碑式水电工程</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">水利/防汛减灾</mark>：党员骨干牵头完成百年老旧机组常态化运维、防汛保电、工业遗产保护全流程攻坚，自主完成老旧设备国产化改造，摆脱进口备件依赖；2026年，石龙坝运维部党员团队获评“全国工人先锋号”，以党员先锋岗为载体，把百年红色基因转化为守护民族水电工业遗产、保障区域绿色供电的实干动力。截至2025年底，电站累计安全发电超10亿千瓦时，持续发挥科普、保供、红色教育三重价值，树立起百年水电党建融合发展标杆</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：航运：三峡水电站1994年正式开工，2003年首批机组并网，2012年全部机组投产，总装机2250万千瓦，是当前全球总装机容量最大水电站，集防洪、发电、航运、水资源利用多重功能于一体。工程建设全程自主完成勘测、设计、施工、设备制造，多年平均发电近900亿千瓦时，丰水年提供超千亿千瓦时清洁电能，大幅削减全国燃煤碳排放，守住长江中下游亿万群众防洪安全底线</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：教育：党员骨干牵头完成百年老旧机组常态化运维、防汛保电、工业遗产保护全流程攻坚，自主完成老旧设备国产化改造，摆脱进口备件依赖；2026年，石龙坝运维部党员团队获评“全国工人先锋号”，以党员先锋岗为载体，把百年红色基因转化为守护民族水电工业遗产、保障区域绿色供电的实干动力。截至2025年底，电站累计安全发电超10亿千瓦时，持续发挥科普、保供、红色教育三重价值，树立起百年水电党建融合发展标杆</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>石龙坝水电站1910年动工、1912年正式发电，产出中国大陆第一度水电，是国人自筹资本、自主兴建的首座水电站，终结中国无水电的历史，被誉为中国水电事业的摇篮</li>
+<li>电站拥有独一无二的红色党建根基：1927年4月，云南省首个产业工人党支部在石龙坝厂区成立，也是当年云南15个地下党支部中唯一完全由产业工人组成的企业党支部，百年红色火种自此扎根水电一线</li>
+<li>和平建设时期，一代代党员接续传承初心，电站运维部现有18名职工，其中共产党员6名，组建党员抢修专班、红色宣讲队，深挖百年电站红色史料，打造党史现场教学基地</li>
+<li>2026年，石龙坝运维部党员团队获评“全国工人先锋号”，以党员先锋岗为载体，把百年红色基因转化为守护民族水电工业遗产、保障区域绿色供电的实干动力</li>
+<li>截至2025年底，电站累计安全发电超10亿千瓦时，持续发挥科普、保供、红色教育三重价值，树立起百年水电党建融合发展标杆</li>
+<li>三峡水电站1994年正式开工，2003年首批机组并网，2012年全部机组投产，总装机2250万千瓦，是当前全球总装机容量最大水电站，集防洪、发电、航运、水资源利用多重功能于一体</li>
+<li>工程建设全程自主完成勘测、设计、施工、设备制造，多年平均发电近900亿千瓦时，丰水年提供超千亿千瓦时清洁电能，大幅削减全国燃煤碳排放，守住长江中下游亿万群众防洪安全底线</li>
+<li>截至2025年底，三峡电站累计发电量突破1.8万亿千瓦时，相当于节约标准煤约5.4亿吨，减排二氧化碳约14.8亿吨</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>
