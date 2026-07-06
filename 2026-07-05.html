@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-05 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-05</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>11 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-c5568d88f0">寻找低估</a><a class="anchor-chip" href="#account-0e0ccdbbe6">北向牧风</a><a class="anchor-chip" href="#account-f00b1051cd">国家能源局</a><a class="anchor-chip" href="#account-a849ebeb02">韭菜的一天</a><a class="anchor-chip" href="#account-bc7ec57680">爱在冰川</a><a class="anchor-chip" href="#account-98077dbdaf">安静拆主线</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">DRAM</span><span class="tag">HBM</span><span class="tag">TSV</span><span class="tag">Unified</span><span class="tag">Hi</span><span class="tag">Intel</span><span class="tag">CPU</span><span class="tag">Granite</span><span class="tag">Emerald</span><span class="tag">Rapids</span><span class="tag">MLCC</span><span class="tag">DeepSeek</span><span class="tag">Mh</span><span class="tag">MACHINA</span><span class="tag">Summit</span><span class="tag">Al</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
+<li>机器人：机器人把 AI 能力落到物理执行端，降本点在核心零部件国产化、规模制造和控制算法优化。</li>
+<li>商业航天：卫星和发射能力规模化会摊薄通信、遥感和发射成本，降本点在复用、批量制造和组网效率。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文强势词提到 存储/HBM、商业航天。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>能源/电力</td><td>合计 5篇/17次</td><td><span class="source-links"><a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-aa5c86b443">模型厂关于近期热点的碎碎念...</a>》6次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-1e0ca36589">周末关注：存储出业绩</a>》4次；<a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-5bf8b58db5">周复盘：韬定律论文公开</a>》3次；<a href="#account-a849ebeb02">韭菜的一天</a>《<a href="#article-4054f22906">0705盘面推演</a>》3次；<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-8510135215">能源科普︱世界第一高坝 如何建成？</a>》1次</span></td></tr>
+<tr><td class="rank">2</td><td>AI算力/大模型</td><td>合计 4篇/122次</td><td><span class="source-links"><a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-aa5c86b443">模型厂关于近期热点的碎碎念...</a>》62次；<a href="#account-a849ebeb02">韭菜的一天</a>《<a href="#article-4054f22906">0705盘面推演</a>》44次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-1e0ca36589">周末关注：存储出业绩</a>》11次；<a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-5bf8b58db5">周复盘：韬定律论文公开</a>》5次</span></td></tr>
+<tr><td class="rank">3</td><td>存储/HBM</td><td>合计 4篇/78次</td><td><span class="source-links"><a href="#account-a849ebeb02">韭菜的一天</a>《<a href="#article-4054f22906">0705盘面推演</a>》40次；<a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-aa5c86b443">模型厂关于近期热点的碎碎念...</a>》19次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-1e0ca36589">周末关注：存储出业绩</a>》12次；<a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-5bf8b58db5">周复盘：韬定律论文公开</a>》7次</span></td></tr>
+<tr><td class="rank">4</td><td>机器人</td><td>合计 3篇/34次</td><td><span class="source-links"><a href="#account-a849ebeb02">韭菜的一天</a>《<a href="#article-4054f22906">0705盘面推演</a>》23次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-1e0ca36589">周末关注：存储出业绩</a>》8次；<a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-5bf8b58db5">周复盘：韬定律论文公开</a>》3次</span></td></tr>
+<tr><td class="rank">5</td><td>商业航天</td><td>合计 3篇/19次</td><td><span class="source-links"><a href="#account-a849ebeb02">韭菜的一天</a>《<a href="#article-4054f22906">0705盘面推演</a>》14次；<a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-5bf8b58db5">周复盘：韬定律论文公开</a>》3次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-1e0ca36589">周末关注：存储出业绩</a>》2次</span></td></tr>
+<tr><td class="rank">6</td><td>锂电材料/电解液</td><td>合计 2篇/6次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-522a8a596e">媒体报道丨变废为宝 破解“新三样”固废难题</a>》5次；<a href="#account-a849ebeb02">韭菜的一天</a>《<a href="#article-4054f22906">0705盘面推演</a>》1次</span></td></tr>
+<tr><td class="rank">7</td><td>创新药/医药</td><td>合计 2篇/4次</td><td><span class="source-links"><a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-5bf8b58db5">周复盘：韬定律论文公开</a>》3次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-1e0ca36589">周末关注：存储出业绩</a>》1次</span></td></tr>
+<tr><td class="rank">8</td><td>消费</td><td>合计 2篇/3次</td><td><span class="source-links"><a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-5bf8b58db5">周复盘：韬定律论文公开</a>》2次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-1e0ca36589">周末关注：存储出业绩</a>》1次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>科技成长/AI硬件、涨价/周期修复、高波动/分歧交易</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>能源/电力：英伟达</li>
+<li>AI算力/大模型：三星、Meta、腾讯、英伟达</li>
+<li>存储/HBM：美光、三星、Meta、SK海力士、苹果、兆易创新、澜起科技</li>
+<li>机器人：原文未明确提及个股/公司</li>
+<li>商业航天：原文未明确提及个股/公司</li>
+<li>锂电材料/电解液：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>复核重点实体的公告、纪要或财报口径：三星、SK、DRAM、HBM、TSV、Unified</li>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、台积电、DRAM、HBM、TPU、Meta</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、DRAM、HBM、Meta、Tier、Q2</li>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、DRAM、HBM、WAIC</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-a849ebeb02" open>
+<summary><span class="account-name">韭菜的一天</span><span class="account-count">1 篇</span><span class="account-titles">0705盘面推演</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-4054f22906">
+<h2>0705盘面推演</h2>
+<ul>
+<li>公众号：韭菜的一天</li>
+<li>发布时间：2026-07-05 22:43:14</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/BtGuzaYD6nXfv9zuFqNMmw">点击查看原文</a></li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-c5568d88f0" open>
+<summary><span class="account-name">寻找低估</span><span class="account-count">1 篇</span><span class="account-titles">周末关注：存储出业绩</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-1e0ca36589">
+<h2>周末关注：存储出业绩</h2>
+<ul>
+<li>公众号：寻找低估</li>
+<li>发布时间：2026-07-05 22:02:22</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/OQM6ParF697dqgSHq9nIAA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：江波龙：预计上半年净利润92亿元-110亿元，同比增长62204%-74394%。26Q2归母净利润预计53.38-71.38亿元，同比+3096%～4174%/环比+38%～85%</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">江波龙</mark>：预计上半年净利润92亿元-110亿元，同比增长62204%-74394%。26Q2归母净利润预计53.38-71.38亿元，同比+3096%～4174%/环比+38%～85%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">江波龙</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">杭电股份</mark>：预计上半年净利，3.6亿元-4亿元，同比增长852%-958%。对应，Q2净利润预计2.79亿-3.19亿，环比变动245%-294%。子公司光纤销量随行业复苏实现同步增长，<mark class="evidence-mark">永鼎股份</mark>：</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">永鼎股份</span><span class="company-badge">杭电股份</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">招商轮船</mark>：预计上半年度净利润，66.00亿元-73.00亿元，同比增长214%-248%。二季度归母净利润预计38.4-45.4亿元，同比增长205%-260%，环比增长39%-64%，住友涨价函：8月1号起，硬质合金调价，gwy：合理控制煤电装机规模和发电量 全面提升可再生能源电力消费比重，国家药监局：将符合条件的细胞与基因治疗药品纳入创新药临床试验审评审批30日通道</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">招商轮船</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月10-13日，预计长10乙发射</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月10日，<mark class="evidence-mark">SK海力士</mark>美国ADR上市</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">SK海力士</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月17-20日，世界人工智能大会</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月31日，第二届中国国际游戏开发者大会</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">机器人</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：1、gwy：合理控制煤电装机规模和发电量 全面提升可再生能源电力消费比重</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：一、AI 周末AI消息很多，存储、光纤都出了不错的中报。之前热议的韬定律V2版论文发布，补充更多工程数据。meta出售算力后，又传下单超 10万亿韩元AI芯片。 存储</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">存储/HBM</mark>：周末AI消息很多，存储、光纤都出了不错的中报。之前热议的韬定律V2版论文发布，补充更多工程数据。meta出售算力后，又传下单超</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">机器人</mark>：3、<mark class="evidence-mark">机器人</mark>： 央视新闻：加速走向全球 今年前5个月我国<mark class="evidence-mark">机器人</mark>出口近200亿元</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：原文在活动/会议前瞻中列出：7月，预计朱雀三发射，可作为<mark class="evidence-mark">商业航天</mark>方向的事件催化</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：先进封装/玻璃基板、光模块/CPO；截图上下文：【浙商Al战队】#火线解读圾定律V2版论文! !；何庭波7月3日发布郁定律Vz版论文，相比5月25日V1版，大量关。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/eec42856d3e751cecf369744111c675d17bcc701.jpg" alt="周末关注：存储出业绩 截图1" loading="lazy"><figcaption>周末关注：存储出业绩 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：先进封装/玻璃基板、光模块/CPO；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：AI算力/大模型、晶振/被动元件；截图上下文：7月4日下午华强北Al专用高容MLCC: 继续涨价，；热门料号下午再度上调报价。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/c7b499101305b965cc0ae10053a70f5dab0b5d15.jpg" alt="周末关注：存储出业绩 截图2" loading="lazy"><figcaption>周末关注：存储出业绩 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：AI算力/大模型、晶振/被动元件；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：电力、AI算力/大模型；截图上下文：该地区是全球规模最大的数据中心集聚地，对电力稳定性和价格均高度敏感。每兆。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/f94b70066121fcc57064963b908d38165258fc62.jpg" alt="周末关注：存储出业绩 截图4" loading="lazy"><figcaption>周末关注：存储出业绩 截图4</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：电力、AI算力/大模型；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">三星</span><span class="tag">SK</span><span class="tag">DRAM</span><span class="tag">HBM</span><span class="tag">TSV</span><span class="tag">Unified</span><span class="tag">Hi</span><span class="tag">Intel</span><span class="tag">CPU</span><span class="tag">Granite</span><span class="tag">Emerald</span><span class="tag">Rapids</span><span class="tag">MLCC</span><span class="tag">DeepSeek</span><span class="tag">Mh</span><span class="tag">MACHINA</span><span class="tag">Summit</span><span class="tag">Al</span><span class="tag">SMM</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>之前热议的韬定律V2版论文发布，补充更多工程数据</li>
+<li>1）江波龙：预计上半年净利润92亿元-110亿元，同比增长62204%-74394%</li>
+<li>26Q2归母净利润预计53.38-71.38亿元，同比+3096%～4174%/环比+38%～85%</li>
+<li>美光科技投资93亿美元扩建先进存储芯片项目 预计2028下半年出货HBM</li>
+<li>三星第三季DRAM拟提价20% 厂家称已接口头通知</li>
+<li>5）联想集团近日被发现在美国在售的笔记本中搭载了长江存储的固态硬盘</li>
+<li>同比增长852%-958%</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核重点实体的公告、纪要或财报口径：三星、SK、DRAM、HBM、TSV、Unified</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-0e0ccdbbe6" open>
+<summary><span class="account-name">北向牧风</span><span class="account-count">1 篇</span><span class="account-titles">模型厂关于近期热点的碎碎念...</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-aa5c86b443">
+<h2>模型厂关于近期热点的碎碎念...</h2>
+<ul>
+<li>公众号：北向牧风</li>
+<li>发布时间：2026-07-05 09:01:58</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/ub6a6ATv50oAXeUtjI1kbg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：图：每一美元算力能换回多少收入——Anthropic 2.10 美元、OpenAI 1.60 美元（不含训练成本口径）</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<figure class="figure"><img src="assets/images/19a9cb9ce51b6b42b48a1bf5b4a292323466ef13.jpg" alt="图：每一美元算力能换回多少收入——Anthropic 2.10 美元、OpenAI 1.60 美元（不含训练成本口径）；把训练成本加回去，OpenAI 只剩约 0.68 美元、掉到 1 美元盈亏线下" loading="lazy"><figcaption>图：每一美元算力能换回多少收入——Anthropic 2.10 美元、OpenAI 1.60 美元（不含训练成本口径）；把训练成本加回去，OpenAI 只剩约 0.68 美元、掉到 1 美元盈亏线下</figcaption></figure>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>公开数据看，A 厂（Anthropic）ARR 3 月约 190 亿、4 月 300 亿、5 月 450 亿，那 6、7 月呢？</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>OpenAI 新发的 GPT-5.6，跟 Fable 5、跟之前的 4.8 比如何？</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>它的核心问题在模型架构的选择——跟 Google 类似，OpenAI 也上了 MoE（Mixture of Experts），但特点是&quot;小专家&quot;太多</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>所以 2026 到 2027 年，行业核心趋势是在 IDC 里换旧卡而不是扩建新 IDC，到 2028 年才 IDC 和新卡一起上？</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>V7 代 TPU 的 HBM 与 DRAM 理想配比可以到 1:10</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：答：趋势基本是这样。数据中心本身已经成了瓶颈，主要体现在电力供应不足，导致已有的算力卡插不上电、跑不起来</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：（一篇谷歌内部的大模型调研，信息量极大，最近的关注点都讲到了...</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">存储/HBM</mark>：这次调价主要影响租卡做模型训练、搭私有虚拟云的用户；像<mark class="evidence-mark">苹果</mark>、<mark class="evidence-mark">三星</mark>这类签了长期合同的 API 调用用户，则没有影响</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">三星</span><span class="company-badge">苹果</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：存储/HBM、AI算力/大模型；截图上下文：GB200 NVL72 Rack Level BOM ($k) TPU v7 Rack Level BOM ($k, take 64-TPU rack as example)；NVIDIA GB200 NVL72 Google TPU v7...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/d4862556be4cf140941ee4919fbadf3105161e7a.jpg" alt="图：单机架 BOM 成本拆解，NVIDIA GB200 NVL72 约 324 万美元，Google TPU v7（64 卡机架）内部 BOM 仅约 150 万美元——TPU 便宜的底气在这里" loading="lazy"><figcaption>图：单机架 BOM 成本拆解，NVIDIA GB200 NVL72 约 324 万美元，Google TPU v7（64 卡机架）内部 BOM 仅约 150 万美元——TPU 便宜的底气在这里</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：存储/HBM、AI算力/大模型；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">三星</span><span class="tag">台积电</span><span class="tag">DRAM</span><span class="tag">HBM</span><span class="tag">TPU</span><span class="tag">Meta</span><span class="tag">V7</span><span class="tag">V8</span><span class="tag">V6</span><span class="tag">Google</span><span class="tag">Anthropic</span><span class="tag">ARR</span><span class="tag">AWS</span><span class="tag">OpenAI</span><span class="tag">GPT-5.6</span><span class="tag">Fiber</span><span class="tag">Codex</span><span class="tag">LongCOT</span><span class="tag">MoE</span><span class="tag">GCP</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>专家提到一个有意思的事：目前正在进行的工作是把老芯片拆除、换成新的 V7 和 V8</li>
+<li>V6 在 Google 内部已很少使用，基本全部供给 Anthropic</li>
+<li>公开数据看，A 厂（Anthropic）ARR 3 月约 190 亿、4 月 300 亿、5 月 450 亿，那 6、7 月呢？</li>
+<li>OpenAI 的 GPT-5.6，相比 5.5 只有微小提升，跟 Anthropic 那边的 Fiber 5 没法比</li>
+<li>等高质量、长程的反馈数据多起来，范式转向大专家，Anthropic 2025 年就押了大专家、卡住了身位</li>
+<li>图：每一美元算力能换回多少收入——Anthropic 2.10 美元、OpenAI 1.60 美元（不含训练成本口径）</li>
+<li>把训练成本加回去，OpenAI 只剩约 0.68 美元、掉到 1 美元盈亏线下</li>
+<li>Anthropic 近期（5 月底到 6 月）的 ARR 和它在 GCP 上的 TPU 用量，是什么状态？</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、台积电、DRAM、HBM、TPU、Meta</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-f00b1051cd" open>
+<summary><span class="account-name">国家能源局</span><span class="account-count">3 篇</span><span class="account-titles">媒体报道丨变废为宝 破解“新三样”固废难题、媒体报道丨加快补齐动力电池、光伏、风电“新三样”固废循环利用短板、能源科普︱世界第一高坝 如何建成？</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-522a8a596e">
+<h2>媒体报道丨变废为宝 破解“新三样”固废难题</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-05 19:17:23</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/CK7H8HwDSco6SS8IpRp6IA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：在新疆哈密戈壁的风电场，一排排60多米的风电叶片刚刚“退役”，经过切割后，它们被送往高新技术产业开发区循环经济产业园内，在这里这些“大块头”摇身一变，成为工程组件，边角料则经过高温压制后加工成了工业托盘</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>在新疆哈密戈壁的风电场，一排排60多米的风电叶片刚刚“退役”，经过切割后，它们被送往高新技术产业开发区循环经济产业园内，在这里这些“大块头”摇身一变，成为工程组件，边角料则经过高温压制后加工成了工业托盘</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>：在物流、重型设备运输等领域特别受欢迎，部分精细处理的材料还能变成3D打印的线材，变成城市雕塑或者文创艺术产品</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>在河南郑州航空港区，两辆满载60多吨废旧锂电池的大货车，正缓缓开进厂区</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这是我们回收回来的废旧锂电池，它不是工业垃圾，它含有丰富的铜、铝以及高价值的镍、钴、锰、锂等电池原材料</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>而这家企业自主研发的专利设备，有六重安全防护，不用放电，废旧锂电池直接就能带电破碎</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>“十五五”时期，我国将进入动力电池、光伏、风电等“新三样”设备规模化“退役”阶段，各地正以技术创新破局固废处置难题，不断完善标准化回收、智能化拆解等全链条体系</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">锂电材料/电解液</mark>：同样作为“新三样”的退役动力电池，也在探索“再生之路”。在河南郑州航空港区，两辆满载60多吨废旧锂电池的大货车，正缓缓开进厂区</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="媒体报道丨变废为宝 破解“新三样”固废难题 截图7" loading="lazy"><figcaption>媒体报道丨变废为宝 破解“新三样”固废难题 截图7</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>在新疆哈密戈壁的风电场，一排排60多米的风电叶片刚刚“退役”，经过切割后，它们被送往高新技术产业开发区循环经济产业园内，在这里这些“大块头”摇身一变，成为工程组件，边角料则经过高温压制后加工成了工业托盘</li>
+<li>：在物流、重型设备运输等领域特别受欢迎，部分精细处理的材料还能变成3D打印的线材，变成城市雕塑或者文创艺术产品</li>
+<li>在河南郑州航空港区，两辆满载60多吨废旧锂电池的大货车，正缓缓开进厂区</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+</ul>
+</article>
+<article class="account-article" id="article-e108b1e659">
+<h2>媒体报道丨加快补齐动力电池、光伏、风电“新三样”固废循环利用短板</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-05</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/Eum8_2Fv56dtHJhOzWEpSw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：媒体报道丨加快补齐动力电池、光伏、风电“新三样”固废循环利用短板</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>媒体报道丨加快补齐动力电池、光伏、风电“新三样”固废循环利用短板</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>微信扫一扫可打开此内容</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-8510135215">
+<h2>能源科普︱世界第一高坝 如何建成？</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-05</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/jb5bufEm4-gQLftWfmzpzg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：能源科普︱世界第一高坝 如何建成？</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>能源科普︱世界第一高坝 如何建成？</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>微信扫一扫可打开此内容</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：能源科普︱世界第一高坝 如何建成？</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-bc7ec57680" open>
+<summary><span class="account-name">爱在冰川</span><span class="account-count">2 篇</span><span class="account-titles">2026-7-5 数据、2026-7-5 短线资金流</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-f5fbba7010">
+<h2>2026-7-5 数据</h2>
+<ul>
+<li>公众号：爱在冰川</li>
+<li>发布时间：2026-07-05 23:58:22</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/ogUJqEsZTtlDAzD6QmkNWA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：不过欧洲股市是涨的，德国股市还创了历史新高</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>不过欧洲股市是涨的，德国股市还创了历史新高</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>本复盘仅为鄙人的股市思考历程，非荐股，请勿跟票</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>说到这你可能会问什么时候能轮到我们，这个我们的资本市场外资进入受限，所以全球资金进出不便，以前我们是加大港股通陆股通的渠道，让资金从港股买A股，其实也很不便，所以我们现在在加大A股的公司去港股发行H股，这个比较便于外资的进出，等到什么时候，A股的各行各业的翘楚公司都完成在港股的H股发行以后，港股未来也会有加入轮动的机会，但是当下应该还不够</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>现在欧洲股指都没人看了，都盯着美股的那些ai股，和韩国的内存股，还有日本的上游材料股看了</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>但是最近科技连杀几天，因为很多逻辑都越跌越没得，而且一波杀跌以后套牢盘也形成的比较多，所以明天这些科技股是可以高举高打还是会高开被套来盘直接砸掉，这个就不太好预判了</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这个周末主要发酵了业绩报，不少公司业绩数据很惊爆眼球，如果是之前科技大热的时候发这个业绩，应该是火上烹油，高举高打</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：半导体、机器人、锂电、商业航天、AI算力/大模型、光模块/CPO、创新药/医药、能源/电力；代表标的：002353 杰瑞股份；截图上下文：505189 SH | wen | 100i] 。 16.05| 。 38.24亿元| 3.56亿元| 3 | 人形机器人*PEEK村料*业续增长*消子纠龙类|。 0 | 3天3板|；000576Sz | Hit | 。 1000| 。 8...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/f213467bbfc047563a65604d9d7d75a2effb6e22.jpg" alt="2026-7-5 数据 截图2" loading="lazy"><figcaption>2026-7-5 数据 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：半导体、机器人、锂电、商业航天、AI算力/大模型、光模块/CPO、创新药/医药、能源/电力；相关公司/标的：002353 杰瑞股份</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-2259fb7439">
+<h2>2026-7-5 短线资金流</h2>
+<ul>
+<li>公众号：爱在冰川</li>
+<li>发布时间：2026-07-05 23:58:22</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/GZYtn94SNhXHFws1ewFUCw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：此栏目为5年以上关注的老粉提供的参考数据，数据来自各大垂直网站，新手不建议观看此栏目，更不可单以此数据来作为交易依据</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>此栏目为5年以上关注的老粉提供的参考数据，数据来自各大垂直网站，新手不建议观看此栏目，更不可单以此数据来作为交易依据</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：创新药/医药；截图上下文：20260703买入排行；名称 代码 热度。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/76d407648d67c23c9c2e1c6baee705d8a05dfb3e.jpg" alt="2026-7-5 短线资金流 截图2" loading="lazy"><figcaption>2026-7-5 短线资金流 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：创新药/医药；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：创新药/医药、锂电材料/电解液；截图上下文：20260703卖出排行；名称 代码 热度。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/e6f4aae4b5fbec6e364cb63d2528d934729c9c37.jpg" alt="2026-7-5 短线资金流 截图3" loading="lazy"><figcaption>2026-7-5 短线资金流 截图3</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：创新药/医药、锂电材料/电解液；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>此栏目为5年以上关注的老粉提供的参考数据，数据来自各大垂直网站，新手不建议观看此栏目，更不可单以此数据来作为交易依据</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-98077dbdaf" open>
+<summary><span class="account-name">安静拆主线</span><span class="account-count">3 篇</span><span class="account-titles">周复盘：韬定律论文公开、7月3日 涨停板复盘、7月3日 强势联动板块复盘</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-5bf8b58db5">
+<h2>周复盘：韬定律论文公开</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-05 19:59:27</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/y6R1g_ubC85mVk1X6Eg31Q">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：江波龙：预计上半年净利润92亿元-110亿元 同比增长62204%-74394%</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">江波龙</mark>：预计上半年净利润92亿元-110亿元 同比增长62204%-74394%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">江波龙</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">招商轮船</mark>：预计上半年度净利润同比增长214%-248% 系国际油轮运输市场进入超级景气周期东方盛虹：预计上半年度净利润同比增长987%-1195%，Q2净利润预计环比变动93%-149%国泰海通：预计上半年归母净利润200.03到205.11亿元，同比增加164%到171%，创下公司半年度业绩历史新高……其他消息面1、沪深北交易所新版交易规则将于7月6日起施行2、药监局：将符合条件的细胞与基因治疗药品纳入创新药临床试验审评审批30日通道</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">招商轮船</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>将在2026世界人工智能大会（WAIC 2026）期间（7月17日-7月20日），展出昇腾最新产品、解决方案、产业实践及行业案例，包括业界最大规模超节点Atlas 950 SuperPoD真机首展</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">美光</mark>科技投资93亿美元扩建先进存储芯片项目 预计2028下半年出货HBM</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">美光</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这周后半周，其实从中际的日k也能看出一些风险偏好变化的端倪</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span><span class="sector-badge">创新药/医药</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>当然，从逻辑上，科技依然是长期的主线</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span><span class="sector-badge">创新药/医药</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：3、管理层：合理控制煤电装机规模和发电量 全面提升可再生能源电力消费比重</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：1）AI硬件 光 存开始出一些比较好的中报 <mark class="evidence-mark">江波龙</mark>：预计上半年净利润92亿元-110亿元 同比增长62204%-74394% <mark class="evidence-mark">杭电股份</mark>：预计上半年净利同比增长852%-958% 子公司光纤销量随行业复苏实现同步增长</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">江波龙</span><span class="company-badge">杭电股份</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">存储/HBM</mark>：5、存储 华强北存储行情回升 多款固态硬盘、内存条价格上涨 <mark class="evidence-mark">三星</mark>第三季DRAM拟提价20% 厂家称已接口头通知 <mark class="evidence-mark">美光</mark>科技投资93亿美元扩建先进存储芯片项目 预计2028下半年出货HBM</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">三星</span><span class="company-badge">美光</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">机器人</mark>：7、特斯拉副总裁陶琳公开表态：Optimus擎天柱人形<mark class="evidence-mark">机器人</mark>，2026年底正式启动规模化量产</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：4、<mark class="evidence-mark">商业航天</mark></p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：光模块/CPO；截图上下文：+ ERODE, BRR；V2 ARSENE ERTREGRVGES, ISPARIREERSE, SARTRE, TOMAR T IDRIS REN: CPUSIET SERENE, BIS AONE。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/19ef02c1ff67c1ca0cd1c3e3b7efdea5b29fd778.jpg" alt="周复盘：韬定律论文公开 截图1" loading="lazy"><figcaption>周复盘：韬定律论文公开 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：光模块/CPO；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：半导体设备；截图上下文：BES) 科创半导体设备ETF华泰柏瑞 MAS: 1.6521 MA10: 1.646) MA20: 1.689) MA30: 1.748), 4746。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/612c4744b740b80573f38cbe25f949ebdbd8f938.jpg" alt="周复盘：韬定律论文公开 截图5" loading="lazy"><figcaption>周复盘：韬定律论文公开 截图5</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：半导体设备；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：代表标的：003043 华亚智能、688729 屹唐股份、603061 金海通、688120 华海清科、688147 微导纳米、688605 先锋精科、002371 北方华创、688012 中微公司、688037 芯源微、688200 华峰测控；截图上下文：003043 华亚智能 1.12% 100.07 +21.83% 9.8347,；688729 屹唐股份 45.8196 42.63 +18.09% 22.3247,；603061 金海通 +0.43% 472.73 -+13.90% 19...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/31be36af61b813a625c990db275302f1830d736a.jpg" alt="周复盘：韬定律论文公开 截图6" loading="lazy"><figcaption>周复盘：韬定律论文公开 截图6</figcaption></figure>
+<ul>
+<li>利好板块/公司：相关公司/标的：003043 华亚智能、688729 屹唐股份、603061 金海通、688120 华海清科、688147 微导纳米、688605 先锋精科、002371 北方华创、688012 中微公司、688037 芯源微、688200 华峰测控</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：硅片、电子特气/六氟化钨；代表标的：688432 有研硅、688503 聚和材料、688548 XD广钢气、603078 江化微、688233 神工股份、688106 金宏气体、688549 中巨芯-U、002971 和远气体、688020 方邦股份、002409 雅克科技；截图上下文：1 688432 有研硅 -8.1096 42.19 +36.54% 34.7817,；4 688503 聚和材料 5.85% 115.05, +21.13% 23.8447,；5 688548 广钢气体 -5.5996 46.45 +19...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/623dc515cadef2319fa71176c379b55ce2a9f607.jpg" alt="周复盘：韬定律论文公开 截图7" loading="lazy"><figcaption>周复盘：韬定律论文公开 截图7</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：硅片、电子特气/六氟化钨；相关公司/标的：688432 有研硅、688503 聚和材料、688548 XD广钢气、603078 江化微、688233 神工股份、688106 金宏气体、688549 中巨芯-U、002971 和远气体、688020 方邦股份、002409 雅克科技</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：代表标的：301328 维峰电子、002979 雷赛智能、300607 拓斯达、688160 步科股份、301596 瑞迪智驱、688017 绿的谐波、688355 明志科技、688165 埃夫特、300403 汉宇集团、002747 埃斯顿；截图上下文：4 301328 维峰电子 42.05% 82.31 437.9% 。 5.08亿；5 002979 雷赛智能 +10.00% 69.55 +34.66% 3.8447,；6 300607 拓斯达 +13.5596 52.96 +33.84...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/de851c27e955dbdc3c906ef22ae1ad6acce544f8.jpg" alt="周复盘：韬定律论文公开 截图8" loading="lazy"><figcaption>周复盘：韬定律论文公开 截图8</figcaption></figure>
+<ul>
+<li>利好板块/公司：相关公司/标的：301328 维峰电子、002979 雷赛智能、300607 拓斯达、688160 步科股份、301596 瑞迪智驱、688017 绿的谐波、688355 明志科技、688165 埃夫特、300403 汉宇集团、002747 埃斯顿</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：医药；代表标的：688068 热景生物、301520 万邦医药、000566 海南海药、688336 三生国健、300765 石药创新、688382 蔓方生物、688221 前沿生物、002683 海思科、688553 汇宇制药、002294 信立素；截图上下文：1 688068 。。 热景生物 411.62% 122.97 463.74% 11.14亿；2 301520 万邦医药 +1322%6 3555 50.90% 。 453亿；3 000566 海南海药 +1.66% 6.14 48.679...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/57469f48c444e64eee643aa28bc8f7af48f03d39.jpg" alt="周复盘：韬定律论文公开 截图9" loading="lazy"><figcaption>周复盘：韬定律论文公开 截图9</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：医药；相关公司/标的：688068 热景生物、301520 万邦医药、000566 海南海药、688336 三生国健、300765 石药创新、688382 蔓方生物、688221 前沿生物、002683 海思科、688553 汇宇制药、002294 信立素</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">三星</span><span class="tag">DRAM</span><span class="tag">HBM</span><span class="tag">WAIC</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>一，周末，华为何庭波发布V2版“韬定律”论文 补充工程细节和实测数据</li>
+<li>江波龙：预计上半年净利润92亿元-110亿元 同比增长62204%-74394%</li>
+<li>杭电股份：预计上半年净利同比增长852%-958% 子公司光纤销量随行业复苏实现同步增长</li>
+<li>永鼎股份：披露2026年上半年业绩预告，同比增长57%-120%</li>
+<li>主业同比增1624%-2314%</li>
+<li>招商轮船：预计上半年度净利润同比增长214%-248% 系国际油轮运输市场进入超级景气周期</li>
+<li>东方盛虹：预计上半年度净利润同比增长987%-1195%</li>
+<li>Q2净利润预计环比变动93%-149%</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>股市有风险，投资需谨慎</li>
+<li>这周后半周，其实从中际的日k也能看出一些风险偏好变化的端倪</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：三星、DRAM、HBM、WAIC</li>
+</ul>
+</article>
+<article class="account-article" id="article-09ec7b0bb5">
+<h2>7月3日 涨停板复盘</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-05 19:59:27</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/qybD5n8VnrS5py05sCoy1Q">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：半导体设备、医药、机器人、猪肉、消费、化工、AI硬件、算力租赁；代表标的：603137 恒尚节能、603559 中通国脉、000595 宝塔实业、000656 金科股份、002979 雷赛智能、600793 宜宾纸业、000506 招金黄金、600988 赤峰黄金、603717 天域生物、605189 富春染织；截图上下文：机器人概念 44 只涨停(含涨幅&gt; 10%) BS；个板块轮动革板块上机器人板块爆发;黄金股延续；后回落; 半导体设备、材料继续调整。；股权 603137 ，恒尚节能 ”09:25 4 0.11；#508 603559 ， 中通国脉 09:...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/56bc323aa142567fa578a69b4b4c2b08098705b8.jpg" alt="7月3日 涨停板复盘 截图1" loading="lazy"><figcaption>7月3日 涨停板复盘 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：半导体设备、医药、机器人、猪肉、消费、化工、AI硬件、算力租赁；相关公司/标的：603137 恒尚节能、603559 中通国脉、000595 宝塔实业、000656 金科股份、002979 雷赛智能、600793 宜宾纸业、000506 招金黄金、600988 赤峰黄金、603717 天域生物、605189 富春染织</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-d4d493db49">
+<h2>7月3日 强势联动板块复盘</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-05 19:59:27</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/5XktQxQLoU6wawD7DMNlLw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：医药、机器人、商业航天、PCB/电子布；代表标的：300580 贝斯特、300718 长盛轴承、301596 瑞迪智驱、300018 中元股份、688017 绿的谐波、300503 吴志机电、300817 双飞集团、300403 汉宇集团、300660 江苏雷利、300549 优德精密；截图上下文：26.07.03 机器人(43)(702.90亿)；300580 贝斯特 20.02 10.79；300718 长盛轴承 20.00 21.43；301596 瑞迪智驱 20.00 4.89；300018 中元股份 19.98 12.26...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/70d7238b41be61ecf25eaa31f7dbf75c8389e110.jpg" alt="7月3日 强势联动板块复盘 截图1" loading="lazy"><figcaption>7月3日 强势联动板块复盘 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：医药、机器人、商业航天、PCB/电子布；相关公司/标的：300580 贝斯特、300718 长盛轴承、301596 瑞迪智驱、300018 中元股份、688017 绿的谐波、300503 吴志机电、300817 双飞集团、300403 汉宇集团、300660 江苏雷利、300549 优德精密</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>
