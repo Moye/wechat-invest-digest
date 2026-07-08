@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-08 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-08</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>6 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-cafa2d599d">盘口逻辑拆解</a><a class="anchor-chip" href="#account-f00b1051cd">国家能源局</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">MLCC</span><span class="tag">IDC</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>商业航天：卫星和发射能力规模化会摊薄通信、遥感和发射成本，降本点在复用、批量制造和组网效率。</li>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>半导体设备：AI/HBM/DRAM 制程升级会抬升前道、量检测和良率控制需求，降本点主要在缩短工艺迭代、提高良率和减少返工。</li>
+<li>先进封装/玻璃基板：先进封装把算力芯片、存储和互连做得更近，降本点在封装集成、互连效率和单位算力能耗。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文暂无可直接判定的连续上涨线索。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>能源/电力</td><td>合计 5篇/50次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a> 5篇/50次</span></td></tr>
+<tr><td class="rank">2</td><td>商业航天</td><td>合计 3篇/6次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-b0e21731e9">高质量发展能源行︱汽车加注“煤直接液化汽油”可以跑更远？</a>》3次、<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-aaf1acc298">人民日报︱从四个新数据读懂上半年中国经济</a>》2次；<a href="#account-cafa2d599d">盘口逻辑拆解</a>《<a href="#article-2289e6e1b8">龙头和狗头</a>》1次</span></td></tr>
+<tr><td class="rank">3</td><td>消费</td><td>合计 2篇/19次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-b0e21731e9">高质量发展能源行︱汽车加注“煤直接液化汽油”可以跑更远？</a>》1次、<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-aaf1acc298">人民日报︱从四个新数据读懂上半年中国经济</a>》18次</span></td></tr>
+<tr><td class="rank">4</td><td>AI算力/大模型</td><td>合计 2篇/11次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-aaf1acc298">人民日报︱从四个新数据读懂上半年中国经济</a>》10次；<a href="#account-cafa2d599d">盘口逻辑拆解</a>《<a href="#article-2289e6e1b8">龙头和狗头</a>》1次</span></td></tr>
+<tr><td class="rank">5</td><td>半导体设备</td><td>合计 1篇/2次</td><td><span class="source-links"><a href="#account-cafa2d599d">盘口逻辑拆解</a>《<a href="#article-2289e6e1b8">龙头和狗头</a>》2次</span></td></tr>
+<tr><td class="rank">6</td><td>硅片</td><td>合计 1篇/2次</td><td><span class="source-links"><a href="#account-cafa2d599d">盘口逻辑拆解</a>《<a href="#article-2289e6e1b8">龙头和狗头</a>》2次</span></td></tr>
+<tr><td class="rank">7</td><td>功率/碳化硅</td><td>合计 1篇/2次</td><td><span class="source-links"><a href="#account-cafa2d599d">盘口逻辑拆解</a>《<a href="#article-2289e6e1b8">龙头和狗头</a>》2次</span></td></tr>
+<tr><td class="rank">8</td><td>晶振/被动元件</td><td>合计 1篇/2次</td><td><span class="source-links"><a href="#account-cafa2d599d">盘口逻辑拆解</a>《<a href="#article-2289e6e1b8">龙头和狗头</a>》2次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>科技成长/AI硬件、高波动/分歧交易、涨价/周期修复</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>能源/电力：原文未明确提及个股/公司</li>
+<li>商业航天：原文未明确提及个股/公司</li>
+<li>消费：原文未明确提及个股/公司</li>
+<li>AI算力/大模型：原文未明确提及个股/公司</li>
+<li>半导体设备：原文未明确提及个股/公司</li>
+<li>硅片：有研硅</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：MLCC</li>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>复核重点实体的公告、纪要或财报口径：IDC</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-cafa2d599d" open>
+<summary><span class="account-name">盘口逻辑拆解</span><span class="account-count">1 篇</span><span class="account-titles">龙头和狗头</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-2289e6e1b8">
+<h2>龙头和狗头</h2>
+<ul>
+<li>公众号：盘口逻辑拆解</li>
+<li>发布时间：2026-07-08 21:59:00</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/-N4S8JkiB_NhDRxcekqmrw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：整体上，市场已经进入超跌阶段，开始有一些下跌抵抗了</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>整体上，市场已经进入超跌阶段，开始有一些下跌抵抗了</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>表现在盘面上便是，反弹的时候弹性挺大的，但下跌的时候也是非常恐慌，且这种恐慌跟前几天走势结合起来，给人非常绝望的即视感</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>如同今天上午那波跳水恐慌，就算日内一个不错的节点，而后来的修复，包括尾盘的回调，都是不太清晰的</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>毕竟现在止跌剐蹭影响挺大的，前一天活口，次日能跌的啥也不是，龙头和狗头无缝衔接，换个时间又出来一批活口，很难做</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>方向上目前容易聚焦的是科技，以往盯着国产，现在感觉可能前面的海外也会有动作，毕竟前几天国产是顺势的，可现在也不太顺了，但海外只会局限于个别方向，可以从相对抗跌里面选，因此上面暂时只增加了MLCC和玻璃</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">晶振/被动元件</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>半导体：<mark class="evidence-mark">半导体设备</mark>ETF，科创<mark class="evidence-mark">半导体设备</mark>ETF</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">半导体设备</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：国产算力/交换机：航天 电器 ， <mark class="evidence-mark">华丰科技</mark></p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">华丰科技</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：国产算力/交换机：航天 电器 ， <mark class="evidence-mark">华丰科技</mark></p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">华丰科技</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">半导体设备</mark>：半导体：<mark class="evidence-mark">半导体设备</mark>ETF，科创<mark class="evidence-mark">半导体设备</mark>ETF MLCC：<mark class="evidence-mark">风华高科</mark> 玻璃基板：京东方A 现在是典型的杀流动性行情，买入➡️被套</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">半导体设备</span><span class="sector-badge">先进封装/玻璃基板</span><span class="sector-badge">晶振/被动元件</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">风华高科</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">硅片</mark>：功率/<mark class="evidence-mark">硅片</mark>：<mark class="evidence-mark">有研硅</mark>，TCL中环，东微半导，华微电子，士兰微</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">硅片</span><span class="sector-badge">功率/碳化硅</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">有研硅</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">功率/碳化硅</mark>：功率/<mark class="evidence-mark">硅片</mark>：<mark class="evidence-mark">有研硅</mark>，TCL中环，东微半导，华微电子，士兰微</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">硅片</span><span class="sector-badge">功率/碳化硅</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">有研硅</span></span></span></p></li>
+</ul>
+<p><strong>板块梳理</strong></p>
+<ul>
+<li>国产算力/交换机：航天；电器；，；华丰科技；，；星网锐捷；，；锐捷网络</li>
+<li>功率/硅片：有研硅，TCL中环，东微半导，华微电子，士兰微</li>
+<li>半导体：半导体设备ETF，科创半导体设备ETF</li>
+<li>MLCC：风华高科</li>
+<li>玻璃基板：京东方A；现在是典型的杀流动性行情，买入➡️被套；➡️；止损；➡️；新低，抄底；➡️；被套；➡️；止损；➡️；新低。只不过之前只跌老登，科技没有痛感且还很享受，现在轮到科技，于是全都开始疼了；但是从短期杀跌情绪来看，这里确实接近拐点，本周内应该是能见到，如果是打算左侧博弈，还是可以看看的，；但如果是右侧，可以等阳线当天盘中去定性，也不迟；方向上目前容易聚焦的是科技，以往盯着国产，现在感觉可能前面的海外也会有动作，毕竟前几天国产是顺势的，可现在也不太顺了，但海外只会局限于个别方向，可以从相对抗跌里面选，因此上面暂时只增加了MLCC和玻璃；... ...</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">MLCC</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>A0030626030030</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>整体上，市场已经进入超跌阶段，开始有一些下跌抵抗了</li>
+<li>表现在盘面上便是，反弹的时候弹性挺大的，但下跌的时候也是非常恐慌，且这种恐慌跟前几天走势结合起来，给人非常绝望的即视感</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：MLCC</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-f00b1051cd">
+<summary><span class="account-name">国家能源局</span><span class="account-count">5 篇</span><span class="account-titles">高质量发展能源行︱调研团实地探访神东煤矿绿色低碳转型的生动实践、国家能源局召开中国—上海合作组织能源合作指导委员会第一次会议、高质量发展能源行︱探访全球独一份的百万吨级煤直接液化基地，黑乎乎变成清亮亮！ 等 5 篇</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-4924258afa">
+<h2>高质量发展能源行︱调研团实地探访神东煤矿绿色低碳转型的生动实践</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-08</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/bs6X5CiObU3fPG8uMONgSA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：高质量发展能源行︱调研团实地探访神东煤矿绿色低碳转型的生动实践</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>高质量发展能源行︱调研团实地探访神东煤矿绿色低碳转型的生动实践</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>微信扫一扫可打开此内容</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：高质量发展能源行︱调研团实地探访神东煤矿绿色低碳转型的生动实践</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-16f0c7a6c2">
+<h2>国家能源局召开中国—上海合作组织能源合作指导委员会第一次会议</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-08 19:59:55</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/MIeBzKh6uecr4oMoWNGwXw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：7月6日，国家能源局召开中国—上海合作组织能源合作指导委员会（简称指导委员会）第一次会议，贯彻落实习近平主席关于成立中国—上海合作组织能源合作平台和实施“双千”项目重要讲话精神，总结合作平台成立以来各项工作，研究谋划长远战略目标，明确近期重点工作任务，积极做好今年上合组织元首峰会能源领域支撑保障工作</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月6日，国家能源局召开中国—上海合作组织能源合作指导委员会（简称指导委员会）第一次会议，贯彻落实习近平主席关于成立中国—上海合作组织能源合作平台和实施“双千”项目重要讲话精神，总结合作平台成立以来各项工作，研究谋划长远战略目标，明确近期重点工作任务，积极做好今年上合组织元首峰会能源领域支撑保障工作</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>会议指出，中国—上海合作组织能源合作平台（简称合作平台）自2025年9月2日正式挂牌成立以来，在各方共同努力下，构建立体组织架构、建立健全规章制度、积极推动落实上合峰会成果、多渠道开展宣传宣介，各项工作扎实有序推进，取得了积极成效</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>会议要求，合作平台要明确近期重点工作，认真做好今年上合组织元首峰会能源领域支持保障</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>会议强调，各方要提高政治站位，充分认识合作平台工作的重要意义</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>同时要谋划长远战略目标，统筹区域能源互补优势，聚焦上合组织国家能源转型需求，为深化区域协同发展作出更大贡献</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>在“双千”项目组织实施、协同开展能力建设、加强重大问题研究、优化平台工作机制等方面抓好落实</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：会议指出，中国—上海合作组织能源合作平台（简称合作平台）自2025年9月2日正式挂牌成立以来，在各方共同努力下，构建立体组织架构、建立健全规章制度、积极推动落实上合峰会成果、多渠道开展宣传宣介，各项工作扎实有序推进，取得了积极成效</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="国家能源局召开中国—上海合作组织能源合作指导委员会第一次会议 截图3" loading="lazy"><figcaption>国家能源局召开中国—上海合作组织能源合作指导委员会第一次会议 截图3</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>7月6日，国家能源局召开中国—上海合作组织能源合作指导委员会（简称指导委员会）第一次会议，贯彻落实习近平主席关于成立中国—上海合作组织能源合作平台和实施“双千”项目重要讲话精神，总结合作平台成立以来各项工作，研究谋划长远战略目标，明确近期重点工作任务，积极做好今年上合组织元首峰会能源领域支撑保障工作</li>
+<li>会议指出，中国—上海合作组织能源合作平台（简称合作平台）自2025年9月2日正式挂牌成立以来，在各方共同努力下，构建立体组织架构、建立健全规章制度、积极推动落实上合峰会成果、多渠道开展宣传宣介，各项工作扎实有序推进，取得了积极成效</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+</ul>
+</article>
+<article class="account-article" id="article-28f6713b3d">
+<h2>高质量发展能源行︱探访全球独一份的百万吨级煤直接液化基地，黑乎乎变成清亮亮！</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-08 15:34:32</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/6DZo3T0pm_7fpBfJL5EUHA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：文章标题直接提到<mark class="evidence-mark">能源/电力</mark>相关方向：高质量发展能源行︱探访全球独一份的百万吨级煤直接液化基地，黑乎乎变成清亮亮！</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="高质量发展能源行︱探访全球独一份的百万吨级煤直接液化基地，黑乎乎变成清亮亮！ 截图2" loading="lazy"><figcaption>高质量发展能源行︱探访全球独一份的百万吨级煤直接液化基地，黑乎乎变成清亮亮！ 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-b0e21731e9">
+<h2>高质量发展能源行︱汽车加注“煤直接液化汽油”可以跑更远？</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-08 15:21:49</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/izjO9bWWJLndeFfoNqEM9A">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：7月7日，由中央网信办网络社会工作局、国家能源局综合司主办，国家能源集团、中国网协办的2026年“高质量发展能源行”网评引导活动在内蒙古鄂尔多斯启动</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月7日，由中央网信办网络社会工作局、国家能源局综合司主办，国家能源集团、中国网协办的2026年“高质量发展能源行”网评引导活动在内蒙古鄂尔多斯启动</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>在我国“富煤、贫油、少气”的资源禀赋约束下，煤炭是我国能源安全的“压舱石”与“稳定器”，其兜底保障作用长期内不可替代</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>据了解，该项目是国家“十五”重点项目之一，也是我国石油替代战略的重要成果，对保障能源安全具有重大的战略和现实意义</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>项目采用国家能源集团完全自主知识产权技术，以煤炭为原料，采用科技部“863”项目研发的纳米级催化剂，使煤粉在供氢溶剂的作用下，通过高温、高压液化反应及提质加工过程，生产优质的清洁油品</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>项目于2011年步入商业化运营，截至2025年，累计转化煤炭超4000万吨，生产油品1200万吨</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>北青报记者在项目现场了解到，目前项目生产出品的“煤直接液化汽油”已面向市场，当地百姓出行能以普通汽油的价格，为私家车加注煤制汽油</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：7月7日，由中央网信办网络社会工作局、国家能源局综合司主办，国家能源集团、中国网协办的2026年“高质量发展能源行”网评引导活动在内蒙古鄂尔多斯启动</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：“我们生产的煤基航天煤油，已通过相关试验证明可以作为航空航天领域的特种油品，先后助力天龙二号、长征十二号火箭发射。”项目相关负责人介绍，目前，我国是世界唯一掌握百万吨级煤直接液化关键技术的国家，项目实现了煤炭资源的就地、清洁、高效转化，是我国推进煤炭清洁转化利用，推进煤炭消费转型升级，促进煤化工产业高端化、多元化、低碳化发展的重要示范工程</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：消费：“我们生产的煤基航天煤油，已通过相关试验证明可以作为航空航天领域的特种油品，先后助力天龙二号、长征十二号火箭发射。”项目相关负责人介绍，目前，我国是世界唯一掌握百万吨级煤直接液化关键技术的国家，项目实现了煤炭资源的就地、清洁、高效转化，是我国推进煤炭清洁转化利用，推进煤炭消费转型升级，促进煤化工产业高端化、多元化、低碳化发展的重要示范工程</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="高质量发展能源行︱汽车加注“煤直接液化汽油”可以跑更远？ 截图5" loading="lazy"><figcaption>高质量发展能源行︱汽车加注“煤直接液化汽油”可以跑更远？ 截图5</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>7月7日，由中央网信办网络社会工作局、国家能源局综合司主办，国家能源集团、中国网协办的2026年“高质量发展能源行”网评引导活动在内蒙古鄂尔多斯启动</li>
+<li>项目采用国家能源集团完全自主知识产权技术，以煤炭为原料，采用科技部“863”项目研发的纳米级催化剂，使煤粉在供氢溶剂的作用下，通过高温、高压液化反应及提质加工过程，生产优质的清洁油品</li>
+<li>项目于2011年步入商业化运营，截至2025年，累计转化煤炭超4000万吨，生产油品1200万吨</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-aaf1acc298">
+<h2>人民日报︱从四个新数据读懂上半年中国经济</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-08 09:17:40</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/1NBWB65BmMMWsxrgaYjHgA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：待8月风电场全部投产后，年均可提供16亿千瓦时清洁电力，满足62.5万户家庭一年的用电需求</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>待8月风电场全部投产后，年均可提供16亿千瓦时清洁电力，满足62.5万户家庭一年的用电需求</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>从硅料、电池片、逆变器到整机、叶片、塔筒，中国拥有全球最完整的新能源装备产业链，全球约80%的光伏组件、60%的风电设备产自中国</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">逆变器/新能源电力电子</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国际数据公司（IDC）中国区总裁霍锦洁预计：到2029年，中国生成式AI市场规模将接近千亿美元，2024年至2029年复合增长率有望达到68%，成为全球最活跃的AI应用市场之一</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>前5个月，高技术产业投资同比增长4.5%，集成电路制造业、锂离子电池制造业投资分别增长11%、24.9%，信息服务业投资增长13.8%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>海关数据显示，今年前5个月，我国对非洲国家进出口1.14万亿元，历史同期首次突破1万亿元，同比增长18.2%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>1至5月，我国货物贸易进出口总值20.68万亿元，同比增长15.3%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：南海之滨，绿电风起。6月22日，龙源电力海南东方启源海风场9号机组成功并网发电。待8月风电场全部投产后，年均可提供16亿千瓦时清洁电力，满足62.5万户家庭一年的用电需求</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：鲜活的发展图景是写照，厚重的经济数据中有答案。电子信息、具身智能、<mark class="evidence-mark">商业航天</mark>等产业新意盎然，文旅、数字、绿色、健康消费方兴未艾，从发电装机容量的历史性突破，到日均词元调用量的爆发式增长，从消费品以旧换新销售额的日积月累，到货物进出口的聚沙成塔，中国经济稳中有进、向新向优</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：消费：鲜活的发展图景是写照，厚重的经济数据中有答案。电子信息、具身智能、<mark class="evidence-mark">商业航天</mark>等产业新意盎然，文旅、数字、绿色、健康消费方兴未艾，从发电装机容量的历史性突破，到日均词元调用量的爆发式增长，从消费品以旧换新销售额的日积月累，到货物进出口的聚沙成塔，中国经济稳中有进、向新向优</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：词元，大模型处理信息的最小单元。用户向人工智能（AI）的每一次提问、AI生成的每一段内容，都会产生词元的调用</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="人民日报︱从四个新数据读懂上半年中国经济 截图2" loading="lazy"><figcaption>人民日报︱从四个新数据读懂上半年中国经济 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">IDC</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>从发电装机容量超40亿千瓦看发展态势之稳</li>
+<li>6月22日，龙源电力海南东方启源海风场9号机组成功并网发电</li>
+<li>待8月风电场全部投产后，年均可提供16亿千瓦时清洁电力，满足62.5万户家庭一年的用电需求</li>
+<li>中国大唐山东郓城630℃国家电力示范项目日前投入商业运营，在燃煤火电领域首次实现热效突破50%</li>
+<li>从南到北，从风电到火电，一个个项目标注着电力工业向上攀登的足迹——截至5月底，全国累计发电装机容量40.1亿千瓦，同比增长11.0%，规模位居全球首位</li>
+<li>从10亿千瓦翻番至20亿千瓦，历经8年时间</li>
+<li>从20亿千瓦到30亿千瓦，历经4年4个月</li>
+<li>如今，我国累计发电装机容量从30亿千瓦到40亿千瓦，仅用了2年左右</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：IDC</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>
