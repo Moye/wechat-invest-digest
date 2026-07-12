@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-10 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-10</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>4 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-bc7ec57680">爱在冰川</a><a class="anchor-chip" href="#account-0554e99f50">梦游史中思的不定期更新</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">待补充</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>商业航天：卫星和发射能力规模化会摊薄通信、遥感和发射成本，降本点在复用、批量制造和组网效率。</li>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>光模块/CPO：高速互连降低数据中心内部通信瓶颈，降本点在传输能耗、端口密度和网络架构简化。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文暂无可直接判定的连续上涨线索。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>数据</td><td>合计 2篇/4次</td><td><span class="source-links"><a href="#account-bc7ec57680">爱在冰川</a>《<a href="#article-35ddafe520">2026-7-9 短线资金流</a>》3次；<a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-85d5addf6b">A股小反弹大暴跌 这个剧本过于狠毒</a>》1次</span></td></tr>
+<tr><td class="rank">2</td><td>商业航天</td><td>合计 1篇/6次</td><td><span class="source-links"><a href="#account-bc7ec57680">爱在冰川</a>《<a href="#article-ba306ebe08">ZMYK</a>》6次</span></td></tr>
+<tr><td class="rank">3</td><td>AI算力/大模型</td><td>合计 1篇/6次</td><td><span class="source-links"><a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-85d5addf6b">A股小反弹大暴跌 这个剧本过于狠毒</a>》6次</span></td></tr>
+<tr><td class="rank">4</td><td>创新药/医药</td><td>合计 1篇/2次</td><td><span class="source-links"><a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-85d5addf6b">A股小反弹大暴跌 这个剧本过于狠毒</a>》2次</span></td></tr>
+<tr><td class="rank">5</td><td>光模块/CPO</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-85d5addf6b">A股小反弹大暴跌 这个剧本过于狠毒</a>》1次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>科技成长/AI硬件、高波动/分歧交易</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>数据：原文未明确提及个股/公司</li>
+<li>商业航天：原文未明确提及个股/公司</li>
+<li>AI算力/大模型：原文未明确提及个股/公司</li>
+<li>创新药/医药：药明康德</li>
+<li>光模块/CPO：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-bc7ec57680" open>
+<summary><span class="account-name">爱在冰川</span><span class="account-count">3 篇</span><span class="account-titles">2026-7-9 数据、ZMYK、2026-7-9 短线资金流</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-9277df3919">
+<h2>2026-7-9 数据</h2>
+<ul>
+<li>公众号：爱在冰川</li>
+<li>发布时间：2026-07-10 00:00:38</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/DegDifOgoC52zrVvNRPhKw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：甚至倒在黎明前的一刻，错过了反弹，然后纠结反弹的持续性，又不肯硬着头皮追回来，等到涨的受不了了追回来又套住了..........</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>甚至倒在黎明前的一刻，错过了反弹，然后纠结反弹的持续性，又不肯硬着头皮追回来，等到涨的受不了了追回来又套住了..........</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>本复盘仅为鄙人的股市思考历程，非荐股，请勿跟票</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>有些股和板块，是主动反弹，甚至是带动市场反弹的，持续性就是会好一些，甚至可以追</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>不过下午我们异军突起，把韩国指数都带起来了</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>今晚复盘主要就是要给市场上的股和自己的持仓股做一下分类和对应的交易计划</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>有些股和板块，是在指数让有一种企稳感觉的时候，有资金想买股票又不愿意追领涨的这些不熟悉的股，而是会优先选择买自己调研充分对未来预期良好的股，这类股可能也会走出持续性</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：半导体设备、机器人、商业航天、电力、教育、先进封装/玻璃基板、存储/HBM、硅片；代表标的：002384 东山精密、002916 深南电路、600206 有研新材、600353 旭光电子、600667 太极实业、603986 兆易创新；截图上下文：_002841SZz | 视源服份| 1000] 。 52.13| 27178亿元| 2547亿元| 3 | 中报记增+交豆智能平板+A教育*机器人 | 。 135 。 | 3天3板|；002384 SZ | 东山精密| 。 10.00|...。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/4b0da2371b6aa9cb4036c2f5effcc0bf3bfbcec2.jpg" alt="2026-7-9 数据 截图2" loading="lazy"><figcaption>2026-7-9 数据 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：半导体设备、机器人、商业航天、电力、教育、先进封装/玻璃基板、存储/HBM、硅片；相关公司/标的：002384 东山精密、002916 深南电路、600206 有研新材、600353 旭光电子、600667 太极实业、603986 兆易创新</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-ba306ebe08">
+<h2>ZMYK</h2>
+<ul>
+<li>公众号：爱在冰川</li>
+<li>发布时间：2026-07-10 15:45:13</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/igjMlFAak-rzRdQbS6bo0Q">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：昨天市场情绪太高潮了，今天正常也是要回落一点的</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>昨天市场情绪太高潮了，今天正常也是要回落一点的</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>早上盘面虽然有震荡分化，至少还是挺良性的</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>抽了科技的血，科技股带指数下跌，指数不行<mark class="evidence-mark">商业航天</mark>也不行了，冲完也是一路回落，大家都落不着好了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>你们也知道A股现在量化的变态的emmmmmm有多变态了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>说好的高潮次日不接力，说好的反弹减仓，说好的我是天才交易员呢</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>万万没想到，火箭回收成功，回收的是我的账户啊</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：火箭回收成功，中午发酵，下午触发了量化， <mark class="evidence-mark">商业航天</mark>集体冲高， 你们也知道A股现在量化的变态的emmmmmm有多变态了， 直接抽血其他板块，科技股作为昨天量化扎堆冲的板块，今天就是扎堆抽血的地方</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：商业航天；截图上下文：商业航天 ”[创业板指 3842.73 -4.3796] 2155.30 2.049 和43.14 BRR 365 BR 152 1.。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/be7a89098d3d9e9b01fbd48e1f614ab1ab06378c.jpg" alt="ZMYK 截图2" loading="lazy"><figcaption>ZMYK 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：商业航天；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>抽了科技的血，科技股带指数下跌，指数不行商业航天也不行了，冲完也是一路回落，大家都落不着好了</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-35ddafe520">
+<h2>2026-7-9 短线资金流</h2>
+<ul>
+<li>公众号：爱在冰川</li>
+<li>发布时间：2026-07-10 00:00:38</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/-vrCCZHuTvOhFrzg1BZWAA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：此栏目为5年以上关注的老粉提供的参考数据，数据来自各大垂直网站，新手不建议观看此栏目，更不可单以此数据来作为交易依据</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>此栏目为5年以上关注的老粉提供的参考数据，数据来自各大垂直网站，新手不建议观看此栏目，更不可单以此数据来作为交易依据</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：数据：此栏目为5年以上关注的老粉提供的参考数据，数据来自各大垂直网站，新手不建议观看此栏目，更不可单以此数据来作为交易依据</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>此栏目为5年以上关注的老粉提供的参考数据，数据来自各大垂直网站，新手不建议观看此栏目，更不可单以此数据来作为交易依据</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-0554e99f50" open>
+<summary><span class="account-name">梦游史中思的不定期更新</span><span class="account-count">1 篇</span><span class="account-titles">A股小反弹大暴跌 这个剧本过于狠毒</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-85d5addf6b">
+<h2>A股小反弹大暴跌 这个剧本过于狠毒</h2>
+<ul>
+<li>公众号：梦游史中思的不定期更新</li>
+<li>发布时间：2026-07-10 15:55:31</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/LmWzYtl7-qX-yUK-JiZCag">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：6. ____是个外行，他根本不懂AI……</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>6. ____是个外行，他根本不懂AI……</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>大A股民考试2026年7月卷</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国产算力 国产半导体，今天也实在顶不住被带崩了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这市场生存率实在是有点低</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>我觉得科技股在国产算力这边会继续突围</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>第一 国产算力本身刚起来</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">寒武纪</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：数据：围绕国芯国模，整个数据中心配套 端侧芯片，都迎来阶段性节点</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：6. ____是个外行，他根本不懂AI……</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">创新药/医药</mark>：创新药倒是稳 贝达药业 <mark class="evidence-mark">药明康德</mark> 凯莱英 诺诚健华。老登股 中国船舶也是稳</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">药明康德</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">光模块/CPO</mark>：也太难了。股票公司不管好坏，只要没在风口，跌的稀里哗啦。 光纤 光模块 崩成这样。国产算力 国产半导体，今天也实在顶不住被带崩了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：半导体、先进封装/玻璃基板、存储/HBM、AI算力/大模型、洁净室/厂务、电子特气/六氟化钨；截图上下文：送入 || i | 用于半导体制造 ith 提供气体、输送、 国产DRAM；gag | PRBS 洁净室、半导体三务、系统集成 v；; Fea 半导体洁净室 Be =e 厂务与工艺系统 进一步带动。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/1a9892ef8f4f3b90dd84cada06bf02e85707a114.jpg" alt="A股小反弹大暴跌 这个剧本过于狠毒 截图1" loading="lazy"><figcaption>A股小反弹大暴跌 这个剧本过于狠毒 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：半导体、先进封装/玻璃基板、存储/HBM、AI算力/大模型、洁净室/厂务、电子特气/六氟化钨；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>大A股民考试2026年7月卷</li>
+<li>1. 事到如今，最对不起的，还是____</li>
+<li>2. 给我退款，我不玩了，我是____</li>
+<li>3. 现在____还来得及吗?</li>
+<li>4. 啊，是______来了！</li>
+<li>5. 请停止____，我要养活____</li>
+<li>6. ____是个外行，他根本不懂AI……</li>
+<li>7. 想起来了，我全都想起来了，我不是____，我不是____，我不是____，我是____！</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>一切假设基于美股不会持续暴跌，ai革命没有结束的前提下</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-12 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-12</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>1 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-fde9011285">老虎不是猫咪</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">待补充</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>机器人：机器人把 AI 能力落到物理执行端，降本点在核心零部件国产化、规模制造和控制算法优化。</li>
+<li>商业航天：卫星和发射能力规模化会摊薄通信、遥感和发射成本，降本点在复用、批量制造和组网效率。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文强势词提到 锂电材料/电解液。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>锂电材料/电解液</td><td>合计 1篇/3次</td><td><span class="source-links"><a href="#account-fde9011285">老虎不是猫咪</a>《<a href="#article-3048fd5cfb">7.12 比亏损更可怕的是失去信心</a>》3次</span></td></tr>
+<tr><td class="rank">2</td><td>AI算力/大模型</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-fde9011285">老虎不是猫咪</a>《<a href="#article-3048fd5cfb">7.12 比亏损更可怕的是失去信心</a>》1次</span></td></tr>
+<tr><td class="rank">3</td><td>机器人</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-fde9011285">老虎不是猫咪</a>《<a href="#article-3048fd5cfb">7.12 比亏损更可怕的是失去信心</a>》1次</span></td></tr>
+<tr><td class="rank">4</td><td>商业航天</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-fde9011285">老虎不是猫咪</a>《<a href="#article-3048fd5cfb">7.12 比亏损更可怕的是失去信心</a>》1次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>科技成长/AI硬件、涨价/周期修复</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>锂电材料/电解液：原文未明确提及个股/公司</li>
+<li>AI算力/大模型：原文未明确提及个股/公司</li>
+<li>机器人：原文未明确提及个股/公司</li>
+<li>商业航天：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-fde9011285" open>
+<summary><span class="account-name">老虎不是猫咪</span><span class="account-count">1 篇</span><span class="account-titles">7.12 比亏损更可怕的是失去信心</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-3048fd5cfb">
+<h2>7.12 比亏损更可怕的是失去信心</h2>
+<ul>
+<li>公众号：老虎不是猫咪</li>
+<li>发布时间：2026-07-12 14:03:03</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/MdcSNJ-Gc4KWC4FKSa40og">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：还有十几个点的试错空间，我会珍惜，昨晚趁着台风天在家又回顾了这几个月的盈亏，发现亏损还是亏在主观看好格局的票，为啥去年做了3倍最大回撤只有8%，因为去年不怎么做趋势，只打板，断板就跑，亏不多说，现在我断板都格局加仓了</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>还有十几个点的试错空间，我会珍惜，昨晚趁着台风天在家又回顾了这几个月的盈亏，发现亏损还是亏在主观看好格局的票，为啥去年做了3倍最大回撤只有8%，因为去年不怎么做趋势，只打板，断板就跑，亏不多说，现在我断板都格局加仓了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这个月给了我一个沉重的打击，因为前几月做的太顺了，天天新高，结果这个月直接给我亏了个25%，这3年来也没回撤过这么多</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>好多高位加仓一把奎光，合锻最多的时间单票赚了30%，后来最高点加了2倍仓位进去，清仓的时候倒亏几十万，长光最多赚了300多，后来高位加仓，割肉的时候倒亏150</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>想起自己从300做到800多的时候，全部都是一把梭哈，那时候每个月交易不了十几次，但是很稳，回撤也小</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>我其实吃一字吃过很多，上次SD题材，首板就买了荣信，兆驰，风语筑啥的，脑机买了普利特，南京熊猫，锆涨价买了东方锆业，三祥，但是为啥没赚到钱，没有雅下的效果，因为没上仓位，前一天没有仓位，手里都是杂毛杂七杂八的，第二天竞价没猛干，所以就没有雅下那种赚钱效应，解决办法只能提高审美多空仓，机会来临的时候才能有仓位重仓猛干，不然美女在你面前给你伟哥都没用啊</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">机器人</span><span class="sector-badge">商业航天</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>题材啥的我也不吹了，锂电是真的亏出翔了，去年和今年赚的锂电两天全部还回去了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">锂电材料/电解液</mark>：一开始重仓格局科技亏了把大的，后来满仓锂电上周吃了2天跌停，错过科技反弹，上周五上午回去科技又亏了把大的，直接被打蒙蔽</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：无偿推荐下我朋友公众号，00后刚毕业，做信息收集，涨停原因归纳等等，你们平时经常问什么小作文哪里看，消息哪里总结啥的，可以关注下他公众号。周末归纳的航天、国产算力啥的都还挺精炼的</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">机器人</mark>：也许彻底不做是一种解脱，每天像个<mark class="evidence-mark">机器人</mark>一样复盘找机会，看曲线，茶不思饭不想，有时候感觉自己疯了，是个赚钱机器，赚了倒还好，亏了就真的傻逼</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">机器人</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：无偿推荐下我朋友公众号，00后刚毕业，做信息收集，涨停原因归纳等等，你们平时经常问什么小作文哪里看，消息哪里总结啥的，可以关注下他公众号。周末归纳的航天、国产算力啥的都还挺精炼的</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>这个月给了我一个沉重的打击，因为前几月做的太顺了，天天新高，结果这个月直接给我亏了个25%，这3年来也没回撤过这么多</li>
+<li>一开始重仓格局科技亏了把大的，后来满仓锂电上周吃了2天跌停，错过科技反弹，上周五上午回去科技又亏了把大的，直接被打蒙蔽</li>
+<li>其实已经彻底没信心了，这波回撤搞的，我自己想了个办法，就是假如再亏一点，亏回5000，我就彻底不做了，贷款还一还，剩下的跑去逆回购和北交所打新，或者买红利ETF去</li>
+<li>还有十几个点的试错空间，我会珍惜，昨晚趁着台风天在家又回顾了这几个月的盈亏，发现亏损还是亏在主观看好格局的票，为啥去年做了3倍最大回撤只有8%，因为去年不怎么做趋势，只打板，断板就跑，亏不多说，现在我断板都格局加仓了</li>
+<li>好多高位加仓一把奎光，合锻最多的时间单票赚了30%，后来最高点加了2倍仓位进去，清仓的时候倒亏几十万，长光最多赚了300多，后来高位加仓，割肉的时候倒亏150</li>
+<li>为了保住这十几个点的试错空间，为了还有个梦，为了不去做红利打新的咸鱼，还是回复之前新题材的模式，只做最新的，做隔夜发酵顶一字的，中午发酵抢钱的，做竞价发酵30分秒板的，做盘中发酵新题材的，不连板就跑，看好的重仓一把梭哈，我现在已经不怕梭哈了，大不了去当打新狗当股息狗</li>
+<li>想起自己从300做到800多的时候，全部都是一把梭哈，那时候每个月交易不了十几次，但是很稳，回撤也小</li>
+<li>无偿推荐下我朋友公众号，00后刚毕业，做信息收集，涨停原因归纳等等，你们平时经常问什么小作文哪里看，消息哪里总结啥的，可以关注下他公众号</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>
