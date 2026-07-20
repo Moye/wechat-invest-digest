@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-13 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-13</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>9 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-c5568d88f0">寻找低估</a><a class="anchor-chip" href="#account-f00b1051cd">国家能源局</a><a class="anchor-chip" href="#account-a855312f36">ymj0418</a><a class="anchor-chip" href="#account-0554e99f50">梦游史中思的不定期更新</a><a class="anchor-chip" href="#account-fde9011285">老虎不是猫咪</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">台积电</span><span class="tag">DRAM</span><span class="tag">PCB</span><span class="tag">SMM</span><span class="tag">PEM</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>商业航天：卫星和发射能力规模化会摊薄通信、遥感和发射成本，降本点在复用、批量制造和组网效率。</li>
+<li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
+<li>PCB/电子布：高速板材和高阶 PCB 承接 AI 服务器升级，降本点在材料性能、良率和高密度布线效率。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文强势词提到 房地产。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>能源/电力</td><td>合计 6篇/130次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a> 4篇/126次；<a href="#account-a855312f36">ymj0418</a>《<a href="#article-797361051f">2026.07.13历史轮回</a>》3次；<a href="#account-fde9011285">老虎不是猫咪</a>《<a href="#article-542370d504">7.13 踩着刹车前进</a>》1次</span></td></tr>
+<tr><td class="rank">2</td><td>AI算力/大模型</td><td>合计 5篇/31次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a> 3篇/18次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-9ad1ae82f4">几个超预期业绩</a>》9次；<a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-7c6b669c83">预计明后天普反。国产算力（国芯国模）→云计算 越来越缩圈了</a>》4次</span></td></tr>
+<tr><td class="rank">3</td><td>商业航天</td><td>合计 4篇/11次</td><td><span class="source-links"><a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-9ad1ae82f4">几个超预期业绩</a>》6次；<a href="#account-a855312f36">ymj0418</a>《<a href="#article-797361051f">2026.07.13历史轮回</a>》2次；<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-8b4163ea5f">高质量发展能源行︱线上带你云逛能源一线发展新图景</a>》2次；<a href="#account-fde9011285">老虎不是猫咪</a>《<a href="#article-542370d504">7.13 踩着刹车前进</a>》1次</span></td></tr>
+<tr><td class="rank">4</td><td>存储/HBM</td><td>合计 3篇/6次</td><td><span class="source-links"><a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-9ad1ae82f4">几个超预期业绩</a>》3次；<a href="#account-fde9011285">老虎不是猫咪</a>《<a href="#article-542370d504">7.13 踩着刹车前进</a>》2次；<a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-7c6b669c83">预计明后天普反。国产算力（国芯国模）→云计算 越来越缩圈了</a>》1次</span></td></tr>
+<tr><td class="rank">5</td><td>消费</td><td>合计 2篇/4次</td><td><span class="source-links"><a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-9ad1ae82f4">几个超预期业绩</a>》3次；<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-d0c83abd78">李强主持召开经济形势专家和企业家座谈会</a>》1次</span></td></tr>
+<tr><td class="rank">6</td><td>化工</td><td>合计 2篇/3次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-8b4163ea5f">高质量发展能源行︱线上带你云逛能源一线发展新图景</a>》2次、<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-2fa260b204">几字弯下聚动能——“高质量发展能源行”调研综述</a>》1次</span></td></tr>
+<tr><td class="rank">7</td><td>锂电材料/电解液</td><td>合计 2篇/2次</td><td><span class="source-links"><a href="#account-a855312f36">ymj0418</a>《<a href="#article-797361051f">2026.07.13历史轮回</a>》1次；<a href="#account-fde9011285">老虎不是猫咪</a>《<a href="#article-542370d504">7.13 踩着刹车前进</a>》1次</span></td></tr>
+<tr><td class="rank">8</td><td>PCB/电子布</td><td>合计 1篇/5次</td><td><span class="source-links"><a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-9ad1ae82f4">几个超预期业绩</a>》5次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>涨价/周期修复、科技成长/AI硬件、高波动/分歧交易</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>能源/电力：原文未明确提及个股/公司</li>
+<li>AI算力/大模型：博杰股份</li>
+<li>商业航天：SpaceX</li>
+<li>存储/HBM：大族激光</li>
+<li>消费：原文未明确提及个股/公司</li>
+<li>化工：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：台积电、DRAM、PCB、SMM</li>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>复核重点实体的公告、纪要或财报口径：PEM</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-c5568d88f0" open>
+<summary><span class="account-name">寻找低估</span><span class="account-count">1 篇</span><span class="account-titles">几个超预期业绩</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-9ad1ae82f4">
+<h2>几个超预期业绩</h2>
+<ul>
+<li>公众号：寻找低估</li>
+<li>发布时间：2026-07-13 21:43:58</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/okBieZdOWycK2bLQhyabtA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：亨通光电：预计上半年净利润同比增长87%-121%，Q2净利润预计19.1亿-24.63亿，环比增长72%-122%。光纤板块为主要利润增量来源。预期22-25亿的都有，PCB、CCL业绩还不错：，沪电股份：上半年净利同比预增68%-78%，Q2净利润预计15.88亿-17.58亿，环比增长27.86%-41.55%。中值略超预期，生益科技：预计上半年净利润同比增长117%-131%。Q2净利润预计19.41亿-21.4亿，环比增长67%-84%。超预期</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">亨通光电</mark>：预计上半年净利润同比增长87%-121%，Q2净利润预计19.1亿-24.63亿，环比增长72%-122%。光纤板块为主要利润增量来源。预期22-25亿的都有，PCB、CCL业绩还不错：，<mark class="evidence-mark">沪电股份</mark>：上半年净利同比预增68%-78%，Q2净利润预计15.88亿-17.58亿，环比增长27.86%-41.55%。中值略超预期，<mark class="evidence-mark">生益科技</mark>：预计上半年净利润同比增长117%-131%。Q2净利润预计19.41亿-21.4亿，环比增长67%-84%。超预期</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">PCB/电子布</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">生益科技</span><span class="company-badge">沪电股份</span><span class="company-badge">亨通光电</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">深南电路</mark>：预计上半年净利润同比增长54%-69%。Q2净利润预计12.5亿-14.5亿，环比增长46%-70%，<mark class="evidence-mark">金安国纪</mark>：预计上半年净利7.30亿元-8.20亿元，同比增长936%-1063%。Q2净利润预计5.28亿-6.18亿，环比增长161%-206%。超预期，<mark class="evidence-mark">华正新材</mark>：预计上半年净利同比增长263%-380%。Q2净利润预计1.24亿-1.74亿，环比增长301%-462%。覆铜板行业需求提升积极开拓市场适时产能扩张实现量价齐升，封测：，<mark class="evidence-mark">华天科技</mark>：预计上半年净利润同比增长231%-275%，Q2净利润预计6.63亿-7.63亿，环比增长664%-779%。扣非</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">PCB/电子布</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">华天科技</span><span class="company-badge">金安国纪</span><span class="company-badge">深南电路</span><span class="company-badge">华正新材</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">博杰股份</mark>：预计上半年净利同比增长643%-816% AI服务器相关测试解决方案及MLCC设备业务规模与效益同步提升，Q2净利润预计0.84亿-1.19亿，环比增长27%-80%。超预期，<mark class="evidence-mark">立昂微</mark>：预计上半年净利润8500万元同比扭亏为盈 12英寸<mark class="evidence-mark">硅片</mark>产销量大幅增长，Q2净利润预计0.78亿，超预期，<mark class="evidence-mark">北京君正</mark>：预计上半年净利同比增长431%-531%，Q2净利润预计7.6亿-9.63亿，环比增长138%-202%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">硅片</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">晶振/被动元件</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">博杰股份</span><span class="company-badge">北京君正</span><span class="company-badge">立昂微</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月16日，长鑫申购（预计7月末上市）</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月16-24日，APEC数字和人工智能部长会议及数字周</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月17-20日，世界人工智能大会</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月31日，第二届中国国际游戏开发者大会</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">机器人</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：一、AI大会 7月17号，世界人工智能大会重磅开幕：</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：4、<mark class="evidence-mark">商业航天</mark>： 长征五号遥十四火箭运抵文昌 将执行嫦娥七号任务 <mark class="evidence-mark">SpaceX</mark>星舰周四进行第13次试飞 20颗V3卫星将首次部署</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">SpaceX</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">存储/HBM</mark>：存储芯片需求旺盛DRAM产品售价涨幅较大 ...... 其 他</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：消费：1、gwy批复《扩大消费“十五五”规划》： 到2030年居民消费率明显提高 社会消费品零售总额达到60万亿元左右</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">PCB/电子布</mark>：<mark class="evidence-mark">生益科技</mark>：预计上半年净利润同比增长117%-131%。Q2净利润预计19.41亿-21.4亿，环比增长67%-84%。超预期</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">PCB/电子布</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">生益科技</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：AI算力/大模型；截图上下文：习近平将出席2026世界人工智能大会暨人工智能全球治；理高级别会议开幕式并发表主旨讲话。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/f59eec5dcfc13a6e550badb0cae2e1f201b798ab.jpg" alt="几个超预期业绩 截图1" loading="lazy"><figcaption>几个超预期业绩 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：AI算力/大模型；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">台积电</span><span class="tag">DRAM</span><span class="tag">PCB</span><span class="tag">SMM</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>7月17号，世界人工智能大会重磅开幕：</li>
+<li>亨通光电：预计上半年净利润同比增长87%-121%</li>
+<li>Q2净利润预计19.1亿-24.63亿，环比增长72%-122%</li>
+<li>预期22-25亿的都有</li>
+<li>沪电股份：上半年净利同比预增68%-78%</li>
+<li>Q2净利润预计15.88亿-17.58亿，环比增长27.86%-41.55%</li>
+<li>生益科技：预计上半年净利润同比增长117%-131%</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：台积电、DRAM、PCB、SMM</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-f00b1051cd">
+<summary><span class="account-name">国家能源局</span><span class="account-count">5 篇</span><span class="account-titles">李强主持召开经济形势专家和企业家座谈会、高质量发展能源行︱线上带你云逛能源一线发展新图景、几字弯下聚动能——“高质量发展能源行”调研综述 等 5 篇</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-d0c83abd78">
+<h2>李强主持召开经济形势专家和企业家座谈会</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-13 21:03:34</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/uTVI1X9mqDuMuSO85ksToQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：大家认为，在国际形势变乱交织、动荡加剧的背景下，上半年我国经济总体平稳，新动能加快壮大，以自身发展的确定性有力应对外部环境的不确定性</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>大家认为，在国际形势变乱交织、动荡加剧的背景下，上半年我国经济总体平稳，新动能加快壮大，以自身发展的确定性有力应对外部环境的不确定性</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>中共中央政治局常委、国务院总理李强7月13日下午主持召开经济形势专家和企业家座谈会，听取对当前经济形势和下一步经济工作的意见建议</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>在听取专家和企业家发言后，李强说，今年以来，在以习近平同志为核心的党中央坚强领导下，各地区各部门认真落实国家宏观政策，克服各种不利因素，努力促进经济持续向好，着力推动高质量发展</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要全面客观认识当前经济形势，既充分肯定取得的成绩，又清醒看到存在的问题，对经济运行中出现的新变化新动向，要深入分析思考，善于研机析理，更好地趋利避害</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>李强希望广大企业家坚定发展信心，深入挖掘需求升级和产业升级机遇，持续做强实体经济，为稳就业促发展多作贡献</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>要系统施策释放内需潜力，抓好服务业扩能提质政策落实，扩大优质服务供给，加快培育消费新增长点</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：消费：李强强调，做好下半年经济工作，直接关系全年发展目标实现，关系“十五五”良好开局。要按照党中央决策部署，保持高质量发展战略定力，加大逆周期调节力度，用好用足存量政策，预研储备增量政策，切实巩固拓展经济稳中向好态势。要系统施策释放内需潜力，抓好服务业扩能提质政策落实，扩大优质服务供给，加快培育消费新增长点。坚持投资于物和投资于人协同发力，着力推进重大基础设施网络建设，加强教育、培训等人力资本投入，完善医疗、养老、托育等公共服务，在改善民生中扩大内需。要推进新旧动能平稳接续转换，加快制造业数智化转型，推动先进制造业...</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/0c2bf5aec72fd03812402ea86e8c4c41c671eedd.jpg" alt="李强主持召开经济形势专家和企业家座谈会 截图2" loading="lazy"><figcaption>李强主持召开经济形势专家和企业家座谈会 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>中共中央政治局常委、国务院总理李强7月13日下午主持召开经济形势专家和企业家座谈会，听取对当前经济形势和下一步经济工作的意见建议</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>虽然仍面临一些风险挑战，但高质量发展的后劲持续增强</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+</ul>
+</article>
+<article class="account-article" id="article-8b4163ea5f">
+<h2>高质量发展能源行︱线上带你云逛能源一线发展新图景</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-13 16:30:01</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/_-bSRfK3prwPteDwJRPJIw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：7月7日，2026“高质量发展能源行”网评引导活动于内蒙古鄂尔多斯正式启动</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月7日，2026“高质量发展能源行”网评引导活动于内蒙古鄂尔多斯正式启动</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>站内56条股道交错排布，日均编组45列万吨运煤专列，一列重载列车运力就抵得上300辆重卡，平均每4分钟就有一趟列车进出</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>中核集团“国铀一号”示范工程位于鄂尔多斯盆地纳岭沟铀矿床，是中核集团和中国铀业“十四五”天然铀产能建设的核心重点工程，通过集成自动化控制、远程操控及大数据智能分析等前沿技术，国铀一号彻底重构了传统开采模式，标志着我国天然铀产业正式迈入高质量发展新阶段</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>站内自研大流量加氢设备，加注速度翻倍，整套控制系统大幅提升作业效率，设备能抗零下30℃极寒</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>项目总装机容量86万千瓦，其中一期36万千瓦风光储电场（风电30万千瓦、光伏6万千瓦，配套6.48万千瓦/25.92万千瓦时（18%/4h）新型储能系统）于2025年12月全容量并网发电，二、三期50万千瓦项目计划于2026年底建成</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>坐落鄂尔多斯的氢能装备实证平台，堪称国产氢能设备专属“标准化考场”，专门破解行业“实验室测试达标、规模化使用故障频发”的痛点</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：原文在活动/会议前瞻中列出：7月7日，2026“高质量发展能源行”网评引导活动于内蒙古鄂尔多斯正式启动。，可作为<mark class="evidence-mark">能源/电力</mark>方向的事件催化</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：华电和林格尔数据中心 绿色能源示范 项目 全国首个“点对点”直供数据中心的</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：坐落于鄂尔多斯的煤直接液化项目，是全球唯一、我国自主打造的百万吨级煤直接液化工程，也是守护国家能源安全的示范项目。我国具有“富煤、贫油、少气”的能源结构特点，石油对外依存度较高，这套完全自主研发的技术，能把本地煤炭转化为清洁油品，可以降低对进口油气的依赖。项目在高温高压环境下给煤炭加氢液化，产出的油品具有密度大，热值与热稳定性高，硫、氮、芳烃含量低等独特优势，燃烧污染物更少，而且还能制成航天煤油，已助力多款火箭成功发射，为煤炭资源清洁高效利用提供了可复制的样板</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：化工：坐落于鄂尔多斯的煤直接液化项目，是全球唯一、我国自主打造的百万吨级煤直接液化工程，也是守护国家能源安全的示范项目。我国具有“富煤、贫油、少气”的能源结构特点，石油对外依存度较高，这套完全自主研发的技术，能把本地煤炭转化为清洁油品，可以降低对进口油气的依赖。项目在高温高压环境下给煤炭加氢液化，产出的油品具有密度大，热值与热稳定性高，硫、氮、芳烃含量低等独特优势，燃烧污染物更少，而且还能制成航天煤油，已助力多款火箭成功发射，为煤炭资源清洁高效利用提供了可复制的样板</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：2026人年；et — oe — ee A ef]。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/f440d15cb22a091d80e2a222131bc4d70444d4cc.jpg" alt="高质量发展能源行︱线上带你云逛能源一线发展新图景 截图2" loading="lazy"><figcaption>高质量发展能源行︱线上带你云逛能源一线发展新图景 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="高质量发展能源行︱线上带你云逛能源一线发展新图景 截图29" loading="lazy"><figcaption>高质量发展能源行︱线上带你云逛能源一线发展新图景 截图29</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">PEM</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>7月7日，2026“高质量发展能源行”网评引导活动于内蒙古鄂尔多斯正式启动</li>
+<li>位于陕西神木的哈拉沟生态示范基地，是全国首个采煤沉陷区山水林田湖草沙综合修复样板，6万亩绿洲告别“只种树、只治水”的单一修复老路</li>
+<li>以绿色、科技、人文为主题，统筹山水林田湖草沙全要素综合治理，打造7大功能分区、10大主题园区与100处示范点位，让矿井废水、煤矸石等全都变废为宝</li>
+<li>站内56条股道交错排布，日均编组45列万吨运煤专列，一列重载列车运力就抵得上300辆重卡，平均每4分钟就有一趟列车进出</li>
+<li>依托包神、神朔重载铁路，这条运输通道三十余年累计运煤超50亿吨，默默支撑着千家万户的日常用电与冬日暖意</li>
+<li>坐落于鄂尔多斯的巴图塔加氢站，是国内首家服务重载铁路的加氢站点，2024年正式投运，每日可供应500公斤氢能，专门为氢燃料电池混动调车机车、接触网作业车补能</li>
+<li>站内自研大流量加氢设备，加注速度翻倍，整套控制系统大幅提升作业效率，设备能抗零下30℃极寒</li>
+<li>配套氢能机车运行全程零尾气，每年可减少800吨二氧化碳排放，调车机车动力性能国际领先，高空作业车可无死角检修铁路设施</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：PEM</li>
+</ul>
+</article>
+<article class="account-article" id="article-2fa260b204">
+<h2>几字弯下聚动能——“高质量发展能源行”调研综述</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-13 16:30:01</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/OsUpjwgAHwxagNH50expFQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：两矿全年商品煤产能稳定在6000万吨以上，高峰月外运量突破550万吨，优质动力煤直发全国二十余省区电厂与工业基地，为制造业、民生用电托底稳价</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>两矿全年商品煤产能稳定在6000万吨以上，高峰月外运量突破550万吨，优质动力煤直发全国二十余省区电厂与工业基地，为制造业、民生用电托底稳价</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>能源是国民经济的命脉，推动绿色转型、深耕科技创新，是传统能源产业迈向高质量发展的必然选择</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>25%提升至85%以上，复垦率实现100%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>“未来国内核电用铀需求大幅增长，这套技术可向北方各大盆地推广，大幅提升天然铀自给率</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>”项目攻克高精度导航、多设备协同调度等核心技术，配套智能边坡监测、煤流自动分选、车辆智能维保多重创新应用，在国内同类露天矿中规模、技术成熟度均位居前列，形成完整国产化无人矿山标准体系，可供全国露天矿区复制推广</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>以实干筑基、以绿色赋能、以科创破局，这片北疆热土持续激活能源产业新动能，不断夯实国家能源安全供应底座，为全国能源行业高质量、可持续转型升级注入源源不断的新动力</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：——“高质量发展能源行”调研综述 能源是国民经济的命脉，推动绿色转型、深耕科技创新，是传统能源产业迈向高质量发展的必然选择。 “高质量发展能源行”活动走进黄河几字弯环抱的鄂尔多斯盆地。这里煤、油、气、铀等能源资源丰富，是我国举足轻重的综合能源基地</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：华电全国一体化算力网络和林格尔绿电直供项目 华电全国一体化算力网络和林格尔绿电直供项目，为全国首个点对点风光储直供数据中心示范工程。项目搭建专属输电线路，将风电、光伏清洁电力直接输送数据中心，配套储能平抑新能源出力波动，实现算力负荷绿电稳定供给</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：化工：整套煤直接液化工艺完全自主可控，稳定产出航煤、柴油等清洁油品，有效对冲国际油价波动、海运通道受限带来的油气供给风险</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="几字弯下聚动能——“高质量发展能源行”调研综述 截图11" loading="lazy"><figcaption>几字弯下聚动能——“高质量发展能源行”调研综述 截图11</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>300吨无人驾驶矿卡往来穿梭，电铲巨臂起落间原煤源源不断送入洗选系统</li>
+<li>两矿全年商品煤产能稳定在6000万吨以上，高峰月外运量突破550万吨，优质动力煤直发全国二十余省区电厂与工业基地，为制造业、民生用电托底稳价</li>
+<li>”依托智能化、集约化开采模式，神东煤炭核定产能达1.74亿吨，建成国内首个亿吨、两亿吨级煤炭生产基地</li>
+<li>3400万吨，曾创下单日装车28列、外运煤炭近11.8万吨的佳绩</li>
+<li>56股道、232副道岔实时可视化，万吨重载列车在此完成解编重组</li>
+<li>包神铁路集团朱盖塔站区副主任刘鑫指着车流数据介绍：“全年编组万吨列车超16300列，高峰单日编组58列，80%煤炭经黄骅港下海供往华东、华南</li>
+<li>4分钟就有一列车从这里出发或返回，打通蒙陕煤田到东部用能区的运输堵点，扩容后直接将神朔线整体运能提升至3亿吨，极端天气、用电峰值时全力疏通煤流，守住能源保供运输生命线</li>
+<li>25%提升至85%以上，复垦率实现100%</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>整套煤直接液化工艺完全自主可控，稳定产出航煤、柴油等清洁油品，有效对冲国际油价波动、海运通道受限带来的油气供给风险</li>
+<li>“从前三班倒驾驶矿卡，风吹日晒风险高，如今在集控中心远程监控，安全与效率同步提升</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+</ul>
+</article>
+<article class="account-article" id="article-bb19d7c754">
+<h2>国家发展改革委关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-13 09:07:12</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/M-QUeyxhSIfteXW3MASrsQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：发改价格〔2026〕1077号</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>发改价格〔2026〕1077号</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>输配电价、区域电网输电价格及有关事项的通知</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>为贯彻落实党中央、国务院关于深化输配电价改革、强化自然垄断环节价格监管的要求，按照《国家发展改革委关于印发输配电定价成本监审办法、省级电网输配电价定价办法、区域电网输电价格定价办法和跨省跨区专项工程输电价格定价办法的通知》（发改价格规〔2025〕1490号）有关规定，核定第四监管周期省级电网输配电价、区域电网输电价格，自2026年8月1日起执行，具体见附件</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>省级价格主管部门要精心组织、周密安排，密切监测输配电价执行情况，发现问题及时报告我委（价格司）</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>电网企业要按照相关要求，严格执行本通知核定的输配电价，对各电压等级的资产、费用、收入、输配售电量、负荷、用户报装容量、线损率、投资计划完成进度等与输配电价相关的基础数据进行统计归集，每年5月底前报我委（价格司）和省级价格主管部门</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2.第四监管周期区域电网输电价格表</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：国家发展改革委关于第四监管周期省级电网 输配电价、区域电网输电价格及有关事项的通知 发改价格〔2026〕1077号 各省、自治区、直辖市发展改革委，国家电网有限公司、中国南方电网有限责任公司、内蒙古电力（集团）有限责任公司：</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：附件1；北京电网输配电价表。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/a2295c50131bfb23a3fa46ec7ff95d872fe9be89.jpg" alt="国家发展改革委关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知 截图2" loading="lazy"><figcaption>国家发展改革委关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：附件2；第四监管周期区域电网输电价格表。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/244a42a716c1edb78ab2c9cef0264aba1c43128b.jpg" alt="国家发展改革委关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知 截图3" loading="lazy"><figcaption>国家发展改革委关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知 截图3</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="国家发展改革委关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知 截图4" loading="lazy"><figcaption>国家发展改革委关于第四监管周期省级电网输配电价、区域电网输电价格及有关事项的通知 截图4</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>发改价格〔2026〕1077号</li>
+<li>为贯彻落实党中央、国务院关于深化输配电价改革、强化自然垄断环节价格监管的要求，按照《国家发展改革委关于印发输配电定价成本监审办法、省级电网输配电价定价办法、区域电网输电价格定价办法和跨省跨区专项工程输电价格定价办法的通知》（发改价格规〔2025〕1490号）有关规定，核定第四监管周期省级电网输配电价、区域电网输电价格，自2026年8月1日起执行，具体见附件</li>
+<li>电网企业要按照相关要求，严格执行本通知核定的输配电价，对各电压等级的资产、费用、收入、输配售电量、负荷、用户报装容量、线损率、投资计划完成进度等与输配电价相关的基础数据进行统计归集，每年5月底前报我委（价格司）和省级价格主管部门</li>
+<li>附件：1.省级电网输配电价表</li>
+<li>2.第四监管周期区域电网输电价格表</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-ec2a9e23ed">
+<h2>媒体报道︱台风“巴威”过境 浙江有序推进全省灾后抢修复电</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-13 10:00:00</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/ba3rU1K1VHJ7YABkpq_A6g">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：今年第9号台风“巴威”于7月11日23时20分前后在浙江台州玉环市坎门街道沿海登陆，12日0时在浙江温州乐清市清江镇沿海二次登陆，12日11时移出浙江进入安徽宁国境内</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>今年第9号台风“巴威”于7月11日23时20分前后在浙江台州玉环市坎门街道沿海登陆，12日0时在浙江温州乐清市清江镇沿海二次登陆，12日11时移出浙江进入安徽宁国境内</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>“巴威”正面袭击浙江，持续的强风和暴雨给浙江带来重创，10级以上大风持续了29小时，8级以上大风覆盖全省70%的面积</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月12日上午，国网宁波市奉化区供电公司输变电运检人员第一时间奔赴各变电站开展灾后特巡及设备抢修工作，逐站排查漂浮物和积水隐患，及时消除35千伏西坞变设备缺陷，同步开展防汛设施复查及设备状态核验，全力保障变电设备安全稳定运行，保障主网设备健康运行</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>8时20分抢修正式展开，供电员工全力压缩故障处置时长，最终在15时恢复周边群众正常用电</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月12日凌晨3时，丽水市莲都区最偏远的峰源乡所辖赛坑线因大树压线发生接地故障，微电网3秒内自动切换，封阳村安置点供电丝毫未受影响，电压平稳如常，30多位转移的村民在梦乡中没有察觉</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>“我真不知道该怎么办了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">水利/防汛减灾</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：“巴威”正面袭击浙江，持续的强风和暴雨给浙江带来重创，10级以上大风持续了29小时，8级以上大风覆盖全省70%的面积。台风过境后，浙江电网全面转入灾后抢修复电阶段。国家能源局、国家电网公司高度重视浙江此次抗击台风工作，要求全省一盘棋打赢抗台风保供电攻坚战，国网浙江电力统筹调配全省1400余支、共1.8万余人的抢修队伍，在严守安全底线的前提下，分重点、按次序推进复电工作</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：能源/电力；截图上下文：9 国家购有局短信公众号是国家能源局新闻言传、 信息公开、服务群众的重要平台。；= .。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/995cccbe5ef9511180ebb9f0ca3437d4dd6a5779.jpg" alt="媒体报道︱台风“巴威”过境 浙江有序推进全省灾后抢修复电 截图2" loading="lazy"><figcaption>媒体报道︱台风“巴威”过境 浙江有序推进全省灾后抢修复电 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：能源/电力；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>今年第9号台风“巴威”于7月11日23时20分前后在浙江台州玉环市坎门街道沿海登陆，12日0时在浙江温州乐清市清江镇沿海二次登陆，12日11时移出浙江进入安徽宁国境内</li>
+<li>“巴威”正面袭击浙江，持续的强风和暴雨给浙江带来重创，10级以上大风持续了29小时，8级以上大风覆盖全省70%的面积</li>
+<li>国家能源局、国家电网公司高度重视浙江此次抗击台风工作，要求全省一盘棋打赢抗台风保供电攻坚战，国网浙江电力统筹调配全省1400余支、共1.8万余人的抢修队伍，在严守安全底线的前提下，分重点、按次序推进复电工作</li>
+<li>7月12日拂晓，台州湾新区供电分公司负责人便带队奔赴受灾现场</li>
+<li>在台风二次登陆地乐清，10千伏雁东线12日凌晨发生线路设备故障，倒伏树木封堵进山道路</li>
+<li>清晨6时，经评估具备抢修条件后，国网乐清市供电公司巡线人员第一时间进山开展全线排查工作，逐段核查线路设备运行状态，并锁定故障点位</li>
+<li>8时20分抢修正式展开，供电员工全力压缩故障处置时长，最终在15时恢复周边群众正常用电</li>
+<li>7月12日上午，国网宁波市奉化区供电公司输变电运检人员第一时间奔赴各变电站开展灾后特巡及设备抢修工作，逐站排查漂浮物和积水隐患，及时消除35千伏西坞变设备缺陷，同步开展防汛设施复查及设备状态核验，全力保障变电设备安全稳定运行，保障主网设备健康运行</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>考虑到山区湿滑、登高作业风险大的客观情况，作业人员提前为脚扣加装防滑防护配件</li>
+<li>正值血蚶上市关键期，一旦长时间缺氧，整塘血蚶将面临死亡风险，一年的辛苦投入可能化为乌有</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-a855312f36" open>
+<summary><span class="account-name">ymj0418</span><span class="account-count">1 篇</span><span class="account-titles">2026.07.13历史轮回</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-797361051f">
+<h2>2026.07.13历史轮回</h2>
+<ul>
+<li>公众号：ymj0418</li>
+<li>发布时间：2026-07-13 23:34:00</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/rkzAqz80S8aYJR1h84USKA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：24年初的连板行情，7，8月的大众，深圳华强投机行情</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>24年初的连板行情，7，8月的大众，深圳华强投机行情</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>19年2月金融爆发，3月各种投机，oled,数字孪生，氢能源</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>24年9月底金融爆发，10月华为，上海电气，四川长虹</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>20年21年都是各种波段机会，半导体,白酒，光伏，锂电池，20年初还穿插了一把疫情投机行情</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>25年底26年1月，<mark class="evidence-mark">商业航天</mark>，ai应用预热，4月开始ai硬件疯狗浪</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>按时间线，21年疯狗浪结束，22年初有波投机机会房地产，然后才是各种腰斩新能源的5，6月反弹双头行情</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：19年2月金融爆发，3月各种投机，oled,数字孪生，氢能源</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：25年底26年1月，<mark class="evidence-mark">商业航天</mark>，ai应用预热，4月开始ai硬件疯狗浪</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">锂电材料/电解液</mark>：20年21年都是各种波段机会，半导体,白酒，光伏，锂电池，20年初还穿插了一把疫情投机行情</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：存储/HBM；截图上下文：@；3723.52 高 开 3809.86 量 2.27亿。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/edf62666edeccd96406b3c90d173d097724a286e.jpg" alt="2026.07.13历史轮回 截图1" loading="lazy"><figcaption>2026.07.13历史轮回 截图1</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：存储/HBM；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>回看19，20年，当时还没这波造富效应大</li>
+<li>18年上半年次新投机行情，年底创投行情</li>
+<li>24年初的连板行情，7，8月的大众，深圳华强投机行情</li>
+<li>19年2月金融爆发，3月各种投机，oled,数字孪生，氢能源</li>
+<li>24年9月底金融爆发，10月华为，上海电气，四川长虹</li>
+<li>20年21年都是各种波段机会，半导体,白酒，光伏，锂电池，20年初还穿插了一把疫情投机行情</li>
+<li>25年也是光模块，国产，5月穿插了一把稳定币行情</li>
+<li>21年5,6月预热三峡，润和大容量投机</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-0554e99f50" open>
+<summary><span class="account-name">梦游史中思的不定期更新</span><span class="account-count">1 篇</span><span class="account-titles">预计明后天普反。国产算力（国芯国模）→云计算 越来越缩圈了</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-7c6b669c83">
+<h2>预计明后天普反。国产算力（国芯国模）→云计算 越来越缩圈了</h2>
+<ul>
+<li>公众号：梦游史中思的不定期更新</li>
+<li>发布时间：2026-07-13 18:37:21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/ho4MZ3is2MKqbxrxAnoVGQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：今天被韩国存储带崩了，大部分公司已经跌30-40%</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>今天被韩国存储带崩了，大部分公司已经跌30-40%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>整体来说跌幅已经非常大了，如果没有外围情绪影响，内盘也不至于跌这么猛</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>市场国产算力这个独苗也分化很重了，连续两三天冲高回落士气影响非常大</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>短期反弹应该一触即发了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>云计算是后于整个国产算力起来的，理论上是没走完的</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>等反弹后再看，目前坚持一下 国产算力+云计算</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：市场国产算力这个独苗也分化很重了，连续两三天冲高回落士气影响非常大</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">存储/HBM</mark>：今天被韩国存储带崩了，大部分公司已经跌30-40%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>截图识别：主要板块：存储/HBM；截图上下文：季报预计公；布时间 公司。OCR 结果可能受截图清晰度影响，需以原图复核。</p></li>
+</ul>
+<figure class="figure"><img src="assets/images/5197fb8c1ed2e677e9d5980a3cfa3ed3f48a8cfa.jpg" alt="预计明后天普反。国产算力（国芯国模）→云计算 越来越缩圈了 截图2" loading="lazy"><figcaption>预计明后天普反。国产算力（国芯国模）→云计算 越来越缩圈了 截图2</figcaption></figure>
+<ul>
+<li>利好板块/公司：利好板块：存储/HBM；相关公司/标的：截图未识别到明确公司名称</li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>今天被韩国存储带崩了，大部分公司已经跌30-40%</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-fde9011285" open>
+<summary><span class="account-name">老虎不是猫咪</span><span class="account-count">1 篇</span><span class="account-titles">7.13 踩着刹车前进</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-542370d504">
+<h2>7.13 踩着刹车前进</h2>
+<ul>
+<li>公众号：老虎不是猫咪</li>
+<li>发布时间：2026-07-13 20:37:02</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/cpVWQCni9x0QwEJYDqTGSA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：回顾这波行情，一直有人在踩刹车，从6月底每天晚上近百个异动澄清，到上周四中午沐曦异动澄清，都有一只无形的大手在拉着这个市场，让这个车开慢点，但是车速这么快一直踩刹车，刹车片会不会磨没了，会不会车毁人亡</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>回顾这波行情，一直有人在踩刹车，从6月底每天晚上近百个异动澄清，到上周四中午沐曦异动澄清，都有一只无形的大手在拉着这个市场，让这个车开慢点，但是车速这么快一直踩刹车，刹车片会不会磨没了，会不会车毁人亡</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>都是来赌博的，赌输了真不能怪别人</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>今天又亏出翔了，上周五买的科技今天好几个跌停走的，买的航天又是-15，-16割的，试错空间越来越小了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>上周我说我要去北交所打新，我现在一想假如行情不好了，IPO都发不出来，我去打毛个新</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">能源/电力</span><span class="sector-badge">商业航天</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>我周末看别人说21年的时候光伏和锂电在大幅扩产，然后21年底指数从3700跳水到2800，求求你们不要扩产了，再扩产科技牛就扩没了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">大族激光</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>最近的行情我感觉是扩产牛，什么行业扩产什么行业就跌停，行情从<mark class="evidence-mark">大族激光</mark>扩产光纤开始就越来越惨，光纤直接A杀，存储海力士华为扩产，存储直接A杀，接下去什么扩产？</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">大族激光</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：最近的行情我感觉是扩产牛，什么行业扩产什么行业就跌停，行情从<mark class="evidence-mark">大族激光</mark>扩产光纤开始就越来越惨，光纤直接A杀，存储海力士华为扩产，存储直接A杀，接下去什么扩产？我周末看别人说21年的时候光伏和锂电在大幅扩产，然后21年底指数从3700跳水到2800，求求你们不要扩产了，再扩产科技牛就扩没了。真的要去长江电力当股息佬了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">能源/电力</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">大族激光</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">商业航天</mark>：今天又亏出翔了，上周五买的科技今天好几个跌停走的，买的航天又是-15，-16割的，试错空间越来越小了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">商业航天</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">存储/HBM</mark>：最近的行情我感觉是扩产牛，什么行业扩产什么行业就跌停，行情从<mark class="evidence-mark">大族激光</mark>扩产光纤开始就越来越惨，光纤直接A杀，存储海力士华为扩产，存储直接A杀，接下去什么扩产？我周末看别人说21年的时候光伏和锂电在大幅扩产，然后21年底指数从3700跳水到2800，求求你们不要扩产了，再扩产科技牛就扩没了。真的要去长江电力当股息佬了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">能源/电力</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">大族激光</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">锂电材料/电解液</mark>：最近的行情我感觉是扩产牛，什么行业扩产什么行业就跌停，行情从<mark class="evidence-mark">大族激光</mark>扩产光纤开始就越来越惨，光纤直接A杀，存储海力士华为扩产，存储直接A杀，接下去什么扩产？我周末看别人说21年的时候光伏和锂电在大幅扩产，然后21年底指数从3700跳水到2800，求求你们不要扩产了，再扩产科技牛就扩没了。真的要去长江电力当股息佬了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">存储/HBM</span><span class="sector-badge">能源/电力</span><span class="sector-badge">锂电材料/电解液</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">大族激光</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>回顾这波行情，一直有人在踩刹车，从6月底每天晚上近百个异动澄清，到上周四中午沐曦异动澄清，都有一只无形的大手在拉着这个市场，让这个车开慢点，但是车速这么快一直踩刹车，刹车片会不会磨没了，会不会车毁人亡</li>
+<li>今天又亏出翔了，上周五买的科技今天好几个跌停走的，买的航天又是-15，-16割的，试错空间越来越小了</li>
+<li>又是排队3年上IPO，现在行情好，大股东才能减持，才能IPO</li>
+<li>我周末看别人说21年的时候光伏和锂电在大幅扩产，然后21年底指数从3700跳水到2800，求求你们不要扩产了，再扩产科技牛就扩没了</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>

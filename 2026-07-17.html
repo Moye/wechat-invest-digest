@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-17 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-17</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>6 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-0e0ccdbbe6">北向牧风</a><a class="anchor-chip" href="#account-f00b1051cd">国家能源局</a><a class="anchor-chip" href="#account-a855312f36">ymj0418</a><a class="anchor-chip" href="#account-0554e99f50">梦游史中思的不定期更新</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">K3</span><span class="tag">Ryan</span><span class="tag">Greenblatt</span><span class="tag">Kimi</span><span class="tag">Opus</span><span class="tag">Mythos</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文暂无可直接判定的连续上涨线索。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>AI算力/大模型</td><td>合计 3篇/19次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-88c46d441e">2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</a>》10次、<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-0cdaf5b4a1">习近平出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话</a>》8次；<a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-8d54c1d119">K3 的第一轮反馈...</a>》1次</span></td></tr>
+<tr><td class="rank">2</td><td>能源/电力</td><td>合计 2篇/21次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-88c46d441e">2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</a>》12次、<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-b17c4da327">人民日报︱全国统一电力市场建设按下“加速键”</a>》9次</span></td></tr>
+<tr><td class="rank">3</td><td>K3 的第一轮反馈</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-8d54c1d119">K3 的第一轮反馈...</a>》1次</span></td></tr>
+<tr><td class="rank">4</td><td>能源双向赋能”分论坛在沪举办</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-88c46d441e">2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</a>》1次</span></td></tr>
+<tr><td class="rank">5</td><td>年一轮回</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-a855312f36">ymj0418</a>《<a href="#article-fb6303564d">2026.07.17 3年一轮回</a>》1次</span></td></tr>
+<tr><td class="rank">6</td><td>创新药/医药</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-de4503fd9e">大家都一样 出口 国产 都一样跌麻</a>》1次</span></td></tr>
+<tr><td class="rank">7</td><td>大家都一样 出口 国产 都一样跌麻</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-de4503fd9e">大家都一样 出口 国产 都一样跌麻</a>》1次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>科技成长/AI硬件、涨价/周期修复</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>AI算力/大模型：原文未明确提及个股/公司</li>
+<li>能源/电力：原文未明确提及个股/公司</li>
+<li>K3 的第一轮反馈：原文未明确提及个股/公司</li>
+<li>能源双向赋能”分论坛在沪举办：原文未明确提及个股/公司</li>
+<li>年一轮回：原文未明确提及个股/公司</li>
+<li>创新药/医药：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>复核重点实体的公告、纪要或财报口径：K3、Ryan、Greenblatt、Kimi、Opus、Mythos</li>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-0e0ccdbbe6" open>
+<summary><span class="account-name">北向牧风</span><span class="account-count">1 篇</span><span class="account-titles">K3 的第一轮反馈...</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-8d54c1d119">
+<h2>K3 的第一轮反馈...</h2>
+<ul>
+<li>公众号：北向牧风</li>
+<li>发布时间：2026-07-17</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/gNc4NgeQBfwkLjRwPQNQLg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：K3 的第一轮反馈...</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>K3 的第一轮反馈...</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>K3 是昨晚两边都收完盘之后才上的，海外这一夜的反馈已经出了一批</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>1/ 整体反馈是：超出一些预期Redwood 的 Ryan Greenblatt，说的比较实： Kimi K3 的表现虽然超出了一些预期，但并非极其出色</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>我初步估计，它的整体实用性和易用性与 Opus 4.8 相当，而整体能力则略高于 Opus 4.8</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>作为预训练模型，它的水平大概介于 4.8 和 Mythos 之间</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>后面还有一段，是他自己也说了不会发生的假设，但角度有意思：这种差距大概可以通过蒸馏以及算法泄漏/扩散来缩小</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：K3 是昨晚两边都收完盘之后才上的，海外这一夜的反馈已经出了一批。挑几条。1/ 整体反馈是：超出一些预期Redwood 的 Ryan Greenblatt，说的比较实： Kimi K3 的表现虽然超出了一些预期，但并非极其出色。我初步估计，它的整体实用性和易用性与 Opus 4.8 相当，而整体能力则略高于 Opus 4.8。作为预训练模型，它的水平大概介于 4.8 和 Mythos 之间。 后面还有一段，是他自己也说了不会发生的假设，但角度有意思：这种差距大概可以通过蒸馏以及算法泄漏/扩散来缩小。假设美国完...</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：K3 的第一轮反馈：K3 的第一轮反馈... K3 是昨晚两边都收完盘之后才上的，海外这一夜的反馈已经出了一批。挑几条。1/ 整体反馈是：超出一些预期Redwood 的 Ryan Greenblatt，说的比较实： Kimi K3 的表现虽然超出了一些预期，但并非极其出色。我初步估计，它的整体实用性和易用性与 Opus 4.8 相当，而整体能力则略高于 Opus 4.8。作为预训练模型，它的水平大概介于 4.8 和 Mythos 之间。 后面还有一段，是他自己也说了不会发生的假设，但角度有意思：这种差距大概可以通过蒸馏以及算法泄漏/…</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">K3</span><span class="tag">Ryan</span><span class="tag">Greenblatt</span><span class="tag">Kimi</span><span class="tag">Opus</span><span class="tag">Mythos</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>K3 的第一轮反馈...</li>
+<li>K3 是昨晚两边都收完盘之后才上的，海外这一夜的反馈已经出了一批</li>
+<li>1/ 整体反馈是：超出一些预期Redwood 的 Ryan Greenblatt，说的比较实： Kimi K3 的表现虽然超出了一些预期，但并非极其出色</li>
+<li>我初步估计，它的整体实用性和易用性与 Opus 4.8 相当，而整体能力则略高于 Opus 4.8</li>
+<li>作为预训练模型，它的水平大概介于 4.8 和 Mythos 之间</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核重点实体的公告、纪要或财报口径：K3、Ryan、Greenblatt、Kimi、Opus、Mythos</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-f00b1051cd" open>
+<summary><span class="account-name">国家能源局</span><span class="account-count">3 篇</span><span class="account-titles">2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办、习近平出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话、人民日报︱全国统一电力市场建设按下“加速键”</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-88c46d441e">
+<h2>2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-17</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/2a57kp2WNxG-rwrK-DcQHw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：7月17日，2026世界人工智能大会“人工智能与能源双向赋能”分论坛在上海举办</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月17日，2026世界人工智能大会“人工智能与能源双向赋能”分论坛在上海举办</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>论坛由国家能源局主办，国家电网公司协办</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国家能源局党组书记、局长王宏志，上海市人大常委会党组成员、副主任宗明出席论坛并致辞</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>大家一致认为，人工智能与能源双向赋能是应对全球</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国家能源局党组成员、副局长宋宏坤作主旨演讲</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：能源双向赋能”分论坛在沪举办：2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>2026世界人工智能大会“人工智能与能源双向赋能”分论坛在沪举办</li>
+<li>7月17日，2026世界人工智能大会“人工智能与能源双向赋能”分论坛在上海举办</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-0cdaf5b4a1">
+<h2>习近平出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-17</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/Vh0FFrbMuZmCC6kyo3gTmQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：7月17日上午，国家主席习近平在上海世界会客厅出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月17日上午，国家主席习近平在上海世界会客厅出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>习近平出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>习近平同与会的国家元首、政府首脑、国际组织负责人及各国代表团团长集体合影</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>在热烈的掌声中，习近平发表题为《携手构建公正合理的全球人工智能治理体系》的主旨讲话</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>习近平指出，当前，世界百年变局加速演进，新一轮科技革命和产业变革加速突破，全球人工智能技术创新进入前所未有的活跃期，既蕴含巨大机遇，也面临治理挑战</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>人类不得不直面时代之问：当机器开始思考，人类如何与之相处？</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：习近平出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>习近平出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话</li>
+<li>7月17日上午，国家主席习近平在上海世界会客厅出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-b17c4da327">
+<h2>人民日报︱全国统一电力市场建设按下“加速键”</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-17</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/D-T-g2UvDqGHJc8rQSro8A">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：人民日报︱全国统一电力市场建设按下“加速键”</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>人民日报︱全国统一电力市场建设按下“加速键”</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>西北的“风光”化作凉风，为大湾区的灼灼夏日带来清凉</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>“十五五”规划纲要提出，基本建成全国统一电力市场体系</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>云贵高原的水电奔赴长三角，带动生产线高速运转……正值迎峰度夏，在电力保供中，跨区域电力交易高效运行发挥了重要作用</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>“十四五”时期，我国市场化交易电量年均增速16.0%，2025年全年市场化交易电量较“十三五”末增长109.7%，市场化交易电量占全社会用电量比重连续4年超过60%，电力资源的配置方式已发生根本改变</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>到2025年底，省级电力现货市场基本实现全覆盖，全国统一电力市场体系初步建成，“计划电”逐步转向“市场电”，电力“血脉”更加畅通</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：人民日报︱全国统一电力市场建设按下“加速键” 西北的“风光”化作凉风，为大湾区的灼灼夏日带来清凉；云贵高原的水电奔赴长三角，带动生产线高速运转……正值迎峰度夏，在电力保供中，跨区域电力交易高效运行发挥了重要作用。“十五五”规划纲要提出，基本建成全国统一电力市场体系。“十四五”时期，我国市场化交易电量年均增速16.0%，2025年全年市场化交易电量较“十三五”末增长109.7%，市场化交易电量占全社会用电量比重连续4年超过60%，电力资源的配置方式已发生根本改变。到2025年底，省级电力现货市场基本实现全覆盖，全国…</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>“十四五”时期，我国市场化交易电量年均增速16.0%，2025年全年市场化交易电量较“十三五”末增长109.7%，市场化交易电量占全社会用电量比重连续4年超过60%，电力资源的配置方式已发生根本改变</li>
+<li>到2025年底，省级电力现货市场基本实现全覆盖，全国统一电力市场体系初步建成，“计划电”逐步转向“市场电”，电力“血脉”更加畅通</li>
+<li>数据来源：《2025年度中国电力市场发展报告》等</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-a855312f36" open>
+<summary><span class="account-name">ymj0418</span><span class="account-count">1 篇</span><span class="account-titles">2026.07.17 3年一轮回</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-fb6303564d">
+<h2>2026.07.17 3年一轮回</h2>
+<ul>
+<li>公众号：ymj0418</li>
+<li>发布时间：2026-07-17</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/yAVkEEuT9-W4U2AqHK-A8g">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：2026.07.17 3年一轮回</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026.07.17 3年一轮回</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：年一轮回：2026.07.17 3年一轮回 今年成也应用败也应用成熟市场的估值还是太随机了没想到抗了一把质谱能从9000亿港币市值跌到5000亿港币市值解禁后买入第二天赚30%到现在亏快40%也就不到10天太刺激了没啥好说的，参考前几天的观点，节奏大于一切持股赚钱的行情已经过去了，后面考验认知，交易能力了创业板很久没这么跌了，周一会修复，但持续性不看好，节奏，还是节奏题外话，中际这个票我看了一下历史，这么牛的票我就23年买过一次，还有今天就两次也是很有意思23年买在101块，现在买在970块股价翻了快10倍，但我同样买不到…</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>2026.07.17 3年一轮回</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-0554e99f50" open>
+<summary><span class="account-name">梦游史中思的不定期更新</span><span class="account-count">1 篇</span><span class="account-titles">大家都一样 出口 国产 都一样跌麻</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-de4503fd9e">
+<h2>大家都一样 出口 国产 都一样跌麻</h2>
+<ul>
+<li>公众号：梦游史中思的不定期更新</li>
+<li>发布时间：2026-07-17</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/-_wL68SmtYHY4g-3WhwhFw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：大家都一样 出口 国产 都一样跌麻</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>大家都一样 出口 国产 都一样跌麻</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这个节点，只要你仓位高，你就是错</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>我就是那个错的最离谱的，这次还是逃不开补跌的命运</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>浪潮信息  紫光 瑞芯微 昆仑万维 沐曦 摩尔 全部崩盘</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>没啥好说的，市场需要比较长时间去修复了，降低预期</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>作者: 梦游史中思的不定期更新</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">创新药/医药</mark>：这个节点，只要你仓位高，你就是错。我就是那个错的最离谱的，这次还是逃不开补跌的命运。浪潮信息  紫光 瑞芯微 昆仑万维 沐曦 摩尔 全部崩盘。创新药同样暴跌。没啥好说的，市场需要比较长时间去修复了，降低预期。看看哪个方向能突围。巧妇难为无米之炊。周末了，回归生活吧。 作者: 梦游史中思的不定期更新</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：大家都一样 出口 国产 都一样跌麻：大家都一样 出口 国产 都一样跌麻 这个节点，只要你仓位高，你就是错。我就是那个错的最离谱的，这次还是逃不开补跌的命运。浪潮信息  紫光 瑞芯微 昆仑万维 沐曦 摩尔 全部崩盘。创新药同样暴跌。没啥好说的，市场需要比较长时间去修复了，降低预期。看看哪个方向能突围。巧妇难为无米之炊。周末了，回归生活吧。 作者: 梦游史中思的不定期更新</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">创新药/医药</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>

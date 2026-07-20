@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-19 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-19</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>8 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-c5568d88f0">寻找低估</a><a class="anchor-chip" href="#account-cafa2d599d">盘口逻辑拆解</a><a class="anchor-chip" href="#account-f00b1051cd">国家能源局</a><a class="anchor-chip" href="#account-a849ebeb02">韭菜的一天</a><a class="anchor-chip" href="#account-98077dbdaf">安静拆主线</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">待补充</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文强势词提到 月17日 强势联动板块复盘。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>AI算力/大模型</td><td>合计 3篇/9次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-083f399c9a">焦点访谈丨算电协同 迎峰度夏</a>》7次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-a68f8f8178">周末关注：国产模型冲塔</a>》1次；<a href="#account-cafa2d599d">盘口逻辑拆解</a>《<a href="#article-dfdb2ed653">下周看法</a>》1次</span></td></tr>
+<tr><td class="rank">2</td><td>能源/电力</td><td>合计 2篇/5次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-3f213d55d0">能源科普︱300吨巨兽无人驾驶 这个煤矿的“大脑”藏在地下几公里外</a>》3次、<a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-083f399c9a">焦点访谈丨算电协同 迎峰度夏</a>》2次</span></td></tr>
+<tr><td class="rank">3</td><td>周末关注：国产模型冲塔</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-a68f8f8178">周末关注：国产模型冲塔</a>》1次</span></td></tr>
+<tr><td class="rank">4</td><td>下周看法</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-cafa2d599d">盘口逻辑拆解</a>《<a href="#article-dfdb2ed653">下周看法</a>》1次</span></td></tr>
+<tr><td class="rank">5</td><td>焦点访谈丨算电协同 迎峰度夏</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-083f399c9a">焦点访谈丨算电协同 迎峰度夏</a>》1次</span></td></tr>
+<tr><td class="rank">6</td><td>归来</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-a849ebeb02">韭菜的一天</a>《<a href="#article-0f4ec7dc24">归来</a>》1次</span></td></tr>
+<tr><td class="rank">7</td><td>周复盘：DS新模型</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-b23817a641">周复盘：DS新模型</a>》1次</span></td></tr>
+<tr><td class="rank">8</td><td>月17日 涨停板复盘</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-98077dbdaf">安静拆主线</a>《<a href="#article-bb08e0b40f">7月17日 涨停板复盘</a>》1次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>高波动/分歧交易、科技成长/AI硬件</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>AI算力/大模型：原文未明确提及个股/公司</li>
+<li>能源/电力：原文未明确提及个股/公司</li>
+<li>周末关注：国产模型冲塔：原文未明确提及个股/公司</li>
+<li>下周看法：原文未明确提及个股/公司</li>
+<li>焦点访谈丨算电协同 迎峰度夏：原文未明确提及个股/公司</li>
+<li>归来：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-a849ebeb02" open>
+<summary><span class="account-name">韭菜的一天</span><span class="account-count">1 篇</span><span class="account-titles">归来</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-0f4ec7dc24">
+<h2>归来</h2>
+<ul>
+<li>公众号：韭菜的一天</li>
+<li>发布时间：2026-07-19</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/FhXL6nDo5ZWRKTjmQiBYYw">点击查看原文</a></li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-c5568d88f0" open>
+<summary><span class="account-name">寻找低估</span><span class="account-count">1 篇</span><span class="account-titles">周末关注：国产模型冲塔</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-a68f8f8178">
+<h2>周末关注：国产模型冲塔</h2>
+<ul>
+<li>公众号：寻找低估</li>
+<li>发布时间：2026-07-19</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/jwei695abLQ-MCT9ySfWKw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：新易盛：Q2净利润42.2-52.2亿，预期42亿左右天孚通信：Q2净利润6.32亿元 ~ 8.12亿元，环比++28% ~ +64%，预期5-6亿协创数据：Q2净利润预计7.496亿-11.496亿，环比变动0%-53%</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">新易盛</mark>：Q2净利润42.2-52.2亿，预期42亿左右天孚通信：Q2净利润6.32亿元 ~ 8.12亿元，环比++28% ~ +64%，预期5-6亿<mark class="evidence-mark">协创数据</mark>：Q2净利润预计7.496亿-11.496亿，环比变动0%-53%</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">新易盛</span><span class="company-badge">协创数据</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>盘面炒作往往由某个新闻而始，每天3-5分钟的碎片阅读，你就能对次日重点做到心中有数，领先市场半步</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">新易盛</span><span class="company-badge">协创数据</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>………以下为周末新闻汇总：一、AI中报周末一批非强制披露的创业板公司集中预增，这个节点多少有些呵护的意思</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">新易盛</span><span class="company-badge">协创数据</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>盘面炒作往往由某个新闻而始，每天3-5分钟的碎片阅读，你就能对次日重点做到心中有数，领先市场半步</li>
+<li>新易盛：Q2净利润42.2-52.2亿，预期42亿左右天孚通信：Q2净利润6.32亿元 ~ 8.12亿元，环比++28% ~ +64%，预期5-6亿协创数据：Q2净利润预计7.496亿-11.496亿，环比变动0%-53%</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-cafa2d599d" open>
+<summary><span class="account-name">盘口逻辑拆解</span><span class="account-count">1 篇</span><span class="account-titles">下周看法</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-dfdb2ed653">
+<h2>下周看法</h2>
+<ul>
+<li>公众号：盘口逻辑拆解</li>
+<li>发布时间：2026-07-19</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/HaaUBJZVpdOyDCH42CUJSg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：上周此时，指数走弱要破位但还没开始跌，当时我们给出的看法是，不乐观，整体以防守为主</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>上周此时，指数走弱要破位但还没开始跌，当时我们给出的看法是，不乐观，整体以防守为主</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>照例还是看看几个主要指数</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>再加上周三四五已经连跌三天，所以，下周大的预期是：下周初应该能见到这波加速向下跌的拐点，届时会有一个小节点</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>经过本周五天，现在指数基本都已经向下加速开始跌了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>其二，高开回落震荡，但跌不动</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>通常是两种情况：其一，日内分时跳水，叠加冰点</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>再加上周三四五已经连跌三天，所以，下周大的预期是：下周初应该能见到这波加速向下跌的拐点，届时会有一个小节点</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-f00b1051cd" open>
+<summary><span class="account-name">国家能源局</span><span class="account-count">2 篇</span><span class="account-titles">能源科普︱300吨巨兽无人驾驶 这个煤矿的“大脑”藏在地下几公里外、焦点访谈丨算电协同 迎峰度夏</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-3f213d55d0">
+<h2>能源科普︱300吨巨兽无人驾驶 这个煤矿的“大脑”藏在地下几公里外</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-19</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/_3Q91o6-Yd_b04Wk-gcFPg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：能源科普︱300吨巨兽无人驾驶 这个煤矿的“大脑”藏在地下几公里外</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>能源科普︱300吨巨兽无人驾驶 这个煤矿的“大脑”藏在地下几公里外</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：能源科普︱300吨巨兽无人驾驶 这个煤矿的“大脑”藏在地下几公里外</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>能源科普︱300吨巨兽无人驾驶 这个煤矿的“大脑”藏在地下几公里外</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-083f399c9a">
+<h2>焦点访谈丨算电协同 迎峰度夏</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-19</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/1joj34u_gf7nkwX56Bolpw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：目前，人工智能正以前所未有的深度与广度重塑全球发展格局，而如何平衡算力发展与电力保障，也是各界重点关注的前沿课题</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>目前，人工智能正以前所未有的深度与广度重塑全球发展格局，而如何平衡算力发展与电力保障，也是各界重点关注的前沿课题</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>焦点访谈丨算电协同 迎峰度夏</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月10日，全国用电负荷今年以来首次创历史新高，最高达到15.18亿千瓦，较历史极值增加1000万千瓦</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>和往年不同的是，除了传统的用电大户，还有不断拔地而起、规模越来越庞大的算力中心</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>我们平时用的大模型运算就是在这样的机柜里完成的，一个普通机柜满负荷运行的情况，一天需要240度电，相当于一</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>今年夏天，算力的使用如火如荼</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：目前，人工智能正以前所未有的深度与广度重塑全球发展格局，而如何平衡算力发展与电力保障，也是各界重点关注的前沿课题。今年夏天来得早，也来得猛。7月10日，全国用电负荷今年以来首次创历史新高，最高达到15.18亿千瓦，较历史极值增加1000万千瓦。和往年不同的是，除了传统的用电大户，还有不断拔地而起、规模越来越庞大的算力中心。那么，算力与电力应该如何协同均衡优质发展呢？记者对此展开了调查。今年夏天，算力的使用如火如荼。在国家数据中心十大集群之一的广东韶关集群，记者看到一排排机柜正在满负荷运行。我们平时用的大模型运...</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：目前，人工智能正以前所未有的深度与广度重塑全球发展格局，而如何平衡算力发展与电力保障，也是各界重点关注的前沿课题。今年夏天来得早，也来得猛。7月10日，全国用电负荷今年以来首次创历史新高，最高达到15.18亿千瓦，较历史极值增加1000万千瓦。和往年不同的是，除了传统的用电大户，还有不断拔地而起、规模越来越庞大的算力中心。那么，算力与电力应该如何协同均衡优质发展呢？记者对此展开了调查。今年夏天，算力的使用如火如荼。在国家数据中心十大集群之一的广东韶关集群，记者看到一排排机柜正在满负荷运行。我们平时用的大模型运...</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：焦点访谈丨算电协同 迎峰度夏：焦点访谈丨算电协同 迎峰度夏 目前，人工智能正以前所未有的深度与广度重塑全球发展格局，而如何平衡算力发展与电力保障，也是各界重点关注的前沿课题。今年夏天来得早，也来得猛。7月10日，全国用电负荷今年以来首次创历史新高，最高达到15.18亿千瓦，较历史极值增加1000万千瓦。和往年不同的是，除了传统的用电大户，还有不断拔地而起、规模越来越庞大的算力中心。那么，算力与电力应该如何协同均衡优质发展呢？记者对此展开了调查。今年夏天，算力的使用如火如荼。在国家数据中心十大集群之一的广东韶关集群，记者看到一排排机柜正在满负荷…</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>7月10日，全国用电负荷今年以来首次创历史新高，最高达到15.18亿千瓦，较历史极值增加1000万千瓦</li>
+<li>我们平时用的大模型运算就是在这样的机柜里完成的，一个普通机柜满负荷运行的情况，一天需要240度电，相当于一</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-98077dbdaf" open>
+<summary><span class="account-name">安静拆主线</span><span class="account-count">3 篇</span><span class="account-titles">周复盘：DS新模型、7月17日 涨停板复盘、7月17日 强势联动板块复盘</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-b23817a641">
+<h2>周复盘：DS新模型</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-19</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/aRh-LwDjGg_blzvHUYcLlw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：股市有风险，投资需谨慎</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>股市有风险，投资需谨慎</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">新易盛</span><span class="company-badge">协创数据</span><span class="company-badge">铜冠铜箔</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这是在7.15的常规时间点之后 主动发，业绩披露新规之</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">新易盛</span><span class="company-badge">协创数据</span><span class="company-badge">铜冠铜箔</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>【重要提示】本文仅是个人交易复盘笔记</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">新易盛</span><span class="company-badge">协创数据</span><span class="company-badge">铜冠铜箔</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>文中所提及任何观点及个股仅是举例</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">新易盛</span><span class="company-badge">协创数据</span><span class="company-badge">铜冠铜箔</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：周复盘：DS新模型：周复盘：DS新模型 【重要提示】本文仅是个人交易复盘笔记。文中所提及任何观点及个股仅是举例。股市有风险，投资需谨慎。一、周末密集发业绩<mark class="evidence-mark">新易盛</mark>：上半年净利同比预增78%-103% （超预期）天孚通信：预计上半年净利润同比增长25%-45%<mark class="evidence-mark">铜冠铜箔</mark>：上半年净利同比预增486%-544%东田微：预计净利润增长幅度为67.71%至87.44% <mark class="evidence-mark">协创数据</mark>：预计净利润15.00亿元至19.00亿元，增长幅度为2.47倍至3.4倍星宸科技：预计中报净利润8.200亿元至9.000亿元，增长幅度为5.84倍至6.5倍……周末发了…</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">新易盛</span><span class="company-badge">协创数据</span><span class="company-badge">铜冠铜箔</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>这是在7.15的常规时间点之后 主动发，业绩披露新规之</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>股市有风险，投资需谨慎</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-bb08e0b40f">
+<h2>7月17日 涨停板复盘</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-19</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/Gf-tr9vTyVW5Mu2zRev_Ag">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-aade82519e">
+<h2>7月17日 强势联动板块复盘</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-19</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/bA43rqffsOiI0lksIPanXg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：7月17日 强势联动板块复盘</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月17日 强势联动板块复盘</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>7月17日 强势联动板块复盘</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>
