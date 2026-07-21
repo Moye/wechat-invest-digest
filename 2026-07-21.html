@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公众号文章摘要 2026-07-21 · 公众号投资简报</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --line: #e2e8f0;
+  --tag: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-border: #22c55e;
+  --risk-bg: #fef2f2;
+  --risk-border: #ef4444;
+  --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.08), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--primary); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.anchor-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.88);
+  backdrop-filter: blur(14px);
+}
+.brand { color: #0f172a; font-size: 15px; font-weight: 800; letter-spacing: 0; }
+.topbar nav a { color: var(--muted); font-size: 14px; font-weight: 700; }
+.container {
+  width: min(100%, 848px);
+  margin: 0 auto;
+  padding: 34px 24px 64px;
+}
+.report {
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.report-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 800;
+}
+h1, h2, h3 { color: #0f172a; line-height: 1.25; letter-spacing: 0; }
+h1 { margin: 16px 0 28px; font-size: clamp(30px, 5vw, 42px); font-weight: 850; }
+h2 {
+  margin: 34px 0 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary);
+  font-size: 23px;
+  font-weight: 820;
+}
+h3 { margin: 26px 0 12px; font-size: 18px; font-weight: 800; }
+p { margin: 14px 0; }
+ul { margin: 12px 0 18px; padding-left: 1.25rem; }
+li { margin: 8px 0; }
+.summary-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.summary-list > li {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.label { display: inline-block; margin-right: 6px; color: #334155; font-weight: 800; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--tag);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 720;
+  white-space: nowrap;
+}
+.core-impact {
+  list-style: none;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+}
+.core-impact p {
+  margin: 0;
+}
+.core-impact p + p {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+.core-label {
+  color: #0f172a;
+  font-weight: 850;
+}
+.impact-label {
+  color: #1d4ed8;
+  font-weight: 850;
+}
+.impact-groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 2px;
+}
+.impact-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.impact-group-label {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 850;
+}
+.sector-badge,
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+.sector-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+.company-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.impact-plain {
+  color: #64748b;
+  font-size: 13px;
+}
+.evidence-mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: #fef08a;
+  box-shadow: inset 0 -1px 0 rgba(202, 138, 4, 0.28);
+  color: #713f12;
+  font-weight: 850;
+}
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 10px;
+  color: #0f172a;
+  font-weight: 850;
+}
+.subsection-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+.insight, .risk { margin: 18px 0; padding: 14px 16px; border-radius: 12px; }
+.insight {
+  background: var(--success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  border-left: 4px solid var(--success-border);
+}
+.risk {
+  background: var(--risk-bg);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-left: 4px solid var(--risk-border);
+}
+.risk p, .risk ul { margin-bottom: 0; }
+.figure {
+  margin: 14px 0 22px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  margin: 12px 0 22px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 14px; }
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #eff6ff; color: #1e40af; font-size: 13px; font-weight: 850; }
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:last-child td { border-bottom: 0; }
+.rank { color: var(--primary); font-weight: 850; white-space: nowrap; }
+.account-archive { margin-top: 38px; }
+details.account-group {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+details.account-group summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 118px 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+details.account-group summary::-webkit-details-marker { display: none; }
+details.account-group summary::after {
+  content: "展开 ▾";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 850;
+}
+details.account-group[open] summary::after { content: "收起 ▴"; }
+.account-name { color: #0f172a; font-weight: 850; }
+.account-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 820;
+}
+.account-titles {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account-articles {
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+.account-article {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.account-article h2 { margin-top: 0; font-size: 21px; }
+.meta-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 14px;
+}
+.meta-list li {
+  margin: 0;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.hero {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.eyebrow, .updated, .report-path { color: var(--muted); font-size: 14px; }
+.report-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+.report-card {
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+.report-card h2 { margin: 8px 0; font-size: 20px; border-left: 0; padding-left: 0; }
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #eef2f7;
+}
+pre {
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+@media (max-width: 680px) {
+  .container { padding: 22px 14px 48px; }
+  .report { border-radius: 14px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  details.account-group summary { grid-template-columns: 1fr auto; padding-right: 92px; }
+  .account-titles { grid-column: 1 / -1; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">公众号投资简报</a>
+    <nav><a href="index.html">全部简报</a></nav>
+  </header>
+  <main class="container">
+    <article class="report">
+  <div class="report-meta">每日摘要</div>
+  <h1>公众号文章摘要 2026-07-21</h1>
+<h2>当日汇总</h2>
+<ul class="summary-list">
+<li><span class="label">收录文章：</span>14 篇</li>
+<li><span class="label">覆盖公众号：</span><span class="tag-row"><a class="anchor-chip" href="#account-c5568d88f0">寻找低估</a><a class="anchor-chip" href="#account-0e0ccdbbe6">北向牧风</a><a class="anchor-chip" href="#account-cafa2d599d">盘口逻辑拆解</a><a class="anchor-chip" href="#account-f00b1051cd">国家能源局</a><a class="anchor-chip" href="#account-a855312f36">ymj0418</a><a class="anchor-chip" href="#account-0554e99f50">梦游史中思的不定期更新</a><a class="anchor-chip" href="#account-fde9011285">老虎不是猫咪</a><a class="anchor-chip" href="#account-98077dbdaf">安静拆主线</a></span></li>
+<li><span class="label">高频实体/主题：</span><span class="tag-row"><span class="tag">AI1</span><span class="tag">JPM</span><span class="tag">高盛</span><span class="tag">SRv6</span></span></li>
+</ul>
+<h2>板块与风格观察</h2>
+<p class="subsection-title"><strong>1. 新技术/降本线索</strong></p>
+<ul>
+<li>AI算力/大模型：模型迭代和推理放量会倒逼算力、存储和网络效率提升，降本点在单位 token 成本、能耗和利用率。</li>
+<li>半导体设备：AI/HBM/DRAM 制程升级会抬升前道、量检测和良率控制需求，降本点主要在缩短工艺迭代、提高良率和减少返工。</li>
+<li>光模块/CPO：高速互连降低数据中心内部通信瓶颈，降本点在传输能耗、端口密度和网络架构简化。</li>
+<li>存储/HBM：AI 训练和推理拉动高带宽存储，降本点在带宽提升、单位容量成本下降和供需改善带来的规模效应。</li>
+</ul>
+<p class="subsection-title"><strong>2. 强势板块线索</strong></p>
+<ul>
+<li>连续两天上涨：待接入板块行情数据确认；原文强势词提到 AI算力/大模型、半导体设备、月21日 强势联动板块复盘。</li>
+<li>当天涨幅最大：待接入当日板块涨幅数据；当前简报仅按公众号文本热度排序，不把热度等同于涨幅。</li>
+</ul>
+<p class="subsection-title"><strong>3. 公众号重复提及板块</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>排名</th><th>板块名称</th><th>提及频次</th><th>核心主体</th></tr></thead>
+<tbody>
+<tr><td class="rank">1</td><td>能源/电力</td><td>合计 5篇/35次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a> 5篇/35次</span></td></tr>
+<tr><td class="rank">2</td><td>AI算力/大模型</td><td>合计 2篇/11次</td><td><span class="source-links"><a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-0099f02cb4">国产算力利好</a>》8次；<a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-3cc52a6f9c">半导体设备材料→国产算力→云计算交换机→端测模型网安→半导体设备材料  一个圈</a>》3次</span></td></tr>
+<tr><td class="rank">3</td><td>半导体设备</td><td>合计 2篇/3次</td><td><span class="source-links"><a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-3cc52a6f9c">半导体设备材料→国产算力→云计算交换机→端测模型网安→半导体设备材料  一个圈</a>》2次；<a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-0099f02cb4">国产算力利好</a>》1次</span></td></tr>
+<tr><td class="rank">4</td><td>光模块/CPO</td><td>合计 1篇/3次</td><td><span class="source-links"><a href="#account-0554e99f50">梦游史中思的不定期更新</a>《<a href="#article-3cc52a6f9c">半导体设备材料→国产算力→云计算交换机→端测模型网安→半导体设备材料  一个圈</a>》3次</span></td></tr>
+<tr><td class="rank">5</td><td>消费</td><td>合计 1篇/2次</td><td><span class="source-links"><a href="#account-f00b1051cd">国家能源局</a>《<a href="#article-48adf21be9">媒体报道︱能源节能降碳打出全链条“组合拳”</a>》2次</span></td></tr>
+<tr><td class="rank">6</td><td>国产算力利好</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-c5568d88f0">寻找低估</a>《<a href="#article-0099f02cb4">国产算力利好</a>》1次</span></td></tr>
+<tr><td class="rank">7</td><td>存储/HBM</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-1638116665">今日大涨的一些解释</a>》1次</span></td></tr>
+<tr><td class="rank">8</td><td>今日大涨的一些解释</td><td>合计 1篇/1次</td><td><span class="source-links"><a href="#account-0e0ccdbbe6">北向牧风</a>《<a href="#article-1638116665">今日大涨的一些解释</a>》1次</span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="subsection-title"><strong>4. 最近风格化所在</strong></p>
+<ul>
+<li>高波动/分歧交易、科技成长/AI硬件、涨价/周期修复</li>
+</ul>
+<p class="subsection-title"><strong>5. 提及板块相关个股/公司</strong></p>
+<ul>
+<li>能源/电力：原文未明确提及个股/公司</li>
+<li>AI算力/大模型：腾讯</li>
+<li>半导体设备：腾讯</li>
+<li>光模块/CPO：原文未明确提及个股/公司</li>
+<li>消费：原文未明确提及个股/公司</li>
+<li>国产算力利好：原文未明确提及个股/公司</li>
+</ul>
+<p class="subsection-title"><strong>共性后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：AI1</li>
+<li>复核重点实体的公告、纪要或财报口径：JPM、高盛</li>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+<li>复核重点实体的公告、纪要或财报口径：SRv6</li>
+</ul>
+<section class="account-archive" aria-label="按公众号归档的文章">
+<h2>按公众号归档</h2>
+<details class="account-group" id="account-c5568d88f0" open>
+<summary><span class="account-name">寻找低估</span><span class="account-count">1 篇</span><span class="account-titles">国产算力利好</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-0099f02cb4">
+<h2>国产算力利好</h2>
+<ul>
+<li>公众号：寻找低估</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/WB7Np7peGcAP4kAqg5ixZw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：………以下为今天新闻汇总：一、维稳今天主旋律还是维稳，拉了科技权重、国产算力，指数走V，半导体设备etf暴力反弹+19%，创业板指+7%盘后，继续呵护+回购二、AI1）报道称中美将于9月举行人工智能会谈2）国产算力/超节点：北京：将布局建设Token工厂，打造“超级节点+行业节点”支撑体系，力争下半年新增智能算力5万P腾讯云：为了将推理成本降低到极</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>………以下为今天新闻汇总：一、维稳今天主旋律还是维稳，拉了科技权重、国产算力，指数走V，<mark class="evidence-mark">半导体设备</mark>etf暴力反弹+19%，创业板指+7%盘后，继续呵护+回购二、AI1）报道称中美将于9月举行人工智能会谈2）国产算力/超节点：北京：将布局建设Token工厂，打造“超级节点+行业节点”支撑体系，力争下半年新增智能算力5万P<mark class="evidence-mark">腾讯</mark>云：为了将推理成本降低到极</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">半导体设备</span><span class="sector-badge">AI算力/大模型</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">腾讯</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>盘面炒作往往由某个新闻而始，每天3-5分钟的碎片阅读，你就能对次日重点做到心中有数，领先市场半步</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">腾讯</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">AI1</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>盘面炒作往往由某个新闻而始，每天3-5分钟的碎片阅读，你就能对次日重点做到心中有数，领先市场半步</li>
+<li>………以下为今天新闻汇总：一、维稳今天主旋律还是维稳，拉了科技权重、国产算力，指数走V，半导体设备etf暴力反弹+19%，创业板指+7%盘后，继续呵护+回购二、AI1）报道称中美将于9月举行人工智能会谈2）国产算力/超节点：北京：将布局建设Token工厂，打造“超级节点+行业节点”支撑体系，力争下半年新增智能算力5万P腾讯云：为了将推理成本降低到极</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：AI1</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-0e0ccdbbe6" open>
+<summary><span class="account-name">北向牧风</span><span class="account-count">1 篇</span><span class="account-titles">今日大涨的一些解释</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-1638116665">
+<h2>今日大涨的一些解释</h2>
+<ul>
+<li>公众号：北向牧风</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/vHGeyHFWH14J7xW7RH_VfA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：今日大涨的一些解释：今日大涨的一些解释 今天半导体大反弹，交易台和产业得信息比较多，简单捋一下：1、各家交易台对今日上涨的解释高盛：全天ETF成交量分布均匀，资金持续涌入科技硬件板块瑞银：去杠杆放缓，且高增长基金一直在稳步增加对超大型科技公司的仓位俩家的意思：这波是仓位层面的回补...早晨JPM交易台基本就阐述了上边的观点...2、韩国杠杆风向标...韩国收盘后交易台给的解释，不如午间那一版全面，前图是午间点评：资金+今天的出口数据+去杠杆放缓产业端情况产业端：核心是K3太强引起的担忧...但是这几天大家用下来，发现担忧过头了...…</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">JPM</span><span class="tag">高盛</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核重点实体的公告、纪要或财报口径：JPM、高盛</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-cafa2d599d" open>
+<summary><span class="account-name">盘口逻辑拆解</span><span class="account-count">1 篇</span><span class="account-titles">蚌埠住了</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-566b4413d5">
+<h2>蚌埠住了</h2>
+<ul>
+<li>公众号：盘口逻辑拆解</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/Z5CERY3jWcE-27NZpELKSQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：日内最有价值的是开盘那段恐慌，至于后来的修复都是走一步看一步无法预测的</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>日内最有价值的是开盘那段恐慌，至于后来的修复都是走一步看一步无法预测的</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>开盘那段恐慌，跟昨天拆解的昨天尾盘几乎一样的</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>当然，最重要的还是对行情大致的预期定性，知道处于什么阶段，然后，这个阶段该做什么事</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>如，昨晚的，如果这里再有恐慌怎么办？</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>只有这样先去定性，然后才能下跌时不被恐慌绑架，才能敢于试一试抄底</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>不然，正常下跌时肯定会犹豫和迟疑的</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>今天开盘十点多，跌到1000家以下，这就是冰点了</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>只有这样先去定性，然后才能下跌时不被恐慌绑架，才能敢于试一试抄底</li>
+<li>不然，正常下跌时肯定会犹豫和迟疑的</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-f00b1051cd">
+<summary><span class="account-name">国家能源局</span><span class="account-count">5 篇</span><span class="account-titles">中国油气勘探开发发展报告（2026）、国家能源局举办“深入学习贯彻党的二十届四中全会精神 贯彻落实‘十五五’能源规划”专题培训班、媒体报道︱能源节能降碳打出全链条“组合拳” 等 5 篇</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-987f9a1341">
+<h2>中国油气勘探开发发展报告（2026）</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/jaFAuVfncJmBQsi1x1uZ7w">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：中国油气勘探开发发展报告（2026）</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>中国油气勘探开发发展报告（2026）</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>中国油气勘探开发发展报告（2026）</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-de9731a567">
+<h2>国家能源局举办“深入学习贯彻党的二十届四中全会精神 贯彻落实‘十五五’能源规划”专题培训班</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/iDcC5gCFAmAjeASAshEC9A">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：为深入学习贯彻党的二十届四中全会关于加快建设新型能源体系、建设能源强国的战略部署，以更高标准、更实举措推动“十五五”时期能源高质量发展，7月16日至17日，国家能源局举办“深入学习贯彻党的二十届四中全会精神 贯彻落实‘十五五’能源规划”专题培训班</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>为深入学习贯彻党的二十届四中全会关于加快建设新型能源体系、建设能源强国的战略部署，以更高标准、更实举措推动“十五五”时期能源高质量发展，7月16日至17日，国家能源局举办“深入学习贯彻党的二十届四中全会精神 贯彻落实‘十五五’能源规划”专题培训班</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国家能源局举办“深入学习贯彻党的二十届四中全会精神 贯彻落实‘十五五’能源规划”专题培训班</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：国家能源局举办“深入学习贯彻党的二十届四中全会精神 贯彻落实‘十五五’能源规划”专题培训班</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>为深入学习贯彻党的二十届四中全会关于加快建设新型能源体系、建设能源强国的战略部署，以更高标准、更实举措推动“十五五”时期能源高质量发展，7月16日至17日，国家能源局举办“深入学习贯彻党的二十届四中全会精神 贯彻落实‘十五五’能源规划”专题培训班</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-48adf21be9">
+<h2>媒体报道︱能源节能降碳打出全链条“组合拳”</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/kmHXVWr3tkIASDyCFXFjcQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：国家能源局近日发布《能源领域节能降碳行动计划（2026—2028年）》（以下简称《行动计划》），明确到2028年，非化石能源消费比重年均提升约1个百分点</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国家能源局近日发布《能源领域节能降碳行动计划（2026—2028年）》（以下简称《行动计划》），明确到2028年，非化石能源消费比重年均提升约1个百分点</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>媒体报道︱能源节能降碳打出全链条“组合拳”</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>合理控制煤电机组供电煤耗，达到现行能效标杆水平的煤电产能比例力争提高15个百分点</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>建成一批零碳低碳煤炭矿区、油区</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>支持建成一批零碳园区，重点行业节能降碳取得显著进展，绿色用能水平不断提升</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>《行动计划》与《新型能源体系建设“十五五”规划》《重点行业节能降碳改造攻坚三年行动计划》相衔接，聚焦能源产供储销等环节，加大煤炭、油气、煤电等行业的节能降碳力度</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：媒体报道︱能源节能降碳打出全链条“组合拳” 国家能源局近日发布《能源领域节能降碳行动计划（2026—2028年）》（以下简称《行动计划》），明确到2028年，非化石能源消费比重年均提升约1个百分点；合理控制煤电机组供电煤耗，达到现行能效标杆水平的煤电产能比例力争提高15个百分点；建成一批零碳低碳煤炭矿区、油区；支持建成一批零碳园区，重点行业节能降碳取得显著进展，绿色用能水平不断提升。《行动计划》与《新型能源体系建设“十五五”规划》《重点行业节能降碳改造攻坚三年行动计划》相衔接，聚焦能源产供储销等环节，加大煤炭、油…</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：消费：国家能源局近日发布《能源领域节能降碳行动计划（2026—2028年）》（以下简称《行动计划》），明确到2028年，非化石能源消费比重年均提升约1个百分点；合理控制煤电机组供电煤耗，达到现行能效标杆水平的煤电产能比例力争提高15个百分点；建成一批零碳低碳煤炭矿区、油区；支持建成一批零碳园区，重点行业节能降碳取得显著进展，绿色用能水平不断提升。《行动计划》与《新型能源体系建设“十五五”规划》《重点行业节能降碳改造攻坚三年行动计划》相衔接，聚焦能源产供储销等环节，加大煤炭、油气、煤电等行业的节能降碳力度；支撑主要用...</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>国家能源局近日发布《能源领域节能降碳行动计划（2026—2028年）》（以下简称《行动计划》），明确到2028年，非化石能源消费比重年均提升约1个百分点</li>
+<li>合理控制煤电机组供电煤耗，达到现行能效标杆水平的煤电产能比例力争提高15个百分点</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>跟踪后续供需数据，区分短期交易担忧和中期产业订单</li>
+</ul>
+</article>
+<article class="account-article" id="article-a637d2335e">
+<h2>国家能源局综合司关于开展电力建设工程施工和监理项目负责人违规任职、现场履职不到位问题专项整治的通知</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/q9mQO13MHNEv3pShIJPzqA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：大中型电力建设工程施工项目经理任职资格要求应符合《注册建造师执业管理办法（试行）》（建市〔2008〕48号）、《注册建造师执业工程规模标准（试行）》（建市〔2007〕171号）</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>大中型电力建设工程施工项目经理任职资格要求应符合《注册建造师执业管理办法（试行）》（建市〔2008〕48号）、《注册建造师执业工程规模标准（试行）》（建市〔2007〕171号）</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国家能源局综合司关于开展电力建设工程施工和监理项目负责人违规任职、现场履职不到位问题专项整治的通知国能综通安全〔2026〕72号根据国务院安委会办公室关于开展“打非治违”工作的要求，为切实加强电力建设工程安全质量管理，有效防范和遏制各类安全质量事故，国家能源局决定组织开展电力建设工程施工和监理项目负责人违规任职、现场履职不到位问题专项整治工作</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>国家能源局综合司关于开展电力建设工程施工和监理项目负责人违规任职、现场履职不到位问题专项整治的通知</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>一、严格落实人员任职要求（一）严格落实施工项目经理任职要求</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：国家能源局综合司关于开展电力建设工程施工和监理项目负责人违规任职、现场履职不到位问题专项整治的通知</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>国家能源局综合司关于开展电力建设工程施工和监理项目负责人违规任职、现场履职不到位问题专项整治的通知国能综通安全〔2026〕72号根据国务院安委会办公室关于开展“打非治违”工作的要求，为切实加强电力建设工程安全质量管理，有效防范和遏制各类安全质量事故，国家能源局决定组织开展电力建设工程施工和监理项目负责人违规任职、现场履职不到位问题专项整治工作</li>
+<li>大中型电力建设工程施工项目经理任职资格要求应符合《注册建造师执业管理办法（试行）》（建市〔2008〕48号）、《注册建造师执业工程规模标准（试行）》（建市〔2007〕171号）</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-4024470a8b">
+<h2>关于2026年6月全国新增建档立卡新能源发电（不含户用光伏）项目情况的公告</h2>
+<ul>
+<li>公众号：国家能源局</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/lMGJJ7x0yd0m9jF2V-bL1w">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：2026年6月，全国新增建档立卡新能源发电（不含户用光伏）项目共3825个，其中风电项目32个，光伏发电项目3787个（集中式光伏发电项目36个，工商业分布式光伏发电项目3751个），生物质发电项目6个</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026年6月，全国新增建档立卡新能源发电（不含户用光伏）项目共3825个，其中风电项目32个，光伏发电项目3787个（集中式光伏发电项目36个，工商业分布式光伏发电项目3751个），生物质发电项目6个</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>附件：2026年6月全国新增建档立卡新能源发电项目（不含分布式光伏）国家能源局2026年7月15日 作者: 国家能源局</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>关于2026年6月全国新增建档立卡新能源发电（不含户用光伏）项目情况的公告</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>风电、集中式光伏发电、生物质发电项目清单见附件，工商业分布式光伏发电项目清单详见国家可再生能源发电项目信息管理平台网站（网址<a href="https://jdlk.renewable.org.cn/card-info-sheet/）">https://jdlk.renewable.org.cn/card-info-sheet/）</a></p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">能源/电力</mark>：关于2026年6月全国新增建档立卡新能源发电（不含户用光伏）项目情况的公告</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">能源/电力</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>关于2026年6月全国新增建档立卡新能源发电（不含户用光伏）项目情况的公告</li>
+<li>2026年6月，全国新增建档立卡新能源发电（不含户用光伏）项目共3825个，其中风电项目32个，光伏发电项目3787个（集中式光伏发电项目36个，工商业分布式光伏发电项目3751个），生物质发电项目6个</li>
+<li>附件：2026年6月全国新增建档立卡新能源发电项目（不含分布式光伏）国家能源局2026年7月15日 作者: 国家能源局</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-a855312f36" open>
+<summary><span class="account-name">ymj0418</span><span class="account-count">1 篇</span><span class="account-titles">2026.07.21岁月静好</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-8937ca06a0">
+<h2>2026.07.21岁月静好</h2>
+<ul>
+<li>公众号：ymj0418</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/SaajcmsIBxfpgLIw7atDJQ">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：2026.07.21岁月静好</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2026.07.21岁月静好</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>2026.07.21岁月静好</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-0554e99f50" open>
+<summary><span class="account-name">梦游史中思的不定期更新</span><span class="account-count">1 篇</span><span class="account-titles">半导体设备材料→国产算力→云计算交换机→端测模型网安→半导体设备材料  一个圈</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-3cc52a6f9c">
+<h2>半导体设备材料→国产算力→云计算交换机→端测模型网安→半导体设备材料  一个圈</h2>
+<ul>
+<li>公众号：梦游史中思的不定期更新</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/hu4L3UaTZft2Detf10mUmg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：半导体设备材料→国产算力→云计算交换机→端测模型网安→半导体设备材料 一个圈</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span><mark class="evidence-mark">半导体设备</mark>材料→国产算力→云计算交换机→端测模型网安→<mark class="evidence-mark">半导体设备</mark>材料 一个圈</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">半导体设备</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>2. 紫光股份（000938，新华三）</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">半导体设备</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">AI算力/大模型</mark>：<mark class="evidence-mark">半导体设备</mark>材料→国产算力→云计算交换机→端测模型网安→<mark class="evidence-mark">半导体设备</mark>材料 一个圈</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">半导体设备</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">半导体设备</mark>：<mark class="evidence-mark">半导体设备</mark>材料→国产算力→云计算交换机→端测模型网安→<mark class="evidence-mark">半导体设备</mark>材料 一个圈</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">半导体设备</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>板块提及：<mark class="evidence-mark">光模块/CPO</mark>：<mark class="evidence-mark">半导体设备</mark>材料→国产算力→云计算交换机→端测模型网安→<mark class="evidence-mark">半导体设备</mark>材料 一个圈</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">半导体设备</span><span class="sector-badge">AI算力/大模型</span><span class="sector-badge">光模块/CPO</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="impact-plain">原文未明确点名</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">SRv6</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>2. 紫光股份（000938，新华三）</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>补充国产替代链条：哪些 A 股公司处在文中提到的薄弱环节</li>
+<li>拆分受益环节：前道设备、厂务洁净室、先进封装、量检测</li>
+<li>复核重点实体的公告、纪要或财报口径：SRv6</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-fde9011285" open>
+<summary><span class="account-name">老虎不是猫咪</span><span class="account-count">1 篇</span><span class="account-titles">7.21 我还没爆仓</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-0e74bbf942">
+<h2>7.21 我还没爆仓</h2>
+<ul>
+<li>公众号：老虎不是猫咪</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/XqD-PjWnEvUlDnzRYkTzHg">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：这种行情真的是见所未见，我15年的时候经历了股灾10万亏了就剩3万，但是那个时候是吃了一个整个股灾亏的，现在半个月就给你干腰斩，而且，现在都是无量下跌，都是量化对倒下跌，持股的时候基本上都亏麻了，因为他们不亏麻之前也不会持股到高位了，盈亏通源</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这种行情真的是见所未见，我15年的时候经历了股灾10万亏了就剩3万，但是那个时候是吃了一个整个股灾亏的，现在半个月就给你干腰斩，而且，现在都是无量下跌，都是量化对倒下跌，持股的时候基本上都亏麻了，因为他们不亏麻之前也不会持股到高位了，盈亏通源</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">德明利</span><span class="company-badge">金安国纪</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>昨晚网上好多人在传我爆仓的聊天记录，我说一下我还没爆仓，还能蹦跶几下，今天又满仓满融梭哈了一笔回了口血，又可以蹦跶了几天了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">德明利</span><span class="company-badge">金安国纪</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>这个时候要拿出傅海棠的名言了，重仓猛干，浮盈加仓</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">德明利</span><span class="company-badge">金安国纪</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>真的是一把亏光，太惨了</p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">德明利</span><span class="company-badge">金安国纪</span></span></span></p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>昨天抄底早了，今天跌停割了<mark class="evidence-mark">金安国纪</mark>和<mark class="evidence-mark">德明利</mark></p><p><span class="impact-label">利好板块/公司：</span><span class="impact-groups"><span class="impact-group"><span class="impact-group-label">利好板块</span><span class="sector-badge">相关公司所在产业链</span></span><span class="impact-group"><span class="impact-group-label">相关公司/标的</span><span class="company-badge">德明利</span><span class="company-badge">金安国纪</span></span></span></p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>这种行情真的是见所未见，我15年的时候经历了股灾10万亏了就剩3万，但是那个时候是吃了一个整个股灾亏的，现在半个月就给你干腰斩，而且，现在都是无量下跌，都是量化对倒下跌，持股的时候基本上都亏麻了，因为他们不亏麻之前也不会持股到高位了，盈亏通源</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>这种行情真的是见所未见，我15年的时候经历了股灾10万亏了就剩3万，但是那个时候是吃了一个整个股灾亏的，现在半个月就给你干腰斩，而且，现在都是无量下跌，都是量化对倒下跌，持股的时候基本上都亏麻了，因为他们不亏麻之前也不会持股到高位了，盈亏通源</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+<details class="account-group" id="account-98077dbdaf" open>
+<summary><span class="account-name">安静拆主线</span><span class="account-count">3 篇</span><span class="account-titles">修复之后，找穿越、7月21日 涨停板复盘、7月21日 强势联动板块复盘</span></summary>
+<div class="account-articles">
+<article class="account-article" id="article-87d47923e5">
+<h2>修复之后，找穿越</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/IrWmgX2FAZPWyXiWtR1YyA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：股市有风险，投资需谨慎</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>股市有风险，投资需谨慎</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>今天市场终于走出了惊心动魄的深V</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>说真的，再不来这个V，屎都快被打出来了</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>但炒股是向前看的游戏，我们继续向前推演</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>但是从大趋势上，科技整体的这个大头部压力是非常大的</p></li>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>指望靠科技再全面主升，来完全化解危机，是一件难度非常大的时候</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>待补充</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>股市有风险，投资需谨慎</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-3eee066d88">
+<h2>7月21日 涨停板复盘</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/efGsIkh3nHH0GBmUa6EMpA">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：正文较短，请结合原文链接复核。</p>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+<article class="account-article" id="article-5325d075ff">
+<h2>7月21日 强势联动板块复盘</h2>
+<ul>
+<li>公众号：安静拆主线</li>
+<li>发布时间：2026-07-21</li>
+<li>原文：<a href="https://mp.weixin.qq.com/s/WRrn4LqH0HB9vEWcF2bhpw">点击查看原文</a></li>
+</ul>
+<p class="insight"><strong>一句话</strong>：7月21日 强势联动板块复盘</p>
+<p class="subsection-title"><strong>核心内容</strong></p>
+<ul>
+<li class="core-impact"><p><span class="core-label">核心内容：</span>7月21日 强势联动板块复盘</p></li>
+</ul>
+<p class="subsection-title"><strong>关键实体</strong></p>
+<span class="tag-row"><span class="tag">待补充</span></span>
+<p class="subsection-title"><strong>关键数字/证据</strong></p>
+<ul>
+<li>7月21日 强势联动板块复盘</li>
+</ul>
+<div class="risk">
+<p><strong>风险/分歧</strong></p>
+<ul>
+<li>原文未强调明确风险。</li>
+</ul>
+</div>
+<p class="subsection-title"><strong>后续跟踪</strong></p>
+<ul>
+<li>复核原文和相关公告。</li>
+</ul>
+</article>
+</div>
+</details>
+</section>
+</article>
+  </main>
+  <script>
+    function openHashTarget() {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var parent = target.closest('details.account-group');
+      if (parent) parent.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', openHashTarget);
+    window.addEventListener('DOMContentLoaded', openHashTarget);
+  </script>
+</body>
+</html>
